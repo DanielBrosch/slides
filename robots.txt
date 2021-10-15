@@ -1,0 +1,4 @@
+Sitemap: danielbrosch.github.io/slides/sitemap.xml
+
+User-agent: *
+Disallow:
