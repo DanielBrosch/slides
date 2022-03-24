@@ -1,5 +1,5 @@
 
 # Recent slides:
 
-- [test slides](/test)
+- [Symmetry reduced Flag-hierarchies](/FlagSymmetries)
 
