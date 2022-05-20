@@ -26,12 +26,6 @@
     <priority>0.5</priority>
 </url>
 <url>
-    <loc>danielbrosch.github.io/slides/FlagSymmetries/April22/Pic_ProfileSolution/</loc>
-    <lastmod>2022-05-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
     <loc>danielbrosch.github.io/slides/test/libs/reveal.js/3.8.0/plugin/notes/notes/</loc>
     <lastmod>2022-05-20</lastmod>
     <changefreq>monthly</changefreq>
@@ -56,13 +50,25 @@
     <priority>0.5</priority>
 </url>
 <url>
-    <loc>danielbrosch.github.io/slides/FlagSymmetries/April22/Pic_ProfileP3E/</loc>
+    <loc>danielbrosch.github.io/slides/FlagSymmetries/April12/Pic_ProfileP3E/</loc>
     <lastmod>2022-05-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
 </url>
 <url>
-    <loc>danielbrosch.github.io/slides/FlagSymmetries/April22/plugin/notes/speaker-view/</loc>
+    <loc>danielbrosch.github.io/slides/FlagSymmetries/April12/plugin/notes/speaker-view/</loc>
+    <lastmod>2022-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>danielbrosch.github.io/slides/FlagSymmetries/April12/Pic_ProfileSolution/</loc>
+    <lastmod>2022-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>danielbrosch.github.io/slides/FlagSymmetries/March22/Pic_ProfileProblem/</loc>
     <lastmod>2022-05-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -74,7 +80,19 @@
     <priority>0.5</priority>
 </url>
 <url>
-    <loc>danielbrosch.github.io/slides/FlagSymmetries/March22/Pic_ProfileProblem/</loc>
+    <loc>danielbrosch.github.io/slides/FlagSymmetries/April12/slides/</loc>
+    <lastmod>2022-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>danielbrosch.github.io/slides/FlagSymmetries/April12/Pic_ProfileProblem/</loc>
+    <lastmod>2022-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>danielbrosch.github.io/slides/FlagSymmetries/April12/index/</loc>
     <lastmod>2022-05-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -110,12 +128,6 @@
     <priority>0.5</priority>
 </url>
 <url>
-    <loc>danielbrosch.github.io/slides/FlagSymmetries/April22/index/</loc>
-    <lastmod>2022-05-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
     <loc>danielbrosch.github.io/slides/FlagSymmetries/March22/Pic_ProfileSolution/</loc>
     <lastmod>2022-05-20</lastmod>
     <changefreq>monthly</changefreq>
@@ -128,25 +140,13 @@
     <priority>0.5</priority>
 </url>
 <url>
-    <loc>danielbrosch.github.io/slides/FlagSymmetries/April22/Pic_ProfileP2E/</loc>
-    <lastmod>2022-05-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>danielbrosch.github.io/slides/FlagSymmetries/April22/Pic_ProfileProblem/</loc>
-    <lastmod>2022-05-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
     <loc>danielbrosch.github.io/slides/FlagSymmetries/March22/Pic_ProfileP2E/</loc>
     <lastmod>2022-05-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
 </url>
 <url>
-    <loc>danielbrosch.github.io/slides/FlagSymmetries/April22/slides/</loc>
+    <loc>danielbrosch.github.io/slides/FlagSymmetries/April12/Pic_ProfileP2E/</loc>
     <lastmod>2022-05-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
