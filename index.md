@@ -6,5 +6,5 @@
 
 - Pre-defense: [15.6.22](/PreDefense)
 
-- Defense: [19.10.22](/defense)
+- Defense: [19.10.22](/defense/#/0/1)
 
