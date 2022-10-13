@@ -1,0 +1,606 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Defense</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/solarized.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	<style>
+		.container{
+			display: flex;
+			/* max-height: 100%; */
+			/* margin-bottom: 100px; */
+		}
+		.col{
+			flex: 1;
+			/* width: 50%; */
+			/* margin-bottom: 100px; */
+		}
+		* {
+  		box-sizing: border-box;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			
+			<section>
+				<section data-auto-animate data-background="FrontImage.png">
+					<h2>Symmetry Reduction in Convex</h2><h2>Optimization</h2>
+					<h3>with Applications in Combinatorics</h3>
+					<br/>
+					<br/>
+					<h3>Daniel Brosch</h3>
+				</section> 
+				<section data-auto-animate>
+					<h2>Symmetry Reduction in Convex</h2><h2 style="color: red;" font-size="40px">Optimization</h2>
+					<h3>with Applications in Combinatorics</h3>
+					<br/>
+					<br/>
+					<h3>Daniel Brosch</h3>
+				</section>
+				<!-- <section data-auto-animate> -->
+
+  					<!-- <h2 style="margin-top: 100px; color: red; position: relative; right: 200px">Optimization</h2> -->
+  					<!-- <h2>Optimization</h2> -->
+				<!-- </section> -->
+				<section data-auto-animate>
+					<h2>Optimization</h2>
+
+					<blockquote cite="https://www.merriam-webster.com/dictionary/optimization">
+						&ldquo; An act, process, or methodology of making something (such as a design, system, or decision) as fully perfect, functional, or effective as possible&rdquo;
+					</blockquote>
+			  	</section>
+			  	<section data-auto-animate>
+					<h2>Optimization</h2>
+					
+					<div class="container">
+						<div class="col">
+							<img src="https://www.spectos.com/wp-content/uploads/2019/01/paketlieferung-e-commerce-600x376.jpg">
+						</div>
+					</div>
+					
+		  		</section>
+				<section data-auto-animate>
+					<h2>Optimization</h2>
+
+					<div class="container">
+						<div class="col" style="width: 50%;">
+							<img style="width: 75%;" src="https://www.spectos.com/wp-content/uploads/2019/01/paketlieferung-e-commerce-600x376.jpg">
+						</div>
+						<div class="col" style="width: 50%;">
+							<img style="width: 75%;" src="https://energiesysteme-zukunft.de/fileadmin/_processed_/4/3/csm_PM_Stellungnahme_Resilienz_46b11eaed1.jpg">
+						</div>
+					</div>
+		  		</section>
+				<section data-auto-animate>
+					<h2>Optimization</h2>
+
+					<div class="container">
+						<div class="col" style="width: 50%;">
+							<img style="width: 75%;" src="https://www.spectos.com/wp-content/uploads/2019/01/paketlieferung-e-commerce-600x376.jpg">
+							<img style="width: 75%;" src="https://static.scientificamerican.com/sciam/cache/file/C7DA52DB-4820-4474-B87837CF06754B92_source.png?w=590&h=800&A9E66A09-C0EC-4EA0-A00C73E38B7B6CCB">							
+						</div>
+						<div class="col" style="width: 50%;">
+							<img style="width: 75%;" src="https://energiesysteme-zukunft.de/fileadmin/_processed_/4/3/csm_PM_Stellungnahme_Resilienz_46b11eaed1.jpg">
+						</div>
+					</div>
+
+		  		</section>
+				<section data-auto-animate>
+					<h2>Optimization</h2>
+
+					<div class="container">
+						<div class="col" style="width: 50%;">
+							<img style="width: 75%;" src="https://www.spectos.com/wp-content/uploads/2019/01/paketlieferung-e-commerce-600x376.jpg">
+							<img style="width: 75%;" src="https://static.scientificamerican.com/sciam/cache/file/C7DA52DB-4820-4474-B87837CF06754B92_source.png?w=590&h=800&A9E66A09-C0EC-4EA0-A00C73E38B7B6CCB">							
+						</div>
+						<div class="col" style="width: 50%;">
+							<img style="width: 75%;"  src="https://energiesysteme-zukunft.de/fileadmin/_processed_/4/3/csm_PM_Stellungnahme_Resilienz_46b11eaed1.jpg">
+							<img style="width: 75%;" src="https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2001/11/artemis_and_spot_4_communicating_via_the_silex_system_-_artist_s_impression/9189083-5-eng-GB/Artemis_and_SPOT_4_communicating_via_the_SILEX_system_-_Artist_s_impression_pillars.jpg">
+						</div>
+					</div>
+
+		  		</section>
+
+				  <section data-auto-animate>
+					<h2>Optimization</h2>
+
+					<br/>
+
+					$$\begin{align*}
+						\min \enspace&f(x)\\
+						\text{s.t.}\enspace &x \in C
+					\end{align*}$$
+					
+
+		  		</section>
+				<!-- <section data-auto-animate>
+					<h2>Optimization</h2>
+		  		</section> -->
+				<section class="fv-background" fv-video="minimize.mp4" fv-playback-info="minimize.json">
+				</section>
+				<!-- <script>Reveal.configure({ autoPlayMedia: null});</script> -->
+
+				<section data-auto-animate>
+					<h2>Optimization is <span style="color: red">hard</span></h2>
+
+					<img class="r-stretch" src="https://upload.wikimedia.org/wikipedia/commons/8/8b/Rastrigin_function.png">
+				</section>
+				<section data-auto-animate>
+					<h2>Optimization is <span style="color: red">hard</span></h2>
+					
+					<br/>
+
+					<h2><span style="color: red">Convex</span> optimization is easier</h2>
+					<h4>(But often still hard)</h4>
+					
+				</section>
+			</section>
+
+			<section>
+				<section data-auto-animate>
+					<h2>Convex optimization</h2>
+
+					<blockquote cite="https://en.wikipedia.org/wiki/Convex_function">
+						&ldquo; A convex function refers to a function whose graph is shaped like a cup.&rdquo;
+					</blockquote>
+				</section>
+				<section data-auto-animate>
+					<h2>Convex optimization</h2>
+
+					<img class="r-stretch" data-id="cup" src="cup.svg">
+
+					<p style="visibility: hidden"><span style="color: red">Lines</span> between any two points are "inside" the cup.</p>
+					
+				</section>
+				<section data-auto-animate>
+					<h2>Convex optimization</h2>
+
+					<img class="r-stretch" data-id="cup" src="cupLine.svg">
+					
+					<p style="visibility: visible"><span style="color: red">Lines</span> between any two points are "inside" the cup.</p>
+				</section>
+				<!-- <section data-auto-animate>
+					<h2>Convex optimization</h2>
+
+					<img class="r-stretch" data-id="cup" src="cupLineAvg.svg">
+					
+					<p style="visibility: visible">Averaged solutions are at least as good as the average of the solutions.</p>
+				</section> -->
+				<section>
+					<h3>Convex relaxations</h3>
+					<blockquote>
+						<br/>
+						Hard optimization problem 
+						$$\Downarrow$$
+						Easier, <span style="color:red">bigger</span>, convex problem
+
+						<br/>
+						<br/>
+					</blockquote>
+
+					<!-- <p class="fragment">Convex relaxations of small problems can be <span style="color: red">very big</span>.</p> -->
+				</section>
+
+			</section>
+
+			<section>
+				<section>
+					<h2>Symmetry reduction</h2>
+
+					<br>
+
+					<p>Can we solve <span style="color:red">symmetric</span> convex problems faster?</p>
+				</section>
+
+				<section class="fv-background" fv-video="symmetry.mp4" fv-playback-info="symmetry.json">
+				</section>
+
+				<section>
+					<h2>Symmetry reduction</h2>
+
+					<br>
+
+					<ul>
+						<li>How to <span style="color:red">find</span> symmetries?</li>
+						<li class="fragment">How to <span style="color:red">exploit</span> symmetries?</li>
+						<li class="fragment">Which <span style="color:red">problems</span> can we reduce?</li>
+					</ul>
+
+				</section>
+			</section>
+
+			<!-- <section>
+				<section>
+					Slide 2
+
+					<div class="container">
+						<div class="col" style="background-color:#FFB695;">
+							<h2>Column 1</h2>
+							<p>Data..</p>
+						</div>
+						<div class="col" style="background-color:#96D1CD;">
+							<h2>Column 2</h2>
+							<p>Data..</p>
+						</div>
+					</div>
+				</section>
+			</section> -->
+			<section data-auto-animate data-background-video="3Points.mp4" data-background-video-loop data-background-video-muted data-background-size="cover" data-background-opacity="1.0">
+				<h2>Symmetry Reduction in Convex</h2><h2>Optimization</h2>
+				<h3>with Applications in Combinatorics</h3>
+				<br/>
+				<br/>
+				<h3>Daniel Brosch</h3>
+			</section> 
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+
+			// The "normal" size of the presentation, aspect ratio will
+			// be preserved when the presentation is scaled to fit different
+			// resolutions. Can be specified using percentage units.
+			// width: 1280,
+			// width: "100%",
+			// height: 720,
+			// height: "100%",
+
+			// Factor of the display size that should remain empty around
+			// the content
+			margin: 0.04,
+
+			// Bounds for smallest/largest possible scale to apply to content
+			// minScale: 0.2,
+			// maxScale: 2.0,
+
+			// Display presentation control arrows
+  			controls: true,
+
+			// Help the user learn the controls by providing hints, for example by
+			// bouncing the down arrow when they first encounter a vertical slide
+			controlsTutorial: false,
+
+			// Determines where controls appear, "edges" or "bottom-right"
+			controlsLayout: 'bottom-right',
+
+			// Visibility rule for backwards navigation arrows; "faded", "hidden"
+			// or "visible"
+			controlsBackArrows: 'faded',
+
+			// Display a presentation progress bar
+			progress: true,
+
+			// Display the page number of the current slide
+			// - true:    Show slide number
+			// - false:   Hide slide number
+			//
+			// Can optionally be set as a string that specifies the number formatting:
+			// - "h.v":   Horizontal . vertical slide number (default)
+			// - "h/v":   Horizontal / vertical slide number
+			// - "c":   Flattened slide number
+			// - "c/t":   Flattened slide number / total slides
+			//
+			// Alternatively, you can provide a function that returns the slide
+			// number for the current slide. The function should take in a slide
+			// object and return an array with one string [slideNumber] or
+			// three strings [n1,delimiter,n2]. See #formatSlideNumber().
+			slideNumber: false,
+
+			// Can be used to limit the contexts in which the slide number appears
+			// - "all":      Always show the slide number
+			// - "print":    Only when printing to PDF
+			// - "speaker":  Only in the speaker view
+			showSlideNumber: 'all',
+
+			// Use 1 based indexing for # links to match slide number (default is zero
+			// based)
+			hashOneBasedIndex: false,
+
+			// Add the current slide number to the URL hash so that reloading the
+			// page/copying the URL will return you to the same slide
+			hash: true,
+
+			// Flags if we should monitor the hash and change slides accordingly
+			respondToHashChanges: true,
+
+			// Push each slide change to the browser history.  Implies `hash: true`
+			history: false,
+
+			// Enable keyboard shortcuts for navigation
+			keyboard: true,
+
+			// Optional function that blocks keyboard events when returning false
+			//
+			// If you set this to 'focused', we will only capture keyboard events
+			// for embedded decks when they are in focus
+			keyboardCondition: null,
+
+			// Disables the default reveal.js slide layout (scaling and centering)
+			// so that you can use custom CSS layout
+			disableLayout: false,
+
+			// Enable the slide overview mode
+			overview: true,
+
+			// Vertical centering of slides
+			center: true,
+
+			// Enables touch navigation on devices with touch input
+			touch: true,
+
+			// Loop the presentation
+			loop: false,
+
+			// Change the presentation direction to be RTL
+			rtl: false,
+
+			// Changes the behavior of our navigation directions.
+			//
+			// "default"
+			// Left/right arrow keys step between horizontal slides, up/down
+			// arrow keys step between vertical slides. Space key steps through
+			// all slides (both horizontal and vertical).
+			//
+			// "linear"
+			// Removes the up/down arrows. Left/right arrows step through all
+			// slides (both horizontal and vertical).
+			//
+			// "grid"
+			// When this is enabled, stepping left/right from a vertical stack
+			// to an adjacent vertical stack will land you at the same vertical
+			// index.
+			//
+			// Consider a deck with six slides ordered in two vertical stacks:
+			// 1.1    2.1
+			// 1.2    2.2
+			// 1.3    2.3
+			//
+			// If you're on slide 1.3 and navigate right, you will normally move
+			// from 1.3 -> 2.1. If "grid" is used, the same navigation takes you
+			// from 1.3 -> 2.3.
+			navigationMode: 'default',
+
+			// Randomizes the order of slides each time the presentation loads
+			shuffle: false,
+
+			// Turns fragments on and off globally
+			fragments: true,
+
+			// Flags whether to include the current fragment in the URL,
+			// so that reloading brings you to the same fragment position
+			fragmentInURL: true,
+
+			// Flags if the presentation is running in an embedded mode,
+			// i.e. contained within a limited portion of the screen
+			embedded: false,
+
+			// Flags if we should show a help overlay when the question-mark
+			// key is pressed
+			help: true,
+
+			// Flags if it should be possible to pause the presentation (blackout)
+			pause: true,
+
+			// Flags if speaker notes should be visible to all viewers
+			showNotes: false,
+
+			// Global override for autolaying embedded media (video/audio/iframe)
+			// - null:   Media will only autoplay if data-autoplay is present
+			// - true:   All media will autoplay, regardless of individual setting
+			// - false:  No media will autoplay, regardless of individual setting
+			autoPlayMedia: null,
+
+			// Global override for preloading lazy-loaded iframes
+			// - null:   Iframes with data-src AND data-preload will be loaded when within
+			//           the viewDistance, iframes with only data-src will be loaded when visible
+			// - true:   All iframes with data-src will be loaded when within the viewDistance
+			// - false:  All iframes with data-src will be loaded only when visible
+			preloadIframes: null,
+
+			// Can be used to globally disable auto-animation
+			autoAnimate: true,
+
+			// Optionally provide a custom element matcher that will be
+			// used to dictate which elements we can animate between.
+			autoAnimateMatcher: null,
+
+			// Default settings for our auto-animate transitions, can be
+			// overridden per-slide or per-element via data arguments
+			autoAnimateEasing: 'ease',
+			autoAnimateDuration: 1.0,
+			autoAnimateUnmatched: true,
+
+			// CSS properties that can be auto-animated. Position & scale
+			// is matched separately so there's no need to include styles
+			// like top/right/bottom/left, width/height or margin.
+			autoAnimateStyles: [
+			'opacity',
+			'color',
+			'background-color',
+			'padding',
+			'font-size',
+			'line-height',
+			'letter-spacing',
+			'border-width',
+			'border-color',
+			'border-radius',
+			'outline',
+			'outline-offset'
+			],
+
+			// Controls automatic progression to the next slide
+			// - 0:      Auto-sliding only happens if the data-autoslide HTML attribute
+			//           is present on the current slide or fragment
+			// - 1+:     All slides will progress automatically at the given interval
+			// - false:  No auto-sliding, even if data-autoslide is present
+			autoSlide: 0,
+
+			// Stop auto-sliding after user input
+			autoSlideStoppable: true,
+
+			// Use this method for navigation when auto-sliding (defaults to navigateNext)
+			autoSlideMethod: null,
+
+			// Specify the average time in seconds that you think you will spend
+			// presenting each slide. This is used to show a pacing timer in the
+			// speaker view
+			defaultTiming: null,
+
+			// Enable slide navigation via mouse wheel
+			mouseWheel: false,
+
+			// Opens links in an iframe preview overlay
+			// Add `data-preview-link` and `data-preview-link="false"` to customise each link
+			// individually
+			previewLinks: false,
+
+			// Exposes the reveal.js API through window.postMessage
+			postMessage: true,
+
+			// Dispatches all reveal.js events to the parent window through postMessage
+			postMessageEvents: false,
+
+			// Focuses body when page changes visibility to ensure keyboard shortcuts work
+			focusBodyOnPageVisibilityChange: true,
+
+			// Transition style
+			transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+			// Transition speed
+			transitionSpeed: 'default', // default/fast/slow
+
+			// Transition style for full page slide backgrounds
+			backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
+
+			// The maximum number of pages a single slide can expand onto when printing
+			// to PDF, unlimited by default
+			pdfMaxPagesPerSlide: Number.POSITIVE_INFINITY,
+
+			// Prints each fragment on a separate slide
+			pdfSeparateFragments: true,
+
+			// Offset used to reduce the height of content within exported PDF pages.
+			// This exists to account for environment differences based on how you
+			// print to PDF. CLI printing options, like phantomjs and wkpdf, can end
+			// on precisely the total height of the document whereas in-browser
+			// printing has to end one pixel before.
+			pdfPageHeightOffset: -1,
+
+			// Number of slides away from the current that are visible
+			viewDistance: 3,
+
+			// Number of slides away from the current that are visible on mobile
+			// devices. It is advisable to set this to a lower number than
+			// viewDistance in order to save resources.
+			mobileViewDistance: 2,
+
+			// The display mode that will be used to show slides
+			display: 'block',
+
+			// Hide cursor if inactive
+			hideInactiveCursor: true,
+
+			// Time before the cursor is hidden (in ms)
+			hideCursorTime: 1000
+		});
+		// Reveal.on('ready', event => {
+			// event.currentSlide, event.indexh, event.indexv
+			
+			// console.log(event.currentSlide)
+			// event.currentSlide.slideBackgroundContentElement.firstChild.playbackRate = 0.1;
+			// var stackedBackgrounds = $('body > div > div.backgrounds');
+			// stackedBackgrounds.each(function () {
+			// 	var me = $(this);
+			// 	var video = me.find('video').get(0);
+			// 	console.log(video);
+			// 	video.playbackRate = 0.1;
+			// 	if (video) {
+			// 		if (me.hasClass('present')) {
+			// 			console.log('play');
+			// 			video.play();
+			// 		}
+			// 		else {
+			// 			console.log('stop');
+			// 			video.load();
+			// 		}
+			// 	}
+			// });
+		// });
+		// Reveal.on('slidechanged', event => {
+		// 	// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+		// 	console.log(`test`)
+		// 	var stackedBackgrounds = $('body > div > div.backgrounds > div.stack');
+		// 	stackedBackgrounds.each(function () {
+		// 		var me = $(this);
+		// 		var video = me.find('video').get(0);
+		// 		console.log(video);
+		// 		video.playbackRate = 0.1;
+		// 		if (video) {
+		// 			if (me.hasClass('present')) {
+		// 				console.log('play');
+		// 				video.play();
+		// 			}
+		// 			else {
+		// 				console.log('stop');
+		// 				video.load();
+		// 			}
+		// 		}
+		// 	});
+		// });
+		// Reveal.addEventListener('slidechanged', function (event) {
+		// 	// window.setTimeout(function () {
+		// 
+		Reveal.on( 'slidechanged', event => {
+			console.log(event.indexh)
+			console.log(event.indexv)
+  			// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+			if (event.indexh == 0 && event.indexv == 8){
+				console.log("autoplay off")
+				Reveal.configure({ autoPlayMedia: false});
+			};
+			if (event.indexh == 0 && event.indexv == 9){
+				console.log("autoplay on")
+				Reveal.configure({ autoPlayMedia: null});
+			};
+			if (event.indexh == 2 && event.indexv == 1){
+				console.log("autoplay off")
+				Reveal.configure({ autoPlayMedia: false});
+			};
+			if (event.indexh == 2 && event.indexv == 2){
+				console.log("autoplay on")
+				Reveal.configure({ autoPlayMedia: null});
+			};
+
+		} );	
+	</script>
+	<script src="plugin/math/math.js"></script>
+	<script src="plugin/manim/manim.js"></script>
+	<script>
+		Reveal.initialize({ plugins: [RevealMath.KaTeX, RevealManim] });
+	</script>
+</body>
+
+</html>
