@@ -8,3 +8,4 @@
 
 - Defense: [19.10.22](/defense/#/0/1)
 
+- Combinatoric derivatives: [23.10.22](/CombDerivatives)

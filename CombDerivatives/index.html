@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <title>Symmetry reduced Flag-hierarchies</title>
+  <link rel="shortcut icon" href="./favicon.ico" />
+  <link rel="stylesheet" href="./dist/reset.css" />
+  <link rel="stylesheet" href="./dist/reveal.css" />
+  <link rel="stylesheet" href="./dist/theme/night.css" id="theme" />
+  <link rel="stylesheet" href="./css/highlight/zenburn.css" />
+
+  <style>
+    .container {
+      display: flex;
+      /* max-height: 100%; */
+      /* margin-bottom: 100px; */
+    }
+
+    .col {
+      flex: 1;
+      /* width: 50%; */
+      /* margin-bottom: 100px; */
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        $$\require{color}$$
+        <section data-auto-animate>
+          <h3 style="display: inline;">Derivatives in </h3>
+          <h3 style="display: inline;" data-id="t1">Continuous </h3>
+          <h3 style="display: inline;"> Combinatorics</h3>
+
+          <br>
+          <br>
+
+          <h4>Daniel Brosch</h4>
+
+          <br>
+
+          <h5>October 24, 2022</h5>
+
+          <!-- $$\sqrt{2}$$ -->
+
+
+        </section>
+        <section data-auto-animate>
+          <h3 style="display: inline;">Derivatives in </h3>
+
+          <h3 style="display: inline; color:red" data-id="t1">Continuous </h3>
+
+          <h3 style="display: inline;"> Combinatorics</h3>
+
+          <br>
+          <br>
+
+          <h4>Daniel Brosch</h4>
+
+          <br>
+
+          <h5>October 24, 2022</h5>
+
+        </section>
+        <section>
+          <h3>Continuous Combinatorics</h3>
+
+          <br>
+
+          <!-- <blockquote>
+            The study of <b>limit objects</b> of growing combinatorial structures.
+          </blockquote> -->
+
+          <p>The study of <b>limit objects</b> of growing combinatorial structures.</p>
+
+          <br>
+
+          <p class="fragment">
+            This talk: <b>graph limits</b>
+            $${\color{orange}\mathcal{G}} = (G_i)_{i=1}^\infty,$$
+            where $G_i$ is a graph on $i$ vertices.
+          </p>
+
+        </section>
+        <section>
+          <h3> How many edges can there be in a triangle free graph?</h3>
+          <video class="fv-video" src="./videos/TriangleFree.mp4" fv-playback-info="./videos/TriangleFree.json">
+          </video>
+        </section>
+        <section>
+          <h3><b>Graphons</b> (<b>Graph</b>-functi<b>ons</b>)</h3>
+          <h6><sup>[Lovász, Szegedy, 2006]</sup></h6>
+
+          <br>
+
+          <div class="container">
+            <div class="col" style="flex: 2">
+              <b>Limits of adjacency matrices:</b> symmetric measurable functions
+              $$W\colon[0,1]^2\to[0,1]$$
+              <img style="width: 70%;" src="Graphon.png">
+            </div>
+            <div class="col" style="flex: 1">
+              <br>
+              <img src="GraphLimits.jpg">
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3><b>Flag Algebras</b></h3>
+          <h6><sup>[Razborov, 2007]</sup></h6>
+
+          <br>
+
+          <div class="container">
+            <div class="col" style="flex: 2">
+
+
+              <b>Record only the limits of subgraph densities:</b>
+              $$\phi(H) = \lim_{i\to\infty} (\text{density of $H$ in $G_i$}).$$
+
+              <b>Flag Algebras</b> consider the algebraic relations between different values $\phi(H)$ and $\phi(H')$.
+
+
+            </div>
+            <div class="col" style="flex: 1">
+              <img style="width: 80%;" src="FlagAlg.png">
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3>Graphons and Flag Algebras</h3>
+
+          <br>
+
+          <p>Flag algebras' limit functionals
+            $$\phi\colon \{\text{finite graphs}\}\to[0,1]$$
+            correspond to <b>graphons "up to isomorphism"</b>.
+          </p>
+          <br>
+
+          <p class="fragment">
+            They form a <b>compact metric space.</b>
+          </p>
+
+
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <h3>Subgraph densities</h3>
+          <br>
+
+          <p>The <b>density</b> of a graph $\color{green}H$ in $\color{orange}\mathcal{G}= (G_i)_{i=1}^\infty$ is
+            $$\phi({\color{green}H}) := \lim_{i\to\infty}
+            \mathbb{P}[{\color{red}\sigma_i}({\color{green}H}) \text{ is a subgraph of }{\color{orange}G_i}],$$
+            where ${\color{red}\sigma_i}$ is a random permutation in $S_i$.
+          </p>
+        </section>
+
+        <section>
+          <h3>Triangle free graphs</h3>
+
+          <p>
+            Maximize the <span style="color:orange">edge density</span> in a <span style="color:green">triangle
+              free</span> sequence $\mathcal{G}$ of graphs of increasing size:
+          </p>
+
+          <img style="width:70%;" src="./Pic_EqTriangleFree.svg">
+
+          <div class="fragment">
+            <p>
+              We saw that
+            </p>
+            <img style="width:30%;" src="./Pic_EqTriangleFreeLowerBound.svg">
+
+            <p>
+              but how can we prove an <b>upper bound</b>?
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h3>Multiplying subgraph densities</h3>
+
+          <div class="r-stack">
+            <div class="fragment fade-out" data-fragment-index="1">
+              <p>To multiply two subgraph densities, we <b>glue together</b> the graphs:</p>
+
+              <img style="width: 40%;" src="./Pic_DensityProduct.svg">
+
+
+              <!-- <div class="fragment fade-in" data-fragment-index="0">
+                Because the probability that the two graphs are sent to <b>disjoint</b> sets
+                of vertices <b>converges to $1$ in the limit</b>.
+              </div> -->
+            </div>
+            <div class="fragment current-visible" data-fragment-index="1">
+              <p>These relationships are <b>independent of $\mathcal{G}$</b>, motivating the definition</p>
+
+              <img style="width: 30%;" src="./Pic_DensityProductNoP.svg">
+
+              <p>
+                where a graph $H$ now stands for the function
+                $$H(\mathcal{G}) = \phi_{\mathcal{G}}(H).$$
+              </p>
+            </div>
+            <div class="fragment">
+              <p>We can fix entries of the $\sigma_i$ to fix (<b>flag</b>) some vertices, and extend the <b>gluing</b>
+                operation to <b>partially labeled graphs (Flags)</b>:</p>
+
+              <img style="width: 40%;" src="./Pic_FlagExample.svg">
+            </div>
+          </div>
+        </section>
+
+        <!-- <section>
+          <h3>The Flag Algebra of Graphs</h3>
+
+          $$\mathcal{A}_{\text{graphs}} = \{\text{real linear combinations of flags}\}$$
+        </section> -->
+
+        <section>
+          <h3>Flag Sums-of-Squares</h3>
+
+          <div class="r-stack">
+            <div class="fragment fade-out" data-fragment-index="3">
+              <ul>
+                <li>
+                  Flags $F$ send graph sequences to real numbers:
+                  $$ F (\mathcal{G}) \in [0,1]$$
+                </li>
+                <li class="fragment" data-fragment-index="1">
+                  Then so do <b>real linear combinations</b> of flags
+                </li>
+                <li class="fragment" data-fragment-index="2">
+                  Squares of real numbers are <b>nonnegative</b>:
+
+                  <div style="text-align: center;">
+                    <img src="./Pic_FlagSOS1.svg">
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="fragment current-visible" data-fragment-index="3">
+              <p>We can <b>average</b> Flags over all choices of labels, <b>unlabeling</b> them:</p>
+
+              <img style="width: 70%;" src="./Pic_FlagSOS2.svg">
+            </div>
+            <div class="fragment">
+              <p>We can now find an <b>upper bound</b> for the edge density in triangle free graphs:</p>
+              <img src="Pic_FlagSOS3.svg" style="width: 90%;">
+              <p class="fragment fade-in">As with <b>polynomial optimization</b>, we can model Flag-SOS using
+                <b>semidefinite programming</b>.
+              </p>
+
+            </div>
+
+        </section>
+
+        <section>
+          <h3>The space of graph limits</h3>
+
+          <div class="r-stack">
+            <div class="fragment fade-out" data-fragment-index="2">
+              <p>We saw that <b>triangle free</b> graphs have at most edge density $\frac{1}{2}$.</p>
+
+              <br>
+
+              <p class="fragment" data-fragment-index="1">What happens if we allow <b>some triangles</b>?</p>
+            </div>
+            <div class="fragment current-visible" data-fragment-index="2">
+
+              <img style="width: 70%;" src="./TriangleProfile.png">
+            </div>
+            <div class="fragment current-visible">
+              <img style="width: 60%;" src="./GraphProfilesHarmonic.png">
+            </div>
+            <div class="fragment">
+              <ul>
+                <li>
+                  Linear combinations of subgraph densities are <b>continuous functions</b> in this space.
+                </li>
+                <li class="fragment">
+                  How can we <b>move</b> in the space without leaving it?
+                </li>
+                <li class="fragment">
+                  Can we define <b>directional derivatives</b> of flags?
+                </li>
+              </ul>
+            </div>
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <h3>Derivatives of flags</h3>
+
+          <p>
+            Razborov introduces two derivatives:
+          <ul>
+            <li>
+              In direction of <b>deleting a vertex</b> $v$.
+            </li>
+            <li>
+              In direction of <b>deleting an edge</b> $e$.
+            </li>
+          </ul>
+          </p>
+
+          <br>
+
+          <p class="fragment">
+            Lovász translates the definition to graphons.
+          </p>
+
+          <p class="fragment">
+            Diao, Guillot, Khare, Bajaratnam consider Gateaux derivatives in the space of graphons.
+          </p>
+
+        </section>
+
+        <section data-auto-animate>
+          <h3>$\partial_v$: Deleting the vertex ${\color{orange}v}$</h3>
+          <h6><sup>(We assume all flags with label ${\color{orange}v}$ converge)</sup></h6>
+
+          <div data-id="1">
+            $$\nabla_{\color{orange}v} f(x) = \lim_{{\color{red}h}\to 0}
+            \frac{f(x+{\color{red}h}{\color{orange}v})-f(x)}{{\color{red}h}}$$
+          </div>
+
+
+          <!-- <img style="width: 80%;" src="./Pic_VertexDeletion.svg"> -->
+
+
+
+        </section>
+        <section data-auto-animate>
+          <h3>$\partial_v$: Deleting the vertex ${\color{orange}v}$</h3>
+          <h6><sup>(We assume all flags with label ${\color{orange}v}$ converge)</sup></h6>
+
+          <div data-id="1">
+            $$\nabla_{\color{orange}v} f(x) = \lim_{{\color{red}h}\to 0}
+            \frac{f(x+{\color{red}h}{\color{orange}v})-f(x)}{{\color{red}h}}$$
+          </div>
+
+          <!-- <img style="width: 80%;" src="./Pic_VertexDeletion.svg"> -->
+
+          <div data-id="2">
+            $$\scriptsize\partial_{\color{orange}v} H :=\lim_{{\color{red}i}\to\infty}\frac{(H \text{ density in }(G_{\color{red}i}-{\color{orange}v})) - (H \text{ density in }G_{\color{red}i})}{{\color{red}i}^{-1}}$$
+          </div>
+          
+
+
+        </section>
+        <section data-auto-animate>
+          <h3>$\partial_v$: Deleting the vertex ${\color{orange}v}$</h3>
+          <h6><sup>(We assume all flags with label ${\color{orange}v}$ converge)</sup></h6>
+
+          <!-- $$ \small \lim_{i\to\infty}(H \text{ density in } (G_i-{\color{orange}v})) - (H \text{ density in } G_i) = 0  $$ -->
+          <div data-id="2">
+            $$\scriptsize\partial_{\color{orange}v} H :=\lim_{{\color{red}i}\to\infty}\frac{(H \text{ density in }(G_{\color{red}i}-{\color{orange}v})) - (H \text{ density in }G_{\color{red}i})}{{\color{red}i}^{-1}}$$
+          </div>
+
+
+          <img class="r-frame" style="width: 50%;" src="./Pic_VertexDeletionExamples.svg">
+
+        </section>
+
+        <section data-auto-animate data-auto-animate-restart>
+          <h3>$\partial_e$: Deleting the edge ${\color{orange}e}$</h3>
+
+          <div data-id="2">
+            $$\scriptsize\partial_{\color{orange}e} H :=\lim_{{\color{red}i}\to\infty}\frac{(H \text{ density in }(G_{\color{red}i}-{\color{orange}e})) - (H \text{ density in }G_{\color{red}i})}{{\color{red}i}^{-2}}$$
+          </div>
+
+
+          <!-- <img style="width: 80%;" src="./Pic_VertexDeletion.svg"> -->
+
+
+
+        </section>
+        <section data-auto-animate>
+          <h3>$\partial_e$: Deleting the edge ${\color{orange}e}$</h3>
+
+          <div data-id="2">
+            $$\scriptsize\partial_{\color{orange}e} H :=\lim_{{\color{red}i}\to\infty}\frac{(H \text{ density in }(G_{\color{red}i}-{\color{orange}e})) - (H \text{ density in }G_{\color{red}i})}{{\color{red}i}^{-2}}$$
+          </div>
+
+
+          <img class="r-frame" style="width: 40%;" src="./Pic_EdgeDeletionExamples.svg">
+          <!-- <img style="width: 80%;" src="./Pic_VertexDeletion.svg"> -->
+
+
+
+        </section>
+
+        <section data-auto-animate>
+          <h3>Using the derivatives in optimization</h3>
+
+          <p>
+            Let ${\color{orange}f}$ be a linear combination of subgraph densities, with <b>minimizer $\mathcal{G}$</b>  . 
+          </p>
+
+          <br>
+
+          <ul>
+            <li class="fragment">
+              Then 
+              $\partial_{\color{red}v} {\color{orange}f}(\mathcal{G}) = 0$
+              for <b>nearly all</b> vertices ${\color{red}v}$.
+            </li>
+            <li class="fragment">
+              Then 
+              $\partial_{\color{red}e} {\color{orange}f}(\mathcal{G}) \geq 0$
+              for <b>nearly all</b> edges ${\color{red}e}$.
+            </li>
+          </ul>
+
+          <p class="fragment">
+            We can add <b>additional constraints</b> to optimization problems!
+          </p>
+          
+        </section>
+        <section data-auto-animate>
+          <h3>Using the derivatives in optimization</h3>
+
+          $$
+          \begin{align}
+            \min_{\mathcal{G}}\enspace& {\color{orange}f}(\mathcal{G}) &= \min_{\mathcal{G}}\enspace& {\color{orange}f}(\mathcal{G})\\
+            &&\text{s.t. }& \mathbb{P}[\partial_{\color{red}v} {\color{orange}f}(\mathcal{G}) = 0]=1, \\
+            &&& \mathbb{P}[\partial_{\color{red}e} {\color{orange}f}(\mathcal{G}) \geq 0]=1. 
+          \end{align}
+          $$
+          
+          <p class="fragment">
+            We can find <b>better SOS certificates</b> in the quadratic module given by these constraints.
+          </p>
+
+        </section>
+
+        <section>
+          <h3>Proof idea</h3>
+
+          <ul>
+            <li>
+              Assume there is an <b>$\varepsilon$-subset</b> of vertices/edges that violates the constraints.
+            </li>
+            <li class="fragment">
+              Show that there exists a subset of <b>$\Theta(n)$ vertices</b> resp. <b>$\Theta(n^2)$ edges</b> we can remove consecutively to shift the objective.
+            </li>
+          </ul>
+
+          <p class="fragment"><b><span style="color:red">Problem:</span> We have to pic the elements "independently enough".</b></p>
+
+        </section>
+
+        <section>
+          <h3>Main contribution</h3>
+
+          <p>We show that the proofs generalize to more complicated actions on <b>three or more vertices</b>.</p>
+
+          <br>
+
+          <p class="fragment">
+            <b>Main observation:</b> We only ever need to apply the operation <b>$\Theta(n^2)$</b> times! We can construct bigger "independent" sets probabilistically.
+          </p>
+        </section>
+
+      </section>
+
+      <section>
+        <section>
+          <h3>Sidorenko's Conjecture</h3>
+
+          <blockquote>For fixed edge density $\rho$, the Erdős–Rényi random graph $\mathrm{ER}(\rho, n)$ minimizes the
+            density of every bipartite graph as $n\to\infty$.</blockquote>
+
+
+          <div class="fragment">
+            <hr>
+            <p>For every bipartite graph $H$, </p>
+            <img src="Pic_Sidorenko.svg" style="width: 40%;">
+          </div>
+        </section>
+
+        <section data-auto-animate data-auto-animate-restart>
+          <h3>Progress on Sidorenko's Conjecture</h3>
+
+          <ul>
+            <li>
+              <b>[Mulholland, Smith 1959]</b>: paths
+            </li>
+          </ul>
+        </section>
+        <section data-auto-animate>
+          <h3>Progress on Sidorenko's Conjecture</h3>
+
+          <ul>
+            <li>
+              <b>[Mulholland, Smith 1959]</b>: paths
+            </li>
+            <li>
+              <b>[Sidorenko 1991]</b>: trees, even cycles, $K_{n,m}$, bipartite graphs with at most $4$ vertices on one side
+            </li>
+            
+          </ul>
+        </section>
+        <section data-auto-animate>
+          <h3>Progress on Sidorenko's Conjecture</h3>
+
+          <ul>
+            <li>
+              <b>[Mulholland, Smith 1959]</b>: paths
+            </li>
+            <li>
+              <b>[Sidorenko 1991]</b>: trees, even cycles, $K_{n,m}$, bipartite graphs with at most $4$ vertices on one side
+            </li>
+            <li>
+              <b>[Hitomi 2008]</b>: Hypercube graphs, norming graphs
+            </li>
+            
+          </ul>
+        </section>
+        <section data-auto-animate>
+          <h3>Progress on Sidorenko's Conjecture</h3>
+
+          <ul>
+            <li>
+              <b>[Sidorenko 1991]</b>: trees, even cycles, $K_{n,m}$, bipartite graphs with at most $4$ vertices on one side
+            </li>
+            <li>
+              <b>[Hitomi 2008]</b>: Hypercube graphs, norming graphs
+            </li>
+            <li>
+              <b>[Conlon, Fox, Sudakov 2010]</b>: If one vertex connects to all vertices on the other side
+            </li>
+            
+          </ul>
+        </section>
+        <section data-auto-animate>
+          <h3>Progress on Sidorenko's Conjecture</h3>
+
+          <ul>
+            <li>
+              <b>[Hitomi 2008]</b>: Hypercube graphs, norming graphs
+            </li>
+            <li>
+              <b>[Conlon, Fox, Sudakov 2010]</b>: If one vertex connects to all vertices on the other side
+            </li>
+            <li>
+              <b>[Conlon, Lee 2018]</b>: For every bipartite graph $H$ exists a $p$ such that the $p$-blow up of $H$ is Sidorenko.
+            </li>
+          </ul>
+        </section>
+        <section data-auto-animate>
+          <h3>Progress on Sidorenko's Conjecture</h3>
+
+          <ul>
+            <li>
+              <b>[Conlon, Fox, Sudakov 2010]</b>: If one vertex connects to all vertices on the other side
+            </li>
+            <li>
+              <b>[Sidorenko 1991], [Li, Szegedy 2011], [Kim, Lee, Lee 2013]</b>: Various recursive constructions
+            </li>
+            <li>
+              <b>[Conlon, Lee 2018]</b>: For every bipartite graph $H$ exists a $p$ such that the $p$-blow up of $H$ is Sidorenko.
+            </li>
+          </ul>
+        </section>
+        <section data-auto-animate>
+          <h3>Progress on Sidorenko's Conjecture</h3>
+
+          <ul>
+            <li>
+              <b>[Sidorenko 1991], [Li, Szegedy 2011], [Kim, Lee, Lee 2013]</b>: Various recursive constructions
+            </li>
+            <li>
+              <b>[Conlon, Lee 2018]</b>: For every bipartite graph $H$ exists a $p$ such that the $p$-blow up of $H$ is Sidorenko.
+            </li>
+            <li>
+              <b>[Blekherman, Raymond, Singh, Thomas 2018]</b>: $P_3-e^3$ is <span style="color:red">not (rational) flag-SOS</span>. The smallest open case $K_{5,5}\setminus C_{10}-e^{15}$ is not <span style="color:red">not (rational) flag-SOS</span>.
+            </li>
+          </ul>
+        </section>
+        <section data-auto-animate>
+          <h3>Progress on Sidorenko's Conjecture</h3>
+
+          <ul>
+            
+            <li>
+              <b>[Blekherman, Raymond, Singh, Thomas 2018]</b>: $P_3-e^3$ is <span style="color:red">not (rational) flag-SOS</span>. The smallest open case $K_{5,5}\setminus C_{10}-e^{15}$ is not <span style="color:red">not (rational) flag-SOS</span>.
+            </li>
+            <li>
+              <b>[Garg, Raymond, Redlich 2022]</b>: Many cases of Sidorenko's Conjecture cannot be shown using flag-SOS. <b>Most known cases can potentially be recovered using flag-SOS.</b>
+            </li>
+          </ul>
+
+          <b class="fragment">Interest for alternative proofs for $P_3-e^3\geq 0$!</b>
+        </section>
+
+        <section>
+          <h3>Hinge-switch derivative</h3>
+
+          We define the derivative $\partial_{\text{hinge}}$ based on the operation on vertices $i,j,k$, which <b>swaps the edges $\{i,j\}$ and $\{i,k\}$</b>.
+
+        </section>
+
+        <section>
+          <h3> SOS based proof of a small case of Sidorenko's</h3>
+
+          We found an exact <b>flag-SOS certificate</b> for
+          \begin{align}
+          0 = \min\enspace& P_3 - e^3\\
+          \text{s.t. }& \mathbb{P}[\partial_{\text{hinge}}(P_3 - e^3) \geq 0 ]=1
+          \end{align}
+          
+
+        </section>
+        
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+## Software
+
+A Julia package implementing multiple symmetry reduced flag-SOS hierarchies for <b>arbitrary Flags</b> will be available soon.
+
+--- 
+
+## Paper:
+
+Very much work in progress (Open for co-authors!).
+
+Other work related to flag algebras is in my thesis.
+
+</script>
+      </section>
+    </div>
+  </div>
+
+  <script src="./dist/reveal.js"></script>
+
+  <script src="./plugin/markdown/markdown.js"></script>
+  <script src="./plugin/highlight/highlight.js"></script>
+  <script src="./plugin/zoom/zoom.js"></script>
+  <script src="./plugin/notes/notes.js"></script>
+  <script src="./plugin/math/math.js"></script>
+  <script>
+    function extend() {
+      var target = {};
+      for (var i = 0; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (source.hasOwnProperty(key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    }
+
+    // default options to init reveal.js
+    var defaultOptions = {
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+      transition: 'default', // none/fade/slide/convex/concave/zoom
+      plugins: [
+        RevealMarkdown,
+        RevealHighlight,
+        RevealZoom,
+        RevealNotes,
+        RevealMath
+      ]
+    };
+
+    // options from URL query string
+    var queryOptions = Reveal().getQueryHash() || {};
+
+    var options = extend(defaultOptions, { "pdfSeparateFragments": true, "transition": "slide" }, queryOptions);
+  </script>
+
+  <script src="./plugins/manim.js"></script>
+  <script src="./plugin.js"></script>
+
+  <script>
+    Reveal.initialize(options);
+  </script>
+</body>
+
+</html>
