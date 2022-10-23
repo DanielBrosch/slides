@@ -8,12 +8,6 @@
     <priority>0.5</priority>
 </url>
 <url>
-    <loc>danielbrosch.github.io/slides/CombDerivatives/README/index.html</loc>
-    <lastmod>2022-10-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
     <loc>danielbrosch.github.io/slides/CombDerivatives/examples/markdown/index.html</loc>
     <lastmod>2022-10-23</lastmod>
     <changefreq>monthly</changefreq>
@@ -69,12 +63,6 @@
 </url>
 <url>
     <loc>danielbrosch.github.io/slides/FlagSymmetries/July26/plugin/notes/speaker-view/</loc>
-    <lastmod>2022-10-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>danielbrosch.github.io/slides/CombDerivatives/slides/</loc>
     <lastmod>2022-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
