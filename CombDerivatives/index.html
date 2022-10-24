@@ -337,8 +337,8 @@
           <h6><sup>(We assume all flags with label ${\color{orange}v}$ converge)</sup></h6>
 
           <!-- <div data-id="1"> -->
-            <!-- $$\nabla_{\color{orange}v} f(x) = \lim_{{\color{red}h}\to 0}\frac{f(x+{\color{red}h}{\color{orange}v})-f(x)}{{\color{red}h}}$$ -->
-            <img style="width: 80%;" src="./Pic_LatexTest.svg">
+          <!-- $$\nabla_{\color{orange}v} f(x) = \lim_{{\color{red}h}\to 0}\frac{f(x+{\color{red}h}{\color{orange}v})-f(x)}{{\color{red}h}}$$ -->
+          <img style="width: 80%;" src="./Pic_LatexTest.svg">
           <!-- </div> -->
 
 
@@ -351,16 +351,17 @@
           <h6><sup>(We assume all flags with label ${\color{orange}v}$ converge)</sup></h6>
 
           <!-- <div data-id="1"> -->
-            <!-- $$\nabla_{\color{orange}v} f(x) = \lim_{{\color{red}h}\to 0}\frac{f(x+{\color{red}h}{\color{orange}v})-f(x)}{{\color{red}h}}$$ -->
-            <img style="width: 80%;" src="./Pic_LatexTest.svg">
+          <!-- $$\nabla_{\color{orange}v} f(x) = \lim_{{\color{red}h}\to 0}\frac{f(x+{\color{red}h}{\color{orange}v})-f(x)}{{\color{red}h}}$$ -->
+          <img style="width: 80%;" src="./Pic_LatexTest.svg">
           <!-- </div> -->
 
           <!-- <img style="width: 80%;" src="./Pic_VertexDeletion.svg"> -->
 
           <div data-id="2">
-            $$\scriptsize\partial_{\color{orange}v} H :=\lim_{{\color{red}i}\to\infty}\frac{(H \text{ density in }(G_{\color{red}i}-{\color{orange}v})) - (H \text{ density in }G_{\color{red}i})}{{\color{red}i}^{-1}}$$
+            $$\scriptsize\partial_{\color{orange}v} H :=\lim_{{\color{red}i}\to\infty}\frac{(H \text{ density in
+            }(G_{\color{red}i}-{\color{orange}v})) - (H \text{ density in }G_{\color{red}i})}{{\color{red}i}^{-1}}$$
           </div>
-          
+
 
 
         </section>
@@ -370,7 +371,8 @@
 
           <!-- $$ \small \lim_{i\to\infty}(H \text{ density in } (G_i-{\color{orange}v})) - (H \text{ density in } G_i) = 0  $$ -->
           <div data-id="2">
-            $$\scriptsize\partial_{\color{orange}v} H :=\lim_{{\color{red}i}\to\infty}\frac{(H \text{ density in }(G_{\color{red}i}-{\color{orange}v})) - (H \text{ density in }G_{\color{red}i})}{{\color{red}i}^{-1}}$$
+            $$\scriptsize\partial_{\color{orange}v} H :=\lim_{{\color{red}i}\to\infty}\frac{(H \text{ density in
+            }(G_{\color{red}i}-{\color{orange}v})) - (H \text{ density in }G_{\color{red}i})}{{\color{red}i}^{-1}}$$
           </div>
 
 
@@ -382,7 +384,8 @@
           <h3>$\partial_e$: Deleting the edge ${\color{orange}e}$</h3>
 
           <div data-id="2">
-            $$\scriptsize\partial_{\color{orange}e} H :=\lim_{{\color{red}i}\to\infty}\frac{(H \text{ density in }(G_{\color{red}i}-{\color{orange}e})) - (H \text{ density in }G_{\color{red}i})}{{\color{red}i}^{-2}}$$
+            $$\scriptsize\partial_{\color{orange}e} H :=\lim_{{\color{red}i}\to\infty}\frac{(H \text{ density in
+            }(G_{\color{red}i}-{\color{orange}e})) - (H \text{ density in }G_{\color{red}i})}{{\color{red}i}^{-2}}$$
           </div>
 
 
@@ -395,7 +398,8 @@
           <h3>$\partial_e$: Deleting the edge ${\color{orange}e}$</h3>
 
           <div data-id="2">
-            $$\scriptsize\partial_{\color{orange}e} H :=\lim_{{\color{red}i}\to\infty}\frac{(H \text{ density in }(G_{\color{red}i}-{\color{orange}e})) - (H \text{ density in }G_{\color{red}i})}{{\color{red}i}^{-2}}$$
+            $$\scriptsize\partial_{\color{orange}e} H :=\lim_{{\color{red}i}\to\infty}\frac{(H \text{ density in
+            }(G_{\color{red}i}-{\color{orange}e})) - (H \text{ density in }G_{\color{red}i})}{{\color{red}i}^{-2}}$$
           </div>
 
 
@@ -406,23 +410,23 @@
 
         </section>
 
-        <section data-auto-animate>
+        <section data-auto-animate data-auto-animate-restart>
           <h3>Using the derivatives in optimization</h3>
 
           <p>
-            Let ${\color{orange}f}$ be a linear combination of subgraph densities, with <b>minimizer $\mathcal{G}$</b>  . 
+            Let ${\color{orange}f}$ be a linear combination of subgraph densities, with <b>minimizer $\mathcal{G}$</b> .
           </p>
 
           <br>
 
           <ul>
             <li class="fragment">
-              Then 
+              Then
               $\partial_{\color{red}v} {\color{orange}f}(\mathcal{G}) = 0$
               for <b>nearly all</b> vertices ${\color{red}v}$.
             </li>
             <li class="fragment">
-              Then 
+              Then
               $\partial_{\color{red}e} {\color{orange}f}(\mathcal{G}) \geq 0$
               for <b>nearly all</b> edges ${\color{red}e}$.
             </li>
@@ -431,19 +435,20 @@
           <p class="fragment">
             We can add <b>additional constraints</b> to optimization problems!
           </p>
-          
+
         </section>
         <section data-auto-animate>
           <h3>Using the derivatives in optimization</h3>
 
           $$
           \begin{align}
-            \min_{\mathcal{G}}\enspace& {\color{orange}f}(\mathcal{G}) &= \min_{\mathcal{G}}\enspace& {\color{orange}f}(\mathcal{G})\\
-            &&\text{s.t. }& \mathbb{P}[\partial_{\color{red}v} {\color{orange}f}(\mathcal{G}) = 0]=1, \\
-            &&& \mathbb{P}[\partial_{\color{red}e} {\color{orange}f}(\mathcal{G}) \geq 0]=1. 
+          \min_{\mathcal{G}}\enspace& {\color{orange}f}(\mathcal{G}) &= \min_{\mathcal{G}}\enspace&
+          {\color{orange}f}(\mathcal{G})\\
+          &&\text{s.t. }& \mathbb{P}[\partial_{\color{red}v} {\color{orange}f}(\mathcal{G}) = 0]=1, \\
+          &&& \mathbb{P}[\partial_{\color{red}e} {\color{orange}f}(\mathcal{G}) \geq 0]=1.
           \end{align}
           $$
-          
+
           <p class="fragment">
             We can find <b>better SOS certificates</b> in the quadratic module given by these constraints.
           </p>
@@ -458,11 +463,13 @@
               Assume there is an <b>$\varepsilon$-subset</b> of vertices/edges that violates the constraints.
             </li>
             <li class="fragment">
-              Show that there exists a subset of <b>$\Theta(n)$ vertices</b> resp. <b>$\Theta(n^2)$ edges</b> we can remove consecutively to shift the objective.
+              Show that there exists a subset of <b>$\Theta(n)$ vertices</b> resp. <b>$\Theta(n^2)$ edges</b> we can
+              remove consecutively to shift the objective.
             </li>
           </ul>
 
-          <p class="fragment"><b><span style="color:red">Problem:</span> We have to pic the elements "independently enough".</b></p>
+          <p class="fragment"><b><span style="color:red">Problem:</span> We have to pic the elements "independently
+              enough".</b></p>
 
         </section>
 
@@ -474,7 +481,8 @@
           <br>
 
           <p class="fragment">
-            <b>Main observation:</b> We only ever need to apply the operation <b>$\Theta(n^2)$</b> times! We can construct bigger "independent" sets probabilistically.
+            <b>Main observation:</b> We only ever need to apply the operation <b>$\Theta(n^2)$</b> times! We can
+            construct bigger "independent" sets probabilistically.
           </p>
         </section>
 
@@ -512,9 +520,10 @@
               <b>[Mulholland, Smith 1959]</b>: paths
             </li>
             <li>
-              <b>[Sidorenko 1991]</b>: trees, even cycles, $K_{n,m}$, bipartite graphs with at most $4$ vertices on one side
+              <b>[Sidorenko 1991]</b>: trees, even cycles, $K_{n,m}$, bipartite graphs with at most $4$ vertices on one
+              side
             </li>
-            
+
           </ul>
         </section>
         <section data-auto-animate>
@@ -525,12 +534,13 @@
               <b>[Mulholland, Smith 1959]</b>: paths
             </li>
             <li>
-              <b>[Sidorenko 1991]</b>: trees, even cycles, $K_{n,m}$, bipartite graphs with at most $4$ vertices on one side
+              <b>[Sidorenko 1991]</b>: trees, even cycles, $K_{n,m}$, bipartite graphs with at most $4$ vertices on one
+              side
             </li>
             <li>
               <b>[Hitomi 2008]</b>: Hypercube graphs, norming graphs
             </li>
-            
+
           </ul>
         </section>
         <section data-auto-animate>
@@ -538,7 +548,8 @@
 
           <ul>
             <li>
-              <b>[Sidorenko 1991]</b>: trees, even cycles, $K_{n,m}$, bipartite graphs with at most $4$ vertices on one side
+              <b>[Sidorenko 1991]</b>: trees, even cycles, $K_{n,m}$, bipartite graphs with at most $4$ vertices on one
+              side
             </li>
             <li>
               <b>[Hitomi 2008]</b>: Hypercube graphs, norming graphs
@@ -546,7 +557,7 @@
             <li>
               <b>[Conlon, Fox, Sudakov 2010]</b>: If one vertex connects to all vertices on the other side
             </li>
-            
+
           </ul>
         </section>
         <section data-auto-animate>
@@ -560,7 +571,8 @@
               <b>[Conlon, Fox, Sudakov 2010]</b>: If one vertex connects to all vertices on the other side
             </li>
             <li>
-              <b>[Conlon, Lee 2018]</b>: For every bipartite graph $H$ exists a $p$ such that the $p$-blow up of $H$ is Sidorenko.
+              <b>[Conlon, Lee 2018]</b>: For every bipartite graph $H$ exists a $p$ such that the $p$-blow up of $H$ is
+              Sidorenko.
             </li>
           </ul>
         </section>
@@ -575,7 +587,8 @@
               <b>[Sidorenko 1991], [Li, Szegedy 2011], [Kim, Lee, Lee 2013]</b>: Various recursive constructions
             </li>
             <li>
-              <b>[Conlon, Lee 2018]</b>: For every bipartite graph $H$ exists a $p$ such that the $p$-blow up of $H$ is Sidorenko.
+              <b>[Conlon, Lee 2018]</b>: For every bipartite graph $H$ exists a $p$ such that the $p$-blow up of $H$ is
+              Sidorenko.
             </li>
           </ul>
         </section>
@@ -587,10 +600,13 @@
               <b>[Sidorenko 1991], [Li, Szegedy 2011], [Kim, Lee, Lee 2013]</b>: Various recursive constructions
             </li>
             <li>
-              <b>[Conlon, Lee 2018]</b>: For every bipartite graph $H$ exists a $p$ such that the $p$-blow up of $H$ is Sidorenko.
+              <b>[Conlon, Lee 2018]</b>: For every bipartite graph $H$ exists a $p$ such that the $p$-blow up of $H$ is
+              Sidorenko.
             </li>
             <li>
-              <b>[Blekherman, Raymond, Singh, Thomas 2018]</b>: $P_3-e^3$ is <span style="color:red">not (rational) flag-SOS</span>. The smallest open case $K_{5,5}\setminus C_{10}-e^{15}$ is not <span style="color:red">not (rational) flag-SOS</span>.
+              <b>[Blekherman, Raymond, Singh, Thomas 2018]</b>: $P_3-e^3$ is <span style="color:red">not (rational)
+                flag-SOS</span>. The smallest open case $K_{5,5}\setminus C_{10}-e^{15}$ is not <span
+                style="color:red">not (rational) flag-SOS</span>.
             </li>
           </ul>
         </section>
@@ -598,12 +614,15 @@
           <h3>Progress on Sidorenko's Conjecture</h3>
 
           <ul>
-            
+
             <li>
-              <b>[Blekherman, Raymond, Singh, Thomas 2018]</b>: $P_3-e^3$ is <span style="color:red">not (rational) flag-SOS</span>. The smallest open case $K_{5,5}\setminus C_{10}-e^{15}$ is not <span style="color:red">not (rational) flag-SOS</span>.
+              <b>[Blekherman, Raymond, Singh, Thomas 2018]</b>: $P_3-e^3$ is <span style="color:red">not (rational)
+                flag-SOS</span>. The smallest open case $K_{5,5}\setminus C_{10}-e^{15}$ is not <span
+                style="color:red">not (rational) flag-SOS</span>.
             </li>
             <li>
-              <b>[Garg, Raymond, Redlich 2022]</b>: Many cases of Sidorenko's Conjecture cannot be shown using flag-SOS. <b>Most known cases can potentially be recovered using flag-SOS.</b>
+              <b>[Garg, Raymond, Redlich 2022]</b>: Many cases of Sidorenko's Conjecture cannot be shown using flag-SOS.
+              <b>Most known cases can potentially be recovered using flag-SOS.</b>
             </li>
           </ul>
 
@@ -613,7 +632,8 @@
         <section>
           <h3>Hinge-switch derivative</h3>
 
-          We define the derivative $\partial_{\text{hinge}}$ based on the operation on vertices $i,j,k$, which <b>swaps the edges $\{i,j\}$ and $\{i,k\}$</b>.
+          We define the derivative $\partial_{\text{hinge}}$ based on the operation on vertices $i,j,k$, which <b>swaps
+            the edges $\{i,j\}$ and $\{i,k\}$</b>.
 
         </section>
 
@@ -625,28 +645,26 @@
           0 = \min\enspace& P_3 - e^3\\
           \text{s.t. }& \mathbb{P}[\partial_{\text{hinge}}(P_3 - e^3) \geq 0 ]=1
           \end{align}
-          
+
 
         </section>
-        
+
       </section>
 
-      <section data-markdown>
-        <script type="text/template">
-## Software
+      <section>
+        <h2>Software:</h2>
+        A Julia package implementing multiple symmetry reduced flag-SOS hierarchies for <b>arbitrary Flags</b> will be
+        available soon.
 
-A Julia package implementing multiple symmetry reduced flag-SOS hierarchies for <b>arbitrary Flags</b> will be available soon.
+        <hr>
 
---- 
+        <h2>Paper:</h2>
+        Very much work in progress (Open for co-authors!).
 
-## Paper:
-
-Very much work in progress (Open for co-authors!).
-
-Other work related to flag algebras is in my thesis.
-
-</script>
+        Other work related to flag algebras is in my thesis.
       </section>
+
+
     </div>
   </div>
 
