@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <title>Derivatives in Continuous Combinatorics</title>
+  <link rel="shortcut icon" href="./favicon.ico" />
+  <link rel="stylesheet" href="./dist/reset.css" />
+  <link rel="stylesheet" href="./dist/reveal.css" />
+  <link rel="stylesheet" href="./dist/theme/beige.css" id="theme" />
+  <link rel="stylesheet" href="./css/highlight/zenburn.css" />
+
+  <style>
+    .container {
+      display: flex;
+      /* max-height: 100%; */
+      /* margin-bottom: 100px; */
+    }
+
+    .col {
+      flex: 1;
+      /* width: 50%; */
+      /* margin-bottom: 100px; */
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <!-- $$\require{color}$$ -->
+        <section>
+          <h3>New lower bounds on crossing numbers of $K_{m,n}$</h3>
+          <h5>from permutation modules and semidefinite programming</h5>
+          <br>
+          <br>
+
+          <h4>Daniel Brosch</h4>
+          <h5>(Based on joint work with Sven Polak)</h5>
+          <br>
+
+          <h5>December 1, 2022</h5>
+        </section>
+        <section data-auto-animate>
+          <h3>Crossing numbers of $K_{m,n}$</h3>
+          <video class="fv-video" src="./videos/Kmn.webm" fv-playback-info="./videos/Kmn.json">
+          </video>
+        </section>
+        <section data-auto-animate>
+          <h3>Crossing numbers of $K_{m,n}$</h3>
+
+          <ul>
+            <li>
+              <b>Turan, 1940s:</b> Minimum number of crossings of $K_{m,n}$?
+            </li>
+            <li>
+              <b>Zarankiewicz's Conjecture, 1956:</b> $$\mathrm{cr}(K_{m,n}) = Z(m,n) :=
+              \left\lfloor\frac{(m-1)^2}{4}\right\rfloor \left\lfloor\frac{(n-1)^2}{4}\right\rfloor$$
+            </li>
+          </ul>
+          <p>
+            <b class="fragment" style="color:red;">Still open in most cases, including asymptotically!</b>
+          </p>
+        </section>
+      </section>
+      <section>
+        <section data-auto-animate data-auto-animate-restart>
+          <h3>Lower bounds for $\mathrm{cr}(K_{m,n})$</h3>
+
+          <ul>
+            <li>
+              <b>[De Klerk, Maharry, Pasechnik, Richter, Salazar 2006]:</b> Quadratic programming bound
+              $\color{blue}q_m$ and
+              semidefinite programming bound $\color{red}\alpha_m$, computed till $\color{red}\alpha_7$.
+            </li>
+          </ul>
+        </section>
+        <section data-auto-animate>
+          <h3>Lower bounds for $\mathrm{cr}(K_{m,n})$</h3>
+
+          <ul>
+            <li>
+              <b>[De Klerk, Maharry, Pasechnik, Richter, Salazar 2006]:</b> Quadratic programming bound
+              $\color{blue}q_m$ and
+              semidefinite programming bound $\color{red}\alpha_m$, computed till $\color{red}\alpha_7$.
+            </li>
+            <li>
+              <b>[Dobre, Vera 2015]:</b> Computed a stronger bound on $\color{blue}q_7$.
+            </li>
+          </ul>
+        </section>
+        <section data-auto-animate>
+          <h3>Lower bounds for $\mathrm{cr}(K_{m,n})$</h3>
+
+          <ul>
+            <li>
+              <b>[De Klerk, Maharry, Pasechnik, Richter, Salazar 2006]:</b> Quadratic programming bound
+              $\color{blue}q_m$ and
+              semidefinite programming bound $\color{red}\alpha_m$, computed till $\color{red}\alpha_7$.
+            </li>
+            <li>
+              <b>[Dobre, Vera 2015]:</b> Computed a stronger bound on $\color{blue}q_7$.
+            </li>
+            <li>
+              <b>[De Klerk, Pasechnik, Schrijver 2007]:</b> Computed $\color{red}\alpha_8$, $\color{red}\alpha_9$ using
+              the <em>regular
+                representation</em>.
+            </li>
+          </ul>
+        </section>
+        <section data-auto-animate>
+          <h3>Lower bounds for $\mathrm{cr}(K_{m,n})$</h3>
+
+          <ul>
+            <li>
+              <b>[De Klerk, Maharry, Pasechnik, Richter, Salazar 2006]:</b> Quadratic programming bound
+              $\color{blue}q_m$ and
+              semidefinite programming bound $\color{red}\alpha_m$, computed till $\color{red}\alpha_7$.
+            </li>
+            <li>
+              <b>[Dobre, Vera 2015]:</b> Computed a stronger bound on $\color{blue}q_7$.
+            </li>
+            <li>
+              <b>[De Klerk, Pasechnik, Schrijver 2007]:</b> Computed $\color{red}\alpha_8$, $\color{red}\alpha_9$ using
+              the <em>regular
+                representation</em>.
+            </li>
+            <li>
+              <b style="color:red">[Brosch, Polak 2022]:</b> Computed $\color{red}\alpha_{10}$ using the <em>full
+                symmetry reduction</em>,
+              introduced weaker bound $\beta_m$ and computed it up to $\beta_{13}$.
+            </li>
+          </ul>
+        </section>
+        <section data-auto-animate>
+          <h3>Lower bounds for $\mathrm{cr}(K_{m,n})$</h3>
+
+          <ul>
+            <li>
+              <b style="color:red">[Brosch, Polak 2022]:</b> Computed $\color{red}\alpha_{10}$ using the <em>full
+                symmetry reduction</em>,
+              introduced weaker bound $\beta_m$ and computed it up to $\beta_{13}$.
+            </li>
+          </ul>
+
+          <br>
+          <br>
+
+
+          <table>
+            <thead>
+              <tr>
+                <th>$n$</th>
+                <th>Old bound</th>
+                <th>New bound</th>
+                <th>$Z(n,n)$</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>$10$</td>
+                <td>$348$</td>
+                <td style="color:red">$388$</td>
+                <td>$400$</td>
+              </tr>
+              <tr>
+                <td>$11$</td>
+                <td>$581$</td>
+                <td style="color:red">$589$</td>
+                <td>$625$</td>
+              </tr>
+              <tr>
+                <td>$12$</td>
+                <td>$846$</td>
+                <td style="color:red">$865$</td>
+                <td>$900$</td>
+              </tr>
+              <tr>
+                <td>$13$</td>
+                <td>$1192$</td>
+                <td style="color:red">$1229$</td>
+                <td>$1296$</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <h3>The quadratic programming bound $\color{blue}q_m$</h3>
+          <div class="r-stack">
+            <div class="fragment fade-out" data-fragment-index="0">
+
+
+              <p style="font-size: 25pt;">
+                Let $\{1,\ldots,m\}$ and $\{b_1,\ldots,b_n\}$ be the sides of the bipartition of $K_{m,n}$. Given a
+                drawing of $K_{m,n}$, define for each vertex $b_i$:
+              </p>
+
+
+              $$\scriptsize\gamma(b_i) :=\text{ the cyclic order in which edges from $b_i$ go to $\{1,\ldots,m\}$}$$
+
+
+              <img class="r-stretch" src="qBound1.svg">
+
+              $$\scriptsize\color{red}\gamma(b_1)=(1 4 5 2 3)$$
+            </div>
+            <div class="fragment fade-out" data-fragment-index="2">
+              <div class="fragment" data-fragment-index="0">
+                <div class="r-frame">
+                  <b>Lemma</b> <span style="font-size: 20pt;">[Kleitman, 1970; Woodall, 1993]</span>
+                  <hr>
+
+                  <p style="font-size: 20pt; margin: 10pt;">
+                    $\#$crossings of edges incident with $b_i$ and $b_j$ $\geq$<br>
+                    min. $\#$swaps of adjacent elements of $\gamma(b_i)$ to change $\gamma(b_i)$ into
+                    $\gamma(b_j)^{-1}$.
+                  </p>
+                </div>
+
+                <br>
+
+                <div class="fragment" data-fragment-index="1">
+                  <div class="container">
+                    <div class="col" style="width: 40%;">
+                      <img style="width: 100%;" src="qBound2.svg">
+                    </div>
+
+                    <div class="col" style="width: 40%;">
+                      <p style="font-size: 20pt;text-align: left;">$\gamma(b_2) = (1 2 3 4 5)$ <br> $\gamma(b_1)^{−1} =
+                        (14523)^{−1} =
+                        (13254)$.<br><br>
+                        Min. #swaps of adjacent elements is $2$.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="fragment" data-fragment-index="2">
+              <p style="text-align: left; font-size: 25pt;">
+                Let $Z_m$ be the set of $m$-cycles, and $Q \in \mathbb{Z}^{Z_m\times Z_m}$, where
+                $$\scriptsize Q_{\sigma,\tau} := \text{min. $\#$swaps of adjacent elements to change $\sigma$ into
+                $\tau^{-1}$}$$
+              </p>
+
+              <p class="r-frame">
+                $$\scriptsize\displaystyle\begin{align*}
+                \mathrm{cr}(G) &\geq \min_{\gamma} \sum_{i < j}Q_{\gamma(i),\gamma(j)}\\ & \geq
+                  \tfrac{1}{2}n^2{\color{blue}q_m} - \tfrac{1}{2} n \lfloor \tfrac{1}{4} (m-1)^2\rfloor, \end{align*} $$
+                  where $\scriptsize{\color{blue}q_m} :=\min \left\{x^T Q x \,\, | \,\, x \in \mathbb{R}^{Z_m}_{\geq 0},
+                  \, e^T x=1 \right\} $<br><br>
+              </p>
+
+            </div>
+            <!-- </div> -->
+          </div>
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <h3>The semidefinite programming bound</h3>
+
+          <p style="text-align: left;">
+            We relax
+            $$\scriptsize{\color{blue}q_m} :=\min \left\{x^T Q x \,\, | \,\, x \in \mathbb{R}^{Z_m}_{\geq 0},
+            \, e^T x=1 \right\} $$
+            to a semidefinite programming problem
+            $$\scriptsize {\color{blue}q_m} \geq {\color{red}\alpha_m} \hspace{-1pt}:=\hspace{-1pt} \min \{\langle X, Q
+            \rangle \, | \, X \in \mathbb{R}^{Z_m \times Z_m}_{\geq 0},\, \langle X, J \rangle =1,\, X \succcurlyeq
+            0\}.$$
+          </p>
+
+          <p class="fragment">
+            <b>Problem:</b><span style="color:red">$|Z_m|=(m-1)!$</span>
+          </p>
+
+        </section>
+        <section data-auto-animate data-auto-animate-restart>
+          <h3>Symmetry reduction</h3>
+          <p style="text-align: left; font-size: 25pt;">
+
+            Let $G_m := S_m \times \{+1,-1\}$ act on $Z_m$ via
+            $$(\pi,\varepsilon)\cdot \sigma := \pi \sigma^\varepsilon\pi^{-1}.$$
+          </p>
+
+        </section>
+        <section data-auto-animate>
+          <h3>Symmetry reduction</h3>
+          <p style="text-align: left; font-size: 25pt;">
+
+            Let $G_m := S_m \times \{+1,-1\}$ act on $Z_m$ via
+            $$(\pi,\varepsilon)\cdot \sigma := \pi \sigma^\varepsilon\pi^{-1}.$$
+          </p>
+
+          <br>
+
+          <p style="text-align:left; font-size: 25pt;">
+            Then, for every $g\in G_m$:
+            $$(g(Q))_{\sigma,\tau} = Q_{g(\sigma), g(\tau)} = Q_{\sigma,\tau}.$$
+          </p>
+
+
+
+        </section>
+        <section data-auto-animate>
+          <h3>Symmetry reduction</h3>
+          <p style="text-align: left; font-size: 25pt;">
+
+            Let $G_m := S_m \times \{+1,-1\}$ act on $Z_m$ via
+            $$(\pi,\varepsilon)\cdot \sigma := \pi \sigma^\varepsilon\pi^{-1}.$$
+          </p>
+
+          <p style="text-align:left; font-size: 25pt;">
+            Then, for every $g\in G_m$:
+            $$(g(Q))_{\sigma,\tau} = Q_{g(\sigma), g(\tau)} = Q_{\sigma,\tau}.$$
+          </p>
+
+          <p class="r-frame" style="margin: 10pt;">
+            <b>Main idea:</b> If $X$ is feasible for $\color{red}\alpha_m$, then so is $g(X)$. By convexity we can
+            <em>average</em> an optimal solution to obtain an <b>invariant optimal solution</b>.
+          </p>
+
+
+        </section>
+        <section data-auto-animate>
+          <h3>Symmetry reduction</h3>
+
+          <p class="r-frame" style="margin: 10pt;">
+            <b>Main idea:</b> If $X$ is feasible for $\color{red}\alpha_m$, then so is $g(X)$. By convexity we can
+            <em>average</em> an optimal solution to obtain an <b>invariant optimal solution</b>.
+          </p>
+
+          <br>
+
+          $$\scriptsize
+          \begin{align*}
+          {\color{red}\alpha_m} \hspace{-1pt}=\hspace{-1pt} \min\enspace &\langle X, Q
+          \rangle \\
+          \text{s.t. }&X \in \mathbb{R}^{Z_m \times Z_m}_{\geq 0},\\
+          &\langle X, J \rangle =1,\\
+          &X \succcurlyeq 0,\\
+          & {\color{red}g(X) = X \quad \text{for all }g\in G_m}.
+          \end{align*}$$
+
+        </section>
+
+        <section data-auto-animate data-auto-animate-restart>
+          <h3>Block-diagonalization</h3>
+
+          <br>
+
+          <p>
+            The <b>algebra</b> of $G_m$-invariant matrices can be block-diagonalized (by <em>Artin-Wedderburn
+              theory</em>):
+          </p>
+
+          <img style="width:70%" src="Pic_SymReduc.svg">
+        </section>
+        <section data-auto-animate>
+          <h3>Block-diagonalization</h3>
+
+          <img style="width:50%" src="Pic_SymReduc.svg">
+
+
+          <p style="text-align: left; font-size: 25pt;">
+            <b>[De Klerk, Pasechnik, Schrijver 2007]:</b> Computed $\color{red}\alpha_8$, $\color{red}\alpha_9$ using
+            the <em>regular
+              representation</em>.
+          </p>
+          <p class="fragment" style="text-align: left; font-size: 25pt;">
+            <b>Regular representation:</b> One block of size $k\times k$, where
+            $$k=|(Z_m \times Z_m)/G_m|$$
+            is the number of <em>orbits of pairs</em>.
+          </p>
+
+        </section>
+        <section data-auto-animate>
+          <h3>Block-diagonalization</h3>
+
+          <img style="width:50%" src="Pic_SymReduc.svg">
+
+          <p style="text-align: left; font-size: 25pt;">
+            <b>Regular representation:</b> One block of size $k\times k$, where
+            $$k=|(Z_m \times Z_m)/G_m|$$
+            is the number of <em>orbits of pairs</em>.
+          </p>
+          <p style="text-align: left; font-size: 25pt;">
+            <b>Full symmetry reduction:</b> Many blocks of sizes $m_1, m_2,\ldots$, with
+            $$\sum m_i^2 = k.$$
+          </p>
+        </section>
+
+        <section data-auto-animate data-auto-animate-restart>
+          <h3>Block-diagonalization idea</h3>
+
+          <ul>
+            <li>
+              The vectorspace $\mathbb{C}^{Z_m}$ is a <b>$G_m=S_m\times \{+1,-1\}$-module</b>.
+            </li>
+          </ul>
+        </section>
+        <section data-auto-animate>
+          <h3>Block-diagonalization idea</h3>
+
+          <ul>
+            <li>
+              The vectorspace $\mathbb{C}^{Z_m}$ is a <b>$G_m=S_m\times \{+1,-1\}$-module</b>.
+            </li>
+            <li>
+              We can <b>decompose</b> the module into copies of <em>irreducible modules</em> $S^{\lambda_i}$:
+              $$\mathbb{C}^{Z_m} \simeq m_1 S^{\lambda_1} \oplus \ldots \oplus m_k S^{\lambda_k} $$
+            </li>
+          </ul>
+        </section>
+        <section data-auto-animate>
+          <h3>Block-diagonalization idea</h3>
+
+          <ul>
+            <li>
+              The vectorspace $\mathbb{C}^{Z_m}$ is a <b>$G_m=S_m\times \{+1,-1\}$-module</b>.
+            </li>
+            <li>
+              We can <b>decompose</b> the module into copies of <em>irreducible modules</em> $S^{\lambda_i}$:
+              $$\mathbb{C}^{Z_m} \simeq m_1 S^{\lambda_1} \oplus \ldots \oplus m_k S^{\lambda_k} $$
+            </li>
+            <li>
+              Choose a basis of $\mathbb{C}^{Z_m}$ according to the decomposition.
+            </li>
+          </ul>
+        </section>
+        <section data-auto-animate>
+          <h3>Block-diagonalization idea</h3>
+
+          <ul>
+            <li>
+              The vectorspace $\mathbb{C}^{Z_m}$ is a <b>$G_m=S_m\times \{+1,-1\}$-module</b>.
+            </li>
+            <li>
+              We can <b>decompose</b> the module into copies of <em>irreducible modules</em> $S^{\lambda_i}$:
+              $$\mathbb{C}^{Z_m} \simeq m_1 S^{\lambda_1} \oplus \ldots \oplus m_k S^{\lambda_k} $$
+            </li>
+            <li>
+              Choose a basis of $\mathbb{C}^{Z_m}$ according to the decomposition.
+            </li>
+            <li>
+              Apply a basis transformation to the rows and columns of the SDP, then delete copies of blocks.
+            </li>
+          </ul>
+        </section>
+        <section data-auto-animate>
+          <h3>Block-diagonalization idea</h3>
+
+          <ul>
+            <li style="color:red">
+              We can <b>decompose</b> the module into copies of <em>irreducible modules</em> $S^{\lambda_i}$:
+              $$\mathbb{C}^{Z_m} \simeq m_1 S^{\lambda_1} \oplus \ldots \oplus m_k S^{\lambda_k} $$
+            </li>
+          </ul>
+        </section>
+        <section data-auto-animate>
+          <h3>Block-diagonalization idea</h3>
+
+          <ul>
+            <li style="color:red">
+              We can <b>decompose</b> the module into copies of <em>irreducible modules</em> $S^{\lambda_i}$:
+              $$\mathbb{C}^{Z_m} \simeq m_1 S^{\lambda_1} \oplus \ldots \oplus m_k S^{\lambda_k} $$
+            </li>
+          </ul>
+
+          <br>
+          The dimension of the module is too high for computational approaches from the literature.
+        </section>
+        <section data-auto-animate data-auto-animate-restart>
+          <h3>Decomposing $\mathbb{C}^{Z_m}$</h3>
+
+          <ul>
+            <li>
+              We first decompose $\mathbb{C}^{Z_m}$ as $S_m$-module:
+              <ul>
+                <li>
+                  The multiplicities $m_i$ are known from the literature!
+                </li>
+                <li class="fragment">
+                  But not the <b>explicit</b> decomposition...
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+        </section>
+        <section data-auto-animate>
+          <h3>Decomposing $\mathbb{C}^{Z_m}$</h3>
+
+          <div class="r-frame" style="scale: 80%;">
+
+            <p style="text-align: left;">
+              <b>Idea:</b> Embed $\mathbb{C}^{Z_m}$ into a bigger, well understood module:
+              $$M^{(1^m)} \twoheadrightarrow M^{(1^m)}/_{\mathbb{Z}/m\mathbb{Z}} \simeq \mathbb{C}^{Z_m},$$
+              where $M^\mu$ denotes a <b>permutation module</b>.
+
+            </p>
+            <p style="text-align: left;" class="fragment">
+
+              <b>My thesis:</b> Efficient algorithm to explicitely compute the Reynolds operator $\mathcal{R}^\lambda
+              \in \mathbb{Z}^{m_i\times m_i}$ of
+              groups $G$ on the semistandard basis of $\mathrm{hom}(S^\lambda, M^\mu)$, i.e.
+              $$\mathrm{Im}(\mathcal{R}^\lambda)\simeq \mathrm{hom}(S^\lambda, M^\mu/_G).$$
+            </p>
+
+            <p style="text-align: left;" class="fragment">
+              <b>
+
+                Then we can chose a column-spanning set of basis elements!
+              </b>
+            </p>
+          </div>
+        </section>
+        <section data-auto-animate>
+          <h3>Decomposing $\mathbb{C}^{Z_m}$</h3>
+
+          <ul>
+            <li>
+              We first decompose $\mathbb{C}^{Z_m}$ as $S_m$-module:
+              <ul>
+                <li data-id="A">
+                  The multiplicities $m_i$ are known from the literature!
+                </li>
+                <li data-id="B">
+                  <s>But not the <b>explicit</b> decomposition...</s><br>
+                  Explicit decomposition trough $\mathcal{R}^\lambda$!
+                </li>
+              </ul>
+            </li>
+            <li class="fragment">
+              The action of $\{+1,-1\}$ splits each block in two, easy to determine when the $\mathcal{R}^\lambda$ are
+              known.
+            </li>
+          </ul>
+
+        </section>
+        <section data-auto-animate>
+          <h3>Decomposing $\mathbb{C}^{Z_m}$</h3>
+
+          <br>
+
+          <h2>
+            <b>We obtain the full block-diagonalization!</b>
+          </h2>
+
+          <p class="fragment" style="color:red; font-size: 20pt;">But the relaxation still grows too quickly, we can only compute
+            $\color{red}\alpha_{10}$.</p>
+
+        </section>
+      </section>
+      <section>
+        <section>
+          <h3>A more <em>efficient</em> relaxation: $\color{green}\beta_m$</h3>
+
+          <ul>
+            <li>
+              The block coming from the partition $\lambda = (m-2,1,1)$ has size $\lfloor \frac{m-1}{2}\rfloor \in
+              \mathcal{O}(m)$...
+            </li>
+            <li class="fragment">
+              We give an explicit combinatorial block-diagonalization...
+            </li>
+            <li class="fragment">
+              And the bound obtained from ignoring all other blocks is <b>nearly as strong as $\color{red}\alpha_m$</b>!
+            </li>
+          </ul>
+
+          <br>
+
+          <p class="fragment">
+            We solve the dual of $\color{green}\beta_m$: <span style="color:green">few variables, small matrix
+              block</span> and <span style="color:red">(exponentially) many linear inequalities.</span>
+          </p>
+        </section>
+
+      </section>
+      <section>
+        <section>
+          <h3>Computational results</h3>
+          $$\scriptsize\begin{align*}
+          \mathrm{cr}(K_{10,n}) &\geq 4.8705n^2 - 10n&&\geq {\color{gray}4.8345n^2-10n,}\\
+          \mathrm{cr}(K_{11,n}) &\geq 5.9993n^2-12.5n&&\geq {\color{gray}5.9088n^2 - 12.2222n,}\\
+          \mathrm{cr}(K_{12,n}) &\geq {7.2557n^2 - 15n}&&\geq {\color{gray}7.0906n^2 - 14.6666n,}\\
+          \mathrm{cr}(K_{13,n}) &\geq {8.6567n^2-18n}&&\geq {\color{gray}8.3798n^2 -17.3333n.}
+          \end{align*}$$
+
+          <p class="fragment"><b>Double counting:</b> Improved bounds for $K_{m,n}$ for $m>13$, and <b>asymptotic
+              bounds</b>.</p>
+        </section>
+        <section>
+          <h3>Asymptotic bounds</h3>
+          <div class="r-frame">
+            <b>Lemma</b> <span style="font-size: 20pt;">[de Klerk, Maharry, Pasechnik, Richter, Salazar 2006]</span>
+            <hr>
+
+            <p style="font-size: 20pt; margin: 10pt;">
+              $${\lim_{n \to \infty} \frac{\mathrm{cr}(K_{n,n})}{Z(n,n)} \geq {\frac{8
+              {\color{red}\alpha_k}}{k(k-1)}}}$$
+            </p>
+          </div>
+
+          <div class="container">
+            <div class="col" style="flex:1;">
+              <br>
+              <table style="font-size: 18pt;">
+                <thead>
+                  <tr>
+                    <th>$k$</th>
+                    <th>$\frac{8 {\color{red}\alpha_k}}{k(k-1)}$</th>
+                    <th>$\frac{8 {\color{green}\beta_k}}{k(k-1)}$</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>$7$</td>
+                    <td>$0.8303$</td>
+                    <td>$0.8210$ </td>
+                  </tr>
+                  <tr>
+                    <td>$8$</td>
+                    <td>$0.8371 $</td>
+                    <td>$0.8326$ </td>
+                  </tr>
+                  <tr>
+                    <td>$9$</td>
+                    <td>$0.8595$</td>
+                    <td>$0.8503$ </td>
+                  </tr>
+                  <tr>
+                    <td>$10$</td>
+                    <td>$0.8659$</td>
+                    <td>$0.8610$ </td>
+                  </tr>
+                  <tr>
+                    <td>$11$</td>
+                    <td> </td>
+                    <td>$0.8726$</td>
+                  </tr>
+                  <tr>
+                    <td>$12$</td>
+                    <td></td>
+                    <td>$0.8794$ </td>
+                  </tr>
+                  <tr>
+                    <td>$13$</td>
+                    <td></td>
+                    <td>$0.8878$ </td>
+                  </tr>
+
+                </tbody>
+              </table>
+
+            </div>
+            <div class="col" style="flex:2;">
+              <br>
+              <!-- <br> -->
+              <img style="width:80%" src="Pic_PlotAsym.svg">
+            </div>
+          </div>
+        </section>
+        <section>
+          <h3>Exact solution for $\beta_m$ possible?</h3>
+
+          If $m$ is odd, the (numerical) optimal solution of $\beta_m$ is of <b>rank 1</b>. The eigenvectors seem to
+          follow a pattern. Can we guess it?
+
+          <img style="width: 60%;" src="Pic_PlotRank1.svg">
+        </section>
+      </section>
+      <section>
+        <section>
+          <h3>Summary</h3>
+          <div class="container">
+            <div class="col" style="flex:1">
+              <ul>
+                <li>
+                  Semidefinite programming gives good lower bounds on $\mathrm{cr}(K_{m,n})$.
+                </li>
+                <li class="fragment">
+                  Key contributions: <b>symmetry reduction</b> and <b>new relaxation $\beta_m$</b> of $\alpha_m$.
+                </li>
+                <li class="fragment">
+                  Advantage of approach: only based on $m$-cycles.
+                </li>
+                <li class="fragment">
+                  Possible to give optimum solution to $\beta_m$ analytically?
+                </li>
+              </ul>
+
+            </div>
+            <div class="col" style="flex:1">
+              <img style="width: 70%;" src="Pic_PlotAsym.svg">
+
+              <img style="width: 85%;" src="Pic_PlotRank1.svg">
+
+            </div>
+          </div>
+        </section>
+      </section>
+    </div>
+
+  </div>
+  </div>
+
+  <script src="./dist/reveal.js"></script>
+
+  <script src="./plugin/markdown/markdown.js"></script>
+  <script src="./plugin/highlight/highlight.js"></script>
+  <script src="./plugin/zoom/zoom.js"></script>
+  <script src="./plugin/notes/notes.js"></script>
+  <script src="./plugin/math/math.js"></script>
+  <script>
+    function extend() {
+      var target = {};
+      for (var i = 0; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (source.hasOwnProperty(key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    }
+
+    // default options to init reveal.js
+    var defaultOptions = {
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+      transition: 'default', // none/fade/slide/convex/concave/zoom
+      plugins: [
+        RevealMarkdown,
+        RevealHighlight,
+        RevealZoom,
+        RevealNotes,
+        // RevealMath
+        RevealMath.KaTeX
+      ]
+    };
+
+    // options from URL query string
+    var queryOptions = Reveal().getQueryHash() || {};
+
+    var options = extend(defaultOptions, { "pdfSeparateFragments": true, "transition": "slide" }, queryOptions);
+  </script>
+
+  <script src="./plugins/manim.js"></script>
+  <script src="./plugin.js"></script>
+
+  <script>
+    Reveal.initialize(options);
+  </script>
+</body>
+
+</html>

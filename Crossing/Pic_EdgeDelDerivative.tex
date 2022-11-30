@@ -1,0 +1,25 @@
+% \documentclass[tikz,convert={outfile=\jobname.svg}]{standalone}
+\documentclass[crop,equation,convert={outext=.svg,command=\unexpanded{pdf2svg \infile\space\outfile}},multi=false]{standalone}
+% \documentclass{article}
+\usepackage{amsmath}
+\input{tikzMacros.tex}
+\usetikzlibrary{arrows.meta}
+
+% \usepackage[margins=0]{geometry}
+\usepackage{ytableau}
+
+\begin{document}
+% \FlagGraphNumb{5}{1--2,2--3,3--4}{2}
+% + 2 \FlagGraph{5}{1--2,2--3,3--4}
+% \begin{center}
+\color{white}
+% \begin{big}
+\Large
+% \boldmath
+% \begin{align*}
+    $\partial_{\color{orange}e} H :=\lim_{{\color{red}i}\to\infty}\frac{(H \text{ density in
+    }(G_{\color{red}i}-{\color{orange}e})) - (H \text{ density in }G_{\color{red}i})}{{\color{red}i}^{-2}}$
+    % \end{align*}
+% \end{big}
+% \end{center}
+\end{document}
