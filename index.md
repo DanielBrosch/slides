@@ -11,3 +11,5 @@
 - Combinatoric derivatives: [23.10.22](/CombDerivatives)
 
 - Crossing number: [1.12.22](/Crossing)
+
+- SDPs for extremal combinatorics: [22.2.23](/SDPsForExtremalCombinatorics)

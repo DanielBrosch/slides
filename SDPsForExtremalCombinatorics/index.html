@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <title>SDPs for Extremal Combinatorics</title>
+  <link rel="shortcut icon" href="./favicon.ico" />
+  <link rel="stylesheet" href="./dist/reset.css" />
+  <link rel="stylesheet" href="./dist/reveal.css" />
+  <link rel="stylesheet" href="./dist/theme/beige.css" id="theme" />
+  <link rel="stylesheet" href="./css/highlight/zenburn.css" />
+
+  <style>
+    .container {
+      display: flex;
+      /* max-height: 100%; */
+      /* margin-bottom: 100px; */
+    }
+
+    .col {
+      flex: 1;
+      /* width: 50%; */
+      /* margin-bottom: 100px; */
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        $$\require{color}$$
+        <section data-auto-animate>
+          <h2 style="display: inline;">SDPs for Extremal Combinatorics</h3>
+            <br>
+            $$\definecolor{darkorange}{rgb}{0.8, 0.45, 0}$$
+            
+
+            <h3>Daniel Brosch</h4>
+            <h5>University of Klagenfurt</h5>
+
+              <br>
+
+              <h5>February 22, 2023</h5>
+
+              <!-- $$\sqrt{2}$$ -->
+
+
+        </section>
+        <section>
+          <h3>Continuous Combinatorics</h3>
+
+          <br>
+
+          <!-- <blockquote>
+            The study of <b>limit objects</b> of growing combinatorial structures.
+          </blockquote> -->
+
+          <p>The study of <b>limit objects</b> of growing combinatorial structures.</p>
+
+          <br>
+
+          <p class="fragment">
+            This talk: <b>graph limits</b>
+            $${\color{darkorange}\mathcal{G}} = (G_i)_{i=1}^\infty,$$
+            where $G_i$ is a graph on $i$ vertices.
+          </p>
+
+        </section>
+        <section>
+          <h3> How many edges can there be in a triangle free graph?</h3>
+          <video class="fv-video" src="./videos/media/videos/TriangleFree/1080p60/Triangle2.webm"
+            fv-playback-info="./videos/media/videos/TriangleFree/1080p60/Triangle2.json">
+          </video>
+        </section>
+        <section>
+          <h3><b>Graphons</b> (<b>Graph</b>-functi<b>ons</b>)</h3>
+          <h6><sup>[Lovász, Szegedy, 2006, $\approx 880$ citations]</sup></h6>
+
+          <br>
+
+          <div class="container">
+            <div class="col" style="flex: 2">
+              <b>Limits of adjacency matrices:</b> symmetric measurable functions
+              $$W\colon[0,1]^2\to[0,1]$$
+              <img style="width: 70%;" src="Graphon.png">
+            </div>
+            <div class="col" style="flex: 1">
+              <br>
+              <img src="GraphLimits.jpg">
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3><b>Flag Algebras</b></h3>
+          <h6><sup>[Razborov, 2007, $\approx 350$ citations]</sup></h6>
+
+          <br>
+
+          <div class="container">
+            <div class="col" style="flex: 2">
+
+
+              <b>Record only the limits of subgraph densities:</b>
+              $$\phi_{\mathcal{G}}(H) = \lim_{i\to\infty} (\text{density of $H$ in $G_i$}).$$
+
+              <b>Flag Algebras</b> consider the algebraic relations between different values $\phi_{\mathcal{G}}(H)$ and
+              $\phi_{\mathcal{G}}(H')$.
+
+
+            </div>
+            <div class="col" style="flex: 1">
+              <img style="width: 80%;" src="FlagAlg.png">
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3>Graphons and Flag Algebras</h3>
+
+          <br>
+
+          <p>Flag algebras' limit functionals
+            $$\phi_{\mathcal{G}}\colon \{\text{finite graphs}\}\to[0,1]$$
+            correspond to <b>graphons "up to isomorphism"</b>.
+          </p>
+          <br>
+
+          <p class="fragment">
+            They form a <b>compact metric space.</b>
+          </p>
+
+
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <h3>Subgraph densities</h3>
+          <br>
+
+          <p>The <b>density</b> of a graph $\color{green}H$ in $\color{darkorange}\mathcal{G}= (G_i)_{i=1}^\infty$ is
+            $$\phi_{\mathcal{G}}({\color{green}H}) := \lim_{i\to\infty}
+            \mathbb{P}[{\color{red}\sigma_i}({\color{green}H}) \text{ is a subgraph of }{\color{darkorange}G_i}],$$
+            where ${\color{red}\sigma_i}$ is a random permutation in $S_i$.
+          </p>
+        </section>
+
+        <section>
+          <h3>Triangle free graphs</h3>
+
+          <p>
+            Maximize the <span style="color:rgb(200, 100, 0)">edge density</span> in a <span
+              style="color:green">triangle
+              free</span> sequence $\mathcal{G}$ of graphs of increasing size:
+          </p>
+
+          <img style="width:70%;" src="./Pic_EqTriangleFree.svg">
+
+          <div class="fragment">
+            <p>
+              We saw that
+            </p>
+            <img style="width:30%;" src="./Pic_EqTriangleFreeLowerBound.svg">
+
+            <p>
+              but how can we prove an <b>upper bound</b>?
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h3>Multiplying subgraph densities</h3>
+
+          <div class="r-stack">
+            <div class="fragment fade-out" data-fragment-index="1">
+              <p>To multiply two subgraph densities, we <b>glue together</b> the graphs:</p>
+
+              <img style="width: 40%;" src="./Pic_DensityProduct.svg">
+
+
+              <!-- <div class="fragment fade-in" data-fragment-index="0">
+                Because the probability that the two graphs are sent to <b>disjoint</b> sets
+                of vertices <b>converges to $1$ in the limit</b>.
+              </div> -->
+            </div>
+            <div class="fragment current-visible" data-fragment-index="1">
+              <p>These relationships are <b>independent of $\mathcal{G}$</b>, motivating the definition</p>
+
+              <img style="width: 30%;" src="./Pic_DensityProductNoP.svg">
+
+              <p>
+                where a graph $H$ now stands for the function
+                $$\small H(\mathcal{G}) = \phi_{\mathcal{G}}(H)= \lim_{i\to\infty}
+                \mathbb{P}[{\sigma_i}({H}) \text{ is a subgraph of }{G_i}].$$
+              </p>
+            </div>
+            <div class="fragment">
+              <p>We can fix entries of the $\sigma_i$ to fix (<b>flag</b>) some vertices, and extend the <b>gluing</b>
+                operation to <b>partially labeled graphs (Flags)</b>:</p>
+
+              <img style="width: 40%;" src="./Pic_FlagExample.svg">
+            </div>
+          </div>
+        </section>
+
+        <!-- <section>
+          <h3>The Flag Algebra of Graphs</h3>
+
+          $$\mathcal{A}_{\text{graphs}} = \{\text{real linear combinations of flags}\}$$
+        </section> -->
+
+        <section>
+          <h3>Flag Sums-of-Squares</h3>
+
+          <div class="r-stack">
+            <div class="fragment fade-out" data-fragment-index="3">
+              <ul>
+                <li>
+                  Flags $F$ send graph sequences to real numbers:
+                  $$ F (\mathcal{G}) \in [0,1]$$
+                </li>
+                <li class="fragment" data-fragment-index="1">
+                  Then so do <b>real linear combinations</b> of flags<br>
+                  <sup style="font-size:large;">
+                    The literature calls these "Quantum graphs".
+                  </sup>
+                </li>
+                <li class="fragment" data-fragment-index="2">
+                  Squares of real numbers are <b>nonnegative</b>:
+
+                  <div style="text-align: center;">
+                    <img style="width: 60%;" src="./Pic_FlagSOS1.svg">
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="fragment current-visible" data-fragment-index="3">
+              <p>We can <b>average</b> Flags over all choices of labels, <b>unlabeling</b> them:</p>
+
+              <img style="width: 60%;" src="./Pic_FlagSOS2.svg">
+            </div>
+            <div class="fragment">
+              <p>We can now find an <b>upper bound</b> for the edge density in triangle free graphs:</p>
+              <img src="Pic_FlagSOS3.svg" style="width: 90%;">
+              <p class="fragment fade-in">As with <b>polynomial optimization</b>, we can model Flag-SOS using
+                <b>semidefinite programming</b>.
+              </p>
+
+            </div>
+
+        </section>
+        <section data-auto-animate>
+          <h3>Polynomial Sums-of-Squares</h3>
+
+          <ul>
+            <li>
+              Let ${\color{darkorange}[x]} = (m_1,\ldots, m_k)^\top$ be a vector containing a finite subset of a basis
+              of $\mathbb{R}{\color{darkorange}[x]}$.
+            </li>
+          </ul>
+        </section>
+        <section data-auto-animate>
+          <h3>Polynomial Sums-of-Squares</h3>
+
+          <ul>
+            <li>
+              Let ${\color{darkorange}[x]} = (m_1,\ldots, m_k)^\top$ be a vector containing a finite subset of a basis
+              of $\mathbb{R}{\color{darkorange}[x]}$.
+            </li>
+            <li>
+              We can write polynomials in the form
+              $$\small p = \sum_{i=1}^k c_i m_i = c^\top{\color{darkorange}[x]}$$
+            </li>
+          </ul>
+        </section>
+        <section data-auto-animate>
+          <h3>Polynomial Sums-of-Squares</h3>
+
+          <ul>
+            <li>
+              Let ${\color{darkorange}[x]} = (m_1,\ldots, m_k)^\top$ be a vector containing a finite subset of a basis
+              of $\mathbb{R}{\color{darkorange}[x]}$.
+            </li>
+            <li>
+              We can write polynomials in the form
+              $$\small p = \sum_{i=1}^k c_i m_i = c^\top{\color{darkorange}[x]}$$
+            </li>
+            <li>
+              And squares as
+              $$\small p^2 = (c^\top{\color{darkorange}[x]})^2 = {\color{darkorange}[x]}^\top (cc^\top)
+              {\color{darkorange}[x]} = \langle c c^\top, {\color{darkorange}[x]}{\color{darkorange}[x]}^\top\rangle$$
+            </li>
+          </ul>
+        </section>
+        <section data-auto-animate>
+          <h3>Polynomial Sums-of-Squares</h3>
+
+          <ul>
+            <li>
+              And squares as
+              $$\small p^2 = (c^\top{\color{darkorange}[x]})^2 = {\color{darkorange}[x]}^\top (cc^\top)
+              {\color{darkorange}[x]} = \langle c c^\top, {\color{darkorange}[x]}{\color{darkorange}[x]}^\top\rangle$$
+            </li>
+            <li>
+              Sums-of-squares correspond to PSD matrices:
+              $$\small \sum p_i^2 = \left\langle \sum c_ic_i^\top,
+              {\color{darkorange}[x]}{\color{darkorange}[x]}^\top\right\rangle =\left\langle M,
+              {\color{darkorange}[x]}{\color{darkorange}[x]}^\top\right\rangle,$$
+              for some $M \in \mathbb{S}^n_+$.
+            </li>
+          </ul>
+        </section>
+
+        <section data-auto-animate>
+          <h3>Flag Sums-of-Squares</h3>
+
+          <ul>
+            <li>
+              Let ${\color{darkorange}\mathcal{F}}$ be a (finite) vector of flags.
+            </li>
+          </ul>
+        </section>
+        <section data-auto-animate>
+          <h3>Flag Sums-of-Squares</h3>
+
+          <ul>
+            <li>
+              Let ${\color{darkorange}\mathcal{F}}$ be a (finite) vector of flags.
+            </li>
+            <li>
+              Linear combinations of flags are of the form
+              $$f = c^\top {\color{darkorange}\mathcal{F}}.$$
+            </li>
+          </ul>
+        </section>
+        <section data-auto-animate>
+          <h3>Flag Sums-of-Squares</h3>
+
+          <ul>
+            <li>
+              Let ${\color{darkorange}\mathcal{F}}$ be a (finite) vector of flags.
+            </li>
+            <li>
+              Linear combinations of flags are of the form
+              $$f = c^\top {\color{darkorange}\mathcal{F}}.$$
+            </li>
+            <li data-fragment-index="a">
+              Unlabelled squares can be written as
+              <div data-fragment-index="b" style="display: flex; justify-content: center;">
+                <img data-fragment-index="c" src="Pic_FlagSOS4.svg" style="width: 50%; text-align: center;">
+              </div>
+            </li>
+          </ul>
+        </section>
+        <section data-auto-animate>
+          <h3>Flag Sums-of-Squares</h3>
+
+          <ul>
+            <li>
+              Linear combinations of flags are of the form
+              $$f = c^\top {\color{darkorange}\mathcal{F}}.$$
+            </li>
+            <li data-fragment-index="a">
+              Unlabelled squares can be written as
+              <div data-fragment-index="b" style="display: flex; justify-content: center;">
+                <img data-fragment-index="c" src="Pic_FlagSOS4.svg" style="width: 50%; text-align: center;">
+              </div>
+            </li>
+            <li>
+              Flag sums-of-squares are of the form
+              <div style="display: flex; justify-content: center;">
+                <img src="Pic_FlagSOS5.svg" style="width: 30%; text-align: center;">
+              </div>
+              for positive semidefinite matrices $M$.
+            </li>
+          </ul>
+        </section>
+        <section data-auto-animate>
+          <h3>Flag Sums-of-Squares</h3>
+
+          <ul>
+            <li>
+              Flag sums-of-squares are of the form
+              <div style="display: flex; justify-content: center;">
+                <img src="Pic_FlagSOS5.svg" style="width: 30%; text-align: center;">
+              </div>
+              for positive semidefinite matrices $M$.
+            </li>
+          </ul>
+
+          <br>
+          <p>
+            In practice: Use "smarter" hierarchies, <b>block diagonalized</b> by combinatorial ideas and/or symmetries.
+          </p>
+        </section>
+
+      </section>
+      <section>
+
+        <section>
+          <h3>The space of graph limits</h3>
+
+          <div class="r-stack">
+            <div class="fragment fade-out" data-fragment-index="2">
+              <p>We saw that <b>triangle free</b> graphs have at most edge density $\frac{1}{2}$.</p>
+
+              <br>
+
+              <p class="fragment" data-fragment-index="1">What happens if we allow <b>some triangles</b>?</p>
+            </div>
+            <div class="fragment" data-fragment-index="2">
+              <figure>
+                <img style="width: 70%;" src="./TriangleProfile.png">
+                <figcaption>
+                  <b>[Razborov, 2008]</b>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+        <section>
+          <h3>Investigating nonnegativity</h3>
+          Let $p=a_1 G_1 + a_2 G_2 + \ldots + a_k G_k$ be a linear combination of unlabeled graphs.
+
+          <br>
+          <br>
+
+          <div class="container">
+            <div class="col" style="flex: 1; background-color:darkseagreen;">
+              <b>[Lovász, Szegedy 2009]:</b> 
+    
+              If $p\geq 0$, then $p + \varepsilon$ is a SOS for any $\varepsilon > 0$.
+            </div>
+            <div class="col" style="flex: 1; background-color: lightcoral;">
+              <b>[Hatami, Norin, 2011]:</b>
+
+              The question<br> "Does $p \geq 0$ hold?"<br> is undecidable.
+            </div>
+          </div>
+
+        </section>
+      </section>
+      <section>
+        <section>
+          
+          <h3>Applications of flag algebras: Directed graphs</h3>
+          
+          <b>Caccetta-Haggkvist conjecture:</b>
+          
+          Every simple directed graph on $n$ vertices with minimum outdegree $\frac{n}{3}$ contains a directed triangle.<br><br><br>
+          
+          <b>[Hladký, Král’, Norin 2009]:</b> True for minimum outdegree $0.3465n$.  
+        </section>
+        
+        <section>
+          <h3>Point order types</h3>
+          
+          <b>Hill's conjecture:</b>
+          The crossing number of $K_n$ is
+          $$\mathrm{cr}(K_n) =\frac{1}{4}\left\lfloor \frac{n}{2} \right\rfloor \left\lfloor \frac{n-1}{2} \right\rfloor \left\lfloor \frac{n-2}{2} \right\rfloor \left\lfloor \frac{n-3}{2} \right\rfloor$$
+          
+          <br><br>
+          
+          <b>[Balogh, Lidicky, Salazar 2019]:</b> The conjecture is at least $98.5\%$ true.
+
+        </section>
+        <section>
+          <h3>
+            And much more!
+          </h3>
+          <ul>
+            <li>
+              <b>Hypergraphs</b> [Razborov, 2010]
+            </li>
+            <li class="fragment">
+              <b>Subgraphs of hypercube graphs</b> [Balogh, Hu, Lidicky, Liu / Baber 2012]
+            </li>
+            <li class="fragment">
+              <b>Order types</b> [Goaoc, Hubard, de Verclos, Séréni, Volec, 2014]
+            </li>
+            <li class="fragment">
+              <b>Permutations</b> [Balogh, Hu, Lidicky, Pikhurko, Udvari, Volect, 2015]
+            </li>
+            <li class="fragment">
+              <b>Tournaments</b> [Coregliano, Razborov 2015]
+            </li>
+            <li class="fragment">
+              <b>Phylogenetic trees</b> [Alon, Naves, Sudakov 2015]
+            </li>
+          </ul>
+
+          <p class="fragment">
+            Applications to Turán and Ramsey type problems, inducibility, fractalizers, investigating classes of objects...
+          </p>
+        </section>
+      </section>
+        
+        <section>
+          <h3>
+            The symmetries of flag algebras
+          </h3>
+
+          In my thesis <a href="www.danielbrosch.com/thesis">(danielbrosch.com/thesis)</a> I investigate the symmetries of flag algebras, further block-diagonalizing the SDP hierarchies.<br>
+
+          <img style="width: 80%;" src="Pic_SpechtFlags.svg">
+          
+      </section>
+      <section>
+        <h3>
+          Work in progress:
+        </h3>
+        <ul>
+          <li>
+            Generalization of Razborov's derivatives of flags: "Local" graph modifications cannot improve optimal solutions.
+          </li>
+          <li class="fragment">
+            Application of Razborov's hierarchies to constant weight error correcting codes (with <b>Sven Polak</b>).
+          </li>
+          <li class="fragment">
+            The flag algebra of binary rooted trees (with <b>Diane Puges</b>).
+          </li>
+        </ul>
+      </section>
+
+
+    </div>
+  </div>
+
+  <script src="./dist/reveal.js"></script>
+
+  <script src="./plugin/markdown/markdown.js"></script>
+  <script src="./plugin/highlight/highlight.js"></script>
+  <script src="./plugin/zoom/zoom.js"></script>
+  <script src="./plugin/notes/notes.js"></script>
+  <script src="./plugin/math/math.js"></script>
+  <script>
+    function extend() {
+      var target = {};
+      for (var i = 0; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (source.hasOwnProperty(key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    }
+
+    // default options to init reveal.js
+    var defaultOptions = {
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+      transition: 'default', // none/fade/slide/convex/concave/zoom
+      plugins: [
+        RevealMarkdown,
+        RevealHighlight,
+        RevealZoom,
+        RevealNotes,
+        RevealMath
+      ]
+    };
+
+    // options from URL query string
+    var queryOptions = Reveal().getQueryHash() || {};
+
+    var options = extend(defaultOptions, { "pdfSeparateFragments": true, "transition": "slide" }, queryOptions);
+  </script>
+
+  <script src="./plugins/manim.js"></script>
+  <script src="./plugin.js"></script>
+
+  <script>
+    Reveal.initialize(options);
+  </script>
+</body>
+
+</html>

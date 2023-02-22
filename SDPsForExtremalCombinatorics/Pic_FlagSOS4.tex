@@ -1,0 +1,24 @@
+% \documentclass[tikz,convert={outfile=\jobname.svg}]{standalone}
+\documentclass[crop,equation,convert={outext=.svg,command=\unexpanded{pdf2svg \infile\space\outfile}},multi=false]{standalone}
+% \documentclass{article}
+\usepackage{amsmath}
+\input{tikzMacros.tex}
+\usetikzlibrary{arrows.meta}
+
+% \usepackage[margins=0]{geometry}
+\usepackage{ytableau}
+
+\begin{document}
+% \FlagGraphNumb{5}{1--2,2--3,3--4}{2}
+% + 2 \FlagGraph{5}{1--2,2--3,3--4}
+% \begin{center}
+\color{black}
+% \begin{big}
+% \Large
+% \boldmath
+% \begin{align*}
+    $\llbracket f^2 \rrbracket = \langle cc^\top, \llbracket{\color{darkorange}\mathcal{F}}{\color{darkorange}\mathcal{F}}^\top\rrbracket\rangle$
+    % \end{align*}
+% \end{big}
+% \end{center}
+\end{document}
