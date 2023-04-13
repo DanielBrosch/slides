@@ -10,6 +10,6 @@
 
 - Combinatoric derivatives: [23.10.22](/CombDerivatives)
 
-- Crossing number: [1.12.22](/Crossing)
+- Crossing number: [1.12.22](/Crossing), [14.4.23](/CrossingGeorgiaTech)
 
 - SDPs for extremal combinatorics: [22.2.23](/SDPsForExtremalCombinatorics)

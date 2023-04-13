@@ -1,0 +1,94 @@
+% \documentclass[tikz,convert={outfile=\jobname.svg}]{standalone}
+\documentclass[convert={outext=.svg,command=\unexpanded{pdf2svg \infile\space\outfile}},multi=false, varwidth, border={0 0 0cm 0}]{standalone}
+% \documentclass{standalone}
+% \documentclass{article}
+\usepackage{amsmath}
+\input{tikzMacros.tex}
+\usetikzlibrary{arrows.meta}
+\definecolor{firebrick}{rgb}{0.7, 0.13, 0.13}
+\definecolor{nwoblue}{RGB}{37,150,190}
+\definecolor{blauw}{RGB}{61,158,255}
+\definecolor{donkerblauw}{RGB}{50,200,50}
+\definecolor{donkergroenoud}{RGB}{46,148,0}
+\definecolor{donkergroen}{RGB}{255,0,0}
+\definecolor{donkergroen2}{RGB}{255,0,0}
+\definecolor{donkerrood}{RGB}{204,0,0}
+
+% \usepackage[margins=0]{geometry}
+\usepackage{ytableau}
+\usepackage[ruled,vlined]{algorithm2e}
+\usepackage{etoolbox}
+\begin{document}
+% \FlagGraphNumb{5}{1--2,2--3,3--4}{2}
+% + 2 \FlagGraph{5}{1--2,2--3,3--4}
+% \begin{center}
+% \color{white}
+% \begin{big}
+% \big
+% \begin{algorithm}
+\pgfplotsset{xmin=4, xmax=13, ymin=0.65, ymax=0.91}
+\begin{tikzpicture}
+  \begin{axis}[domain=4:10, restrict y to domain=0.6:1,
+      % width=6.55cm,
+      width={.95\textwidth}, height={.73\textwidth},
+      axis x line*=bottom,axis y line*=left,
+      /pgf/number format/.cd,tick label style={font=\footnotesize},
+      %       use comma,
+      ylabel = {},%\footnotesize $8 \gamma_k / (k(k-1))$ $\Large\rightarrow$},
+      ylabel style={yshift=0cm,xshift=0cm},
+      xlabel={$k \rightarrow$},
+      xlabel style={yshift=.15cm,xshift=0cm,font=\footnotesize},   %was yshift.25, xshift.4=3
+      /pgfplots/scaled ticks=false,
+      1000 sep={},
+      precision=6,
+      ylabel style={yshift=0cm},%      ylabel={\color{firebrick} $2^n$},
+      %   yticklabels=\empty,    xticklabels=\empty, xtick style={draw=none},ytick style={draw=none},%was not empty
+      every axis plot/.append style={thick}]
+    \addplot+ [mark=*,donkergroen2, line width={1}] table {
+        %2  0
+        %3  .6667
+        4  .6667
+        5  .7789
+        6  .7872
+        7  .8303
+        8  .8371
+        9  .8595
+        10 .8659
+      };
+    \addplot+ [mark=*,donkerblauw, line width={1}] table {
+        %2  0
+        %3  .6667
+        4  .6667
+        5  .7708
+        6  .7872
+        7  .8210
+        8  .8326
+        9  .8503
+        10 .8610
+        11 .8726
+        12 .8794
+        13 .8878
+      };
+    \addplot[mark=*,donkergroen2, mark size={2.0 pt}, mark options={color=black,fill={donkergroen2}, line width={0.75}}] coordinates {(4,0.6667)};
+    \addplot[mark=*,donkergroen2, mark size={2.0 pt}, mark options={color=black,fill={donkergroen2}, line width={0.75}}] coordinates {(5,0.7789)};
+    \addplot[mark=*,donkergroen2, mark size={2.0 pt}, mark options={color=black,fill={donkergroen2}, line width={0.75}}] coordinates {(6,0.7872)};
+    \addplot[mark=*,donkergroen2, mark size={2.0 pt}, mark options={color=black,fill={donkergroen2}, line width={0.75}}] coordinates {(7,0.8303)};
+    \addplot[mark=*,donkergroen2, mark size={2.0 pt}, mark options={color=black,fill={donkergroen2}, line width={0.75}}] coordinates {(8,0.8371)};
+    \addplot[mark=*,donkergroen2, mark size={2.0 pt}, mark options={color=black,fill={donkergroen2}, line width={0.75}}] coordinates {(9,0.8595)};
+    \addplot[mark=*,donkergroen2, mark size={2.0 pt}, mark options={color=black,fill={donkergroen2}, line width={0.75}}] coordinates {(10,0.8659)};
+    \addplot[mark=*,donkerblauw, mark size={2.0 pt}, mark options={color=black,fill={donkerblauw}, line width={0.75}}] coordinates {(4,0.6667)};
+    \addplot[mark=*,donkerblauw, mark size={2.0 pt}, mark options={color=black,fill={donkerblauw}, line width={0.75}}] coordinates {(5,0.7708)};
+    \addplot[mark=*,donkerblauw, mark size={2.0 pt}, mark options={color=black,fill={donkerblauw}, line width={0.75}}] coordinates {(7,0.8210)};
+    \addplot[mark=*,donkerblauw, mark size={2.0 pt}, mark options={color=black,fill={donkerblauw}, line width={0.75}}] coordinates {(8,0.8326)};
+    \addplot[mark=*,donkerblauw, mark size={2.0 pt}, mark options={color=black,fill={donkerblauw}, line width={0.75}}] coordinates {(9,0.8503)};
+    \addplot[mark=*,donkerblauw, mark size={2.0 pt}, mark options={color=black,fill={donkerblauw}, line width={0.75}}] coordinates {(10,0.8610)};
+    \addplot[mark=*,donkerblauw, mark size={2.0 pt}, mark options={color=black,fill={donkerblauw}, line width={0.75}}] coordinates {(11,0.8726)};
+    \addplot[mark=*,donkerblauw, mark size={2.0 pt}, mark options={color=black,fill={donkerblauw}, line width={0.75}}] coordinates {(12,0.8794)};
+    \addplot[mark=*,donkerblauw, mark size={2.0 pt}, mark options={color=black,fill={donkerblauw}, line width={0.75}}] coordinates {(13,0.8878)};
+  \end{axis}
+  % \node [right] at (5, 101) {\scriptsize$10^6$};
+\end{tikzpicture}
+% \end{algorithm}
+% \end{big}
+% \end{center}
+\end{document}
