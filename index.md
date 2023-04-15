@@ -13,3 +13,4 @@
 - Crossing number: [1.12.22](/Crossing), [14.4.23](/CrossingGeorgiaTech)
 
 - SDPs for extremal combinatorics: [22.2.23](/SDPsForExtremalCombinatorics)
+- Flag algebra of binary rooted trees: [15.4.23](/TreeFlags)
