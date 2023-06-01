@@ -513,16 +513,16 @@
           <h3>$\partial_v$: Deleting the vertex ${\color{orange}v}$</h3>
 
           <img style="width: 60%;" src="./LatexPics/LatexPic-17.svg">
-          
-          
+
+
           <img style="width: 80%;" src="./LatexPics/LatexPic-18.svg">
-          
-          
-          
+
+
+
         </section>
         <section data-auto-animate>
           <h3>$\partial_v$: Deleting the vertex ${\color{orange}v}$</h3>
-          
+
           <img style="width: 80%;" src="./LatexPics/LatexPic-18.svg">
 
           <img style="width: 50%; margin: 1em;" src="./LatexPics/LatexPic-19.svg">
@@ -635,18 +635,39 @@
 
           We define the derivative $\partial_{\text{hinge}}$ based on the operation on vertices $i,j,k$, which
           <b>swaps
-            the edges $\{i,j\}$ and $\{i,k\}$</b>.
+            the edges $\{i,j\}$ and $\{i,k\}$.</b>
+            <br><br>
+
+          <div class="fragment">
+
+            <h3>Edge-swap derivative</h3>
+
+            We define the derivative $\partial_{\text{swap}}$ based on the operation on vertices $i,j,k, l$, which
+            <b>swaps
+              the edges $\{i,j\}$ and $\{k,l\}$.</b>
+          </div>
+
+          <p class="fragment">
+
+
+            And many more complicated ones!
+          </p>
+
 
         </section>
 
         <section>
-          <h3> SOS based proof of a small case of Sidorenko's</h3>
+          <h3> SOS based proof for small cases of Sidorenko's</h3>
 
-          We found an exact <b>flag-SOS certificate</b> for
+          We found an exact (and easily human checkable) <b>flag-SOS certificate</b> for
           \begin{align}
           0 = \min\enspace& P_3 - e^3\\
-          \text{s.t. }& \mathbb{P}[\partial_{\text{hinge}}(P_3 - e^3) \geq 0 ]=1
+          \text{s.t. }& \mathbb{P}[\partial_{\text{swap}}(P_3 - e^3) \geq 0 ]=1
           \end{align}
+
+          <p class="fragment">
+            And numeric certificates for the <b>two next biggest cases</b> with no "pure" flag-SOS based proof.
+          </p>
 
 
         </section>
