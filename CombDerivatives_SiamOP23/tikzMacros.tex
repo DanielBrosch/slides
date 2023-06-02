@@ -116,12 +116,12 @@
             \draw[#1] (0,-4pt) -- (0,16pt);
         \fi
         \ifnum#4>0
-          \node[#1, circle,inner sep=0.5pt, fill=white, draw=black] (tmp1) at (0,16pt){\footnotesize 1};
+          \node[thick, circle,inner sep=1pt, fill=white, draw, minimum size = 3pt] (tmp1) at (0,16pt){\footnotesize 1};
         \else
           \node[#1, circle,inner sep=2pt, fill] (tmp1) at (0,16pt){};
         \fi
         \ifnum#4>1
-          \node[#1,circle,inner sep=0.5pt, fill=white, draw=black] (tmp2) at (0,-4pt){\footnotesize 2};
+          \node[thick, circle,inner sep=1pt, fill=white, draw, minimum size = 3pt] (tmp2) at (0,-4pt){\footnotesize 2};
         \else 
           \node[#1,circle,inner sep=2pt, fill] (tmp2) at (0,-4pt){};
         \fi
@@ -135,7 +135,7 @@
             %\fill (tmp.corner \X) circle (1pt);
             \pgfmathtruncatemacro\result{\X-1}
             \ifnum#4>\result
-              \node [#1,circle=black,inner sep=0.5pt, fill=white, draw=black] at (tmp.corner \X){\footnotesize $\X$};
+              \node [thick, circle,inner sep=1pt, fill=white, draw, minimum size = 3pt] at (tmp.corner \X){\footnotesize $\X$};
             \else 
               \node [#1,circle,inner sep=2pt, fill] at (tmp.corner \X){};
             \fi
@@ -143,6 +143,24 @@
 
     }
 \fi
+}
+\newcommand{\FlagGraphLabelTwo}[4][very thick]{
+  \tikz[baseline=3pt]{
+    \ifx#2\empty%
+    \else
+        \draw[#1] (0,0) -- (0,16pt);
+    \fi
+    \ifx#30
+      \node[#1, circle,inner sep=1.5pt, fill] (tmp1) at (0,16pt){};
+    \else
+      \node[thick, circle,inner sep=1pt, fill=white, draw, minimum size = 3pt] (tmp1) at (0,16pt){\footnotesize $#3$};
+    \fi  
+    \ifx#40
+      \node[#1,circle,inner sep=1.5pt, fill] (tmp2) at (0,0){};
+    \else
+      \node[thick, circle,inner sep=1pt, fill=white, draw, minimum size = 3pt] (tmp2) at (0,0){\footnotesize $#4$}; 
+    \fi    
+  }
 }
 
 \newcommand{\FlagGraphLabelThree}[5][very thick]{
@@ -152,22 +170,169 @@
         \draw[#1,polygon side/.list={#2}];
         
         \ifx#30
-          \node [#1,circle,inner sep=2pt, fill] at (tmp.corner 1){};
+          \node [#1,circle,inner sep=1.5pt, fill] at (tmp.corner 1){};
         \else 
           \node [thick, circle,inner sep=1pt, fill=white, draw, minimum size = 3pt] at (tmp.corner 1){\footnotesize $#3$};
         \fi
         \ifx#40
-          \node [#1,circle,inner sep=2pt, fill] at (tmp.corner 2){};
+          \node [#1,circle,inner sep=1.5pt, fill] at (tmp.corner 2){};
         \else 
           \node [thick, circle,inner sep=1pt, fill=white, draw, minimum size = 3pt] at (tmp.corner 2){\footnotesize $#4$};
         \fi
         \ifx#50
-          \node [#1,circle,inner sep=2pt, fill] at (tmp.corner 3){};
+          \node [#1,circle,inner sep=1.5pt, fill] at (tmp.corner 3){};
         \else 
           \node [thick, circle,inner sep=1pt, fill=white, draw, minimum size = 3pt] at (tmp.corner 3){\footnotesize $#5$};
         \fi
     }
 }
+
+\newcommand{\FlagGraphLabelFour}[6][very thick]{
+  \tikz[baseline=-2pt]{
+        \node[#1,gon2=4]{};
+        % \node[name=tmp,regular polygon,regular polygon sides=#1,minimum size=8pt,inner sep=3pt]{};
+        \draw[#1,polygon side/.list={#2}];
+        
+        \ifx#30
+          \node [#1,circle,inner sep=1.5pt, fill] at (tmp.corner 1){};
+        \else 
+          \node [thick, circle,inner sep=1pt, fill=white, draw, minimum size = 3pt] at (tmp.corner 1){\footnotesize $#3$};
+        \fi
+        \ifx#40
+          \node [#1,circle,inner sep=1.5pt, fill] at (tmp.corner 2){};
+        \else 
+          \node [thick, circle,inner sep=1pt, fill=white, draw, minimum size = 3pt] at (tmp.corner 2){\footnotesize $#4$};
+        \fi
+        \ifx#50
+          \node [#1,circle,inner sep=1.5pt, fill] at (tmp.corner 3){};
+        \else 
+          \node [thick, circle,inner sep=1pt, fill=white, draw, minimum size = 3pt] at (tmp.corner 3){\footnotesize $#5$};
+        \fi
+        \ifx#60
+          \node [#1,circle,inner sep=1.5pt, fill] at (tmp.corner 4){};
+        \else 
+          \node [thick, circle,inner sep=1pt, fill=white, draw, minimum size = 3pt] at (tmp.corner 4){\footnotesize $#6$};
+        \fi
+    }
+}
+
+\newcommand{\FlagGraphLabelFive}[7][very thick]{
+  \tikz[baseline=-2pt]{
+        \node[#1,gon2=5]{};
+        % \node[name=tmp,regular polygon,regular polygon sides=#1,minimum size=8pt,inner sep=3pt]{};
+        \draw[#1,polygon side/.list={#2}];
+        
+        \ifx#30
+          \node [#1,circle,inner sep=1.5pt, fill] at (tmp.corner 1){};
+        \else 
+          \node [thick, circle,inner sep=1pt, fill=white, draw, minimum size = 3pt] at (tmp.corner 1){\footnotesize $#3$};
+        \fi
+        \ifx#40
+          \node [#1,circle,inner sep=1.5pt, fill] at (tmp.corner 2){};
+        \else 
+          \node [thick, circle,inner sep=1pt, fill=white, draw, minimum size = 3pt] at (tmp.corner 2){\footnotesize $#4$};
+        \fi
+        \ifx#50
+          \node [#1,circle,inner sep=1.5pt, fill] at (tmp.corner 3){};
+        \else 
+          \node [thick, circle,inner sep=1pt, fill=white, draw, minimum size = 3pt] at (tmp.corner 3){\footnotesize $#5$};
+        \fi
+        \ifx#60
+          \node [#1,circle,inner sep=1.5pt, fill] at (tmp.corner 4){};
+        \else 
+          \node [thick, circle,inner sep=1pt, fill=white, draw, minimum size = 3pt] at (tmp.corner 4){\footnotesize $#6$};
+        \fi
+        \ifx#70
+          \node [#1,circle,inner sep=1.5pt, fill] at (tmp.corner 5){};
+        \else 
+          \node [thick, circle,inner sep=1pt, fill=white, draw, minimum size = 3pt] at (tmp.corner 5){\footnotesize $#7$};
+        \fi
+    }
+}
+
+\newcommand{\FlagGraphLabelSix}[8][very thick]{
+  \tikz[baseline=-2pt]{
+        \node[#1,gon2=6]{};
+        % \node[name=tmp,regular polygon,regular polygon sides=#1,minimum size=8pt,inner sep=3pt]{};
+        \draw[#1,polygon side/.list={#2}];
+        
+        \ifx#30
+          \node [#1,circle,inner sep=1.5pt, fill] at (tmp.corner 1){};
+        \else 
+          \node [thick, circle,inner sep=1pt, fill=white, draw, minimum size = 3pt] at (tmp.corner 1){\footnotesize $#3$};
+        \fi
+        \ifx#40
+          \node [#1,circle,inner sep=1.5pt, fill] at (tmp.corner 2){};
+        \else 
+          \node [thick, circle,inner sep=1pt, fill=white, draw, minimum size = 3pt] at (tmp.corner 2){\footnotesize $#4$};
+        \fi
+        \ifx#50
+          \node [#1,circle,inner sep=1.5pt, fill] at (tmp.corner 3){};
+        \else 
+          \node [thick, circle,inner sep=1pt, fill=white, draw, minimum size = 3pt] at (tmp.corner 3){\footnotesize $#5$};
+        \fi
+        \ifx#60
+          \node [#1,circle,inner sep=1.5pt, fill] at (tmp.corner 4){};
+        \else 
+          \node [thick, circle,inner sep=1pt, fill=white, draw, minimum size = 3pt] at (tmp.corner 4){\footnotesize $#6$};
+        \fi
+        \ifx#70
+          \node [#1,circle,inner sep=1.5pt, fill] at (tmp.corner 5){};
+        \else 
+          \node [thick, circle,inner sep=1pt, fill=white, draw, minimum size = 3pt] at (tmp.corner 5){\footnotesize $#7$};
+        \fi
+        \ifx#80
+          \node [#1,circle,inner sep=1.5pt, fill] at (tmp.corner 6){};
+        \else 
+          \node [thick, circle,inner sep=1pt, fill=white, draw, minimum size = 3pt] at (tmp.corner 5){\footnotesize $#8$};
+        \fi
+    }
+}
+
+\newcommand{\FlagGraphLabelSeven}[9][very thick]{
+  \tikz[baseline=-2pt]{
+        \node[#1,gon2=7]{};
+        % \node[name=tmp,regular polygon,regular polygon sides=#1,minimum size=8pt,inner sep=3pt]{};
+        \draw[#1,polygon side/.list={#2}];
+        
+        \ifx#30
+          \node [#1,circle,inner sep=1.5pt, fill] at (tmp.corner 1){};
+        \else 
+          \node [thick, circle,inner sep=1pt, fill=white, draw, minimum size = 3pt] at (tmp.corner 1){\footnotesize $#3$};
+        \fi
+        \ifx#40
+          \node [#1,circle,inner sep=1.5pt, fill] at (tmp.corner 2){};
+        \else 
+          \node [thick, circle,inner sep=1pt, fill=white, draw, minimum size = 3pt] at (tmp.corner 2){\footnotesize $#4$};
+        \fi
+        \ifx#50
+          \node [#1,circle,inner sep=1.5pt, fill] at (tmp.corner 3){};
+        \else 
+          \node [thick, circle,inner sep=1pt, fill=white, draw, minimum size = 3pt] at (tmp.corner 3){\footnotesize $#5$};
+        \fi
+        \ifx#60
+          \node [#1,circle,inner sep=1.5pt, fill] at (tmp.corner 4){};
+        \else 
+          \node [thick, circle,inner sep=1pt, fill=white, draw, minimum size = 3pt] at (tmp.corner 4){\footnotesize $#6$};
+        \fi
+        \ifx#70
+          \node [#1,circle,inner sep=1.5pt, fill] at (tmp.corner 5){};
+        \else 
+          \node [thick, circle,inner sep=1pt, fill=white, draw, minimum size = 3pt] at (tmp.corner 5){\footnotesize $#7$};
+        \fi
+        \ifx#80
+          \node [#1,circle,inner sep=1.5pt, fill] at (tmp.corner 6){};
+        \else 
+          \node [thick, circle,inner sep=1pt, fill=white, draw, minimum size = 3pt] at (tmp.corner 5){\footnotesize $#8$};
+        \fi
+        \ifx#90
+          \node [#1,circle,inner sep=1.5pt, fill] at (tmp.corner 7){};
+        \else 
+          \node [thick, circle,inner sep=1pt, fill=white, draw, minimum size = 3pt] at (tmp.corner 5){\footnotesize $#9$};
+        \fi
+    }
+}
+
 
 \usepackage{mathrsfs}
 \usetikzlibrary{arrows}
