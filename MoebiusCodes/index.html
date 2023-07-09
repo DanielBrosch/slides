@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- first run: npm install -->
+<!-- then: npm start -->
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <title>Title</title>
+  <link rel="shortcut icon" href="./favicon.ico" />
+  <link rel="stylesheet" href="./dist/reset.css" />
+  <link rel="stylesheet" href="./dist/reveal.css" />
+  <link rel="stylesheet" href="./dist/theme/beige_custom_2.css" id="theme" />
+  <link rel="stylesheet" href="./css/highlight/zenburn.css" />
+
+  <style>
+    .container {
+      display: flex;
+      /* max-height: 100%; */
+      /* margin-bottom: 100px; */
+    }
+
+    .col {
+      flex: 1;
+      /* width: 50%; */
+      /* margin-bottom: 100px; */
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        $$\require{color}$$
+        $$\definecolor{darkorange}{rgb}{0.8, 0.45, 0}$$
+        <section>
+          <h3>Möbius Transform Based Bounds for Constant Weight Codes</h3>
+          <br>
+
+          <h3>Daniel Brosch</h3>
+          <h5>University of Klagenfurt</h5>
+
+          <br>
+
+          <h5>Joint work with <b>Sven Polak</b>.</h5>
+
+          <br>
+
+          <h5>July 10, 2023</h5>
+
+        </section>
+      </section>
+      <section data-auto-animate>
+        <h2>Error correcting codes</h2>
+
+        <div class="container">
+          <div class="col">
+            <img style="width: 75%;" src="./A.jpg">
+          </div>
+        </div>
+
+      </section>
+      <section data-auto-animate>
+        <h2>Error correcting codes</h2>
+
+        <div class="container">
+          <div class="col" style="width: 48%;">
+            <img style="width: 75%;" src="./A.jpg">
+          </div>
+          <div class="col" style="width: 48%;">
+            <img style="width: 75%;" src="./B.jpg">
+          </div>
+        </div>
+      </section>
+      <section data-auto-animate>
+        <h2>Error correcting codes</h2>
+
+        <div class="container">
+          <div class="col" style="width: 48%;">
+            <img style="width: 75%;" src="./A.jpg">
+            <img style="width: 75%;" src="./B.jpg">
+          </div>
+          <div class="col" style="width: 48%;">
+            <img style="width: 75%;" src="./C.jpg">
+          </div>
+        </div>
+
+      </section>
+      <section data-auto-animate>
+        <h2>Error correcting codes</h2>
+
+        <div class="container">
+          <div class="col" style="width: 48%;">
+            <img style="width: 75%;" src="./A.jpg">
+            <img style="width: 75%;" src="./B.jpg">
+          </div>
+          <div class="col" style="width: 48%;">
+            <img style="width: 75%;" src="./C.jpg">
+            <img style="width: 75%;" src="./D.jpg">
+          </div>
+        </div>
+
+      </section>
+      <section>
+        <section>
+          <h2>Error correcting codes</h2>
+          <p>
+            Let $u,v\in \{0,1\}^n$ be binary strings (<b>words</b>) of length $n$.
+          </p>
+          <p class="fragment">
+            The <b>Hamming-distance</b> of $u$ and $v$ is
+            $$\mathrm{d_H}(u,v) = \lvert \{ i \enspace\colon\enspace u_i \neq v_i\}\rvert.$$
+          </p>
+          <p class="fragment">
+            An <b>$(n,d_\min)$-code</b> is a set of words $C\subseteq \{0,1\}^n$ with
+            $$\mathrm{d_H}(u,v) \geq d_\min \quad\text{for all } u,v\in C, u\neq v.$$
+          </p>
+          <p class="fragment">
+            $${\color{darkorange}A(n,d_\min)} := \max_{(n,d_\min)\text{-code }C} |C|.$$
+          </p>
+        </section>
+        <section>
+          <h2>Constant weight code</h2>
+          <p>
+            The <b>weight</b> of a word is
+            $$\mathrm{wt}(u) := \mathrm{d_H}(u, 0^n) = \lvert\{ i \enspace\colon\enspace u_i = 1\}\rvert.$$
+          </p>
+          <p class="fragment">
+            An <b>$(n, d_\min, w)$-constant weight code</b> is a code consisting of words of a fixed weight $w$.
+          </p>
+          <p class="fragment">
+            $${\color{darkorange}A(n,d_\min,w)} := \max_{(n,d_\min,w)\text{-code }C} |C|.$$
+          </p>
+        </section>
+        <section>
+          <h3>Existing bounds</h3>
+
+          <b>
+            <a href="https://www.win.tue.nl/~aeb/codes/Andw.html">Bound tables by Andries Brouwer</a>
+          </b>
+
+        </section>
+      </section>
+      <section>
+        <section>
+          <h2>Independent set</h2>
+
+          Let $G=(V,E)$ be the <b>graph</b> with
+          <ul>
+            <li>
+              <b>vertices $V$</b>$=\text{words of weight $w$}=\{0,1\}^n_{=w}$,
+            </li>
+            <li>
+              an <b>edge</b> for every $u,v\in V$ with $\mathrm{d_H}(u,v)&ltd_\min$
+            </li>
+          </ul>
+
+          <p class="fragment">
+            Then clearly $A(n, d_\min, w) = \alpha(G)$.
+          </p>
+
+          <img style="width: 30%;" class="fragment" src="./LatexPics/LatexPic-2.svg">
+        </section>
+        <section>
+          <h2>Polynomial optimization</h2>
+          $$\small\begin{align}
+          A(n, d_\min, w) = \max &\sum_v x_v\\
+          \text{s.t. }&x_vx_u = 0 \quad \text{if } \mathrm{d_H}(u,v)&ltd_\min,\\
+          & x_v \in \{0,1\} \quad \text{for all } v\in\{0,1\}^n_{=w}.
+          \end{align}$$
+        </section>
+        <section>
+          <h2>Convex relaxation: The Lasserre hierarchy</h2>
+
+          Let $\mathcal{C}_r = \{C \subseteq \{0,1\}^n \enspace \colon\enspace |C|\leq r\}$.<br>
+
+
+          <p class="r-frame">
+
+            $$\small
+            \begin{align}
+            \mathrm{Las}_{r}:=\sup &\sum y_{\{v\}}\\
+            \text{s.t. }& M(y):=\left(y_{C_1\cup C_2}\right)_{C_1, C_2 \in \mathcal{C}_r} \succcurlyeq 0\\
+            & y_C = 0 \quad \text{ if $C$ is not an $(n, d_\min, w)$-code}\\
+            & y_C \in \mathbb{R} \quad \text{for }C\in\mathcal{C}_{2r}.
+            \end{align}
+            $$
+          </p>
+
+          <p class="fragment">
+            We have $\mathrm{Las}_r \geq A(n, d_\min, w)$ and $\mathrm{Las}_{A(n, d_\min, w)} = A(n, d_\min, w)$.
+          </p>
+        </section>
+        <section>
+          <h2>Convex relaxation: The Lasserre hierarchy</h2>
+
+          Every <b>fixed level</b> of the Lasserre hierarchy can be computed in <b>polynomial time</b> in $n$.
+
+          <br>
+
+          <p class="fragment">
+            The semidefinite constraint is of size
+            $${\color{red}\Theta\left(n^{wr}\right)},$$
+            and grows too quickly for computations in practice.
+          </p>
+        </section>
+      </section>
+      <section>
+        <section>
+          <h2>
+            SDP Symmetry reduction basics
+          </h2>
+
+          <br />
+
+          <img style="width: 60%;" src="./LatexPics/LatexPic-3.svg">
+
+        </section>
+        <section>
+          <h2>
+            Symmetric solutions
+          </h2>
+
+
+
+          <b>$S_n$</b> acts on the words $v=(v_1,v_2,\ldots, v_n)\in \{0,1\}^n$ by
+          $$\sigma(v) = (v_{\sigma(1)}, v_{\sigma(2)}, \ldots, v_{\sigma(n)}) .$$
+
+          <p class="fragment">
+            This action extends to <b>permute the rows and columns</b> of the positive semidefinite matrix
+            $$\sigma(M(y))=\left(y_{\sigma(C_1)\cup \sigma(C_2)}\right)_{C_1, C_2 \in \mathcal{C}_r} = M(\sigma(y)).$$
+          </p>
+
+          <b class="fragment">
+            If $M(y)$ is positive semidefinite, then $\sigma(M(y))$ is as well!
+          </b>
+
+        </section>
+        <section>
+
+          <h2>
+            How do we exploit symmetries?
+          </h2>
+
+          As the feasible set of an SDP is <b>convex</b>, we can <b>average</b> feasible solutions:
+
+          $$\mathcal{R}(M(y)) := \frac{1}{|{\color{darkorange}S_n}|} \sum_{{\color{darkorange}\sigma}\in
+          {\color{darkorange}S_n}}{\color{darkorange}\sigma}(M(y))$$
+
+
+          <b>
+
+            $\mathcal{R}(X)$ is again feasible, with the same objective value as $X$!
+          </b>
+
+          </span>
+
+        </section>
+        <section>
+          <h2>
+            Symmetric optimal solutions
+          </h2>
+
+          <div class="r-stack">
+
+            <span class="fragment fade-out" data-fragment-index="1">
+              If $X^*$ is an optimal solution, then so is $\mathcal{R}(X^*)$. This solution is
+              <b>
+                invariant under actions of ${\color{darkorange}S_n}$:
+              </b>
+              $${\color{darkorange}\sigma}(\mathcal{R}(X^*)) = \mathcal{R}(X^*). $$
+            </span>
+            <span class="fragment fade-in-then-out" data-fragment-index="1">
+
+              We can restrict the SDP to optimize only over <b>invariant</b> matrices:
+              \begin{align}
+              \inf\enspace&\langle C,X\rangle \\
+              \text{s.t.}\enspace& \langle A_i, X\rangle = b_i\quad \text{for all } i,\\
+              & X\succcurlyeq 0,\\
+              & {\color{darkorange}\mathcal{R}(X)=X}.\\
+              \end{align}
+
+            </span>
+            <span class="fragment fade-in-then-out" data-fragment-index="2">
+
+              In the case of ${\color{darkorange}G}=D_{10}=C_5\times Z_2$ we can restrict $X$ to have the <b>pattern</b>
+
+              $$\begin{pmatrix}
+              {\color{red}A} & {\color{darkorange}B} & {\color{green}C} & {\color{green}C} & {\color{darkorange}B}\\
+              {\color{darkorange}B} & {\color{red}A} & {\color{darkorange}B} & {\color{green}C} & {\color{green}C}\\
+              {\color{green}C} & {\color{darkorange}B} & {\color{red}A} & {\color{darkorange}B} & {\color{green}C}\\
+              {\color{green}C} & {\color{green}C} & {\color{darkorange}B} & {\color{red}A} & {\color{darkorange}B} \\
+              {\color{darkorange}B} & {\color{green}C} & {\color{green}C} & {\color{darkorange}B} & {\color{red}A}\\
+              \end{pmatrix}$$
+            </span>
+          </div>
+
+        </section>
+
+        <section>
+          <h3>
+            Block-diagonalization
+          </h3>
+
+          <div class="r-stack">
+
+            <span class="fragment fade-out" data-fragment-index="1">
+
+              $$\tiny\begin{pmatrix}
+              {\color{red}A} & {\color{darkorange}B} & {\color{green}C} & {\color{green}C} & {\color{darkorange}B}\\
+              {\color{darkorange}B} & {\color{red}A} & {\color{darkorange}B} & {\color{green}C} & {\color{green}C}\\
+              {\color{green}C} & {\color{darkorange}B} & {\color{red}A} & {\color{darkorange}B} & {\color{green}C}\\
+              {\color{green}C} & {\color{green}C} & {\color{darkorange}B} & {\color{red}A} & {\color{darkorange}B} \\
+              {\color{darkorange}B} & {\color{green}C} & {\color{green}C} & {\color{darkorange}B} & {\color{red}A}\\
+              \end{pmatrix}
+              $$
+              <p>
+                is positive semidefinite if and only if
+
+              </p>
+              <ul>
+                <li>
+                  ${\color{red}A} + {\color{darkorange}B} + {\color{green}C} \geq 0$,
+                </li>
+                <ul>
+                  ${\color{red}A} +\frac{\sqrt{5}-1}{4}{\color{darkorange}B} - \frac{\sqrt{5}+1}{4}{\color{green}C} \geq
+                  0$,
+                </ul>
+                <li>
+                  ${\color{red}A} -\frac{\sqrt{5}+1}{4}{\color{darkorange}B}+\frac{\sqrt{5}-1}{4}{\color{green}C} \geq
+                  0$.
+                </li>
+              </ul>
+
+
+            </span>
+            <span class="fragment fade-in" data-fragment-index="1">
+              In general we may still get multiple bigger blocks
+
+              <p>
+
+                <img style="width: 60%;" src="./LatexPics/LatexPic-3.svg">
+              </p>
+
+              but <b>the sum of the block sizes is often significantly lower than $n$!</b>
+
+            </span>
+          </div>
+
+        </section>
+      </section>
+      <section>
+        <section>
+          <h3>Symmetry reduced Lasserre hierarchy for constant weight codes</h3>
+
+          <ul>
+            <li>
+              <b>[Schrijver, 1979]</b>: The first level $\mathrm{Las}_1$ with entrywise nonnegativity is equivalent to
+              the <b>Delsarte LP-bound</b> for constant weight codes.
+            </li>
+            <li class="fragment">
+              <b>[Schrijver, 2005]</b> computes a <b>3-point bound</b> (in between $\mathrm{Las}_1$ and
+              $\mathrm{Las}_2$).
+            </li>
+            <li class="fragment">
+
+              <b>[Polak, 2019]</b> computes a <b>4-point bound</b>, and in some small cases the full second level
+              <b>$\mathrm{Las}_2$</b>.
+            </li>
+          </ul>
+        </section>
+      </section>
+      <section>
+        <section>
+
+          <div class="container">
+            <div class="col" style="flex: 3">
+              <br><br><br>
+              <br><br>
+
+              <h3>
+                Razborov style hierarchy
+              </h3>
+
+              <h4>
+                Prioritizing codes on <b>few vertices</b>
+              </h4>
+
+            </div>
+            <div class="col" style="flex: 2">
+              <img style="width: 80%;" src="FlagAlg.png">
+            </div>
+          </div>
+
+
+        </section>
+
+        <section>
+
+          <h3>
+            Möbius-transforms
+            <small><sup>(Not to be confused with Möbius-transformations)</sup></small>
+          </h3>
+
+
+          <div class="r-stack">
+            <div class="fragment fade-out" data-fragment-index="1">
+
+              <p>
+                Well-known fact: <b>The $n$'th level of the Lasserre hierarchy is sharp.</b>
+              </p>
+
+              <br />
+              <p>
+                <b>Proof idea:</b> Applying a <b>Möbius-transform</b> to the rows and columns of the SDP
+                <b>diagonalizes</b> the hierarchy.
+              </p>
+
+            </div>
+            <div class="fragment fade-in-then-out" data-fragment-index="1">
+
+              <b>Example:</b> Optimize over two binary variables $x_1,x_2\in\{0,1\}.$
+
+              <br />
+
+              The second level of the <b>Lasserre hierarchy</b> involves a matrix
+              $\color{darkorange}X$ of the form
+              $$\small\begin{pmatrix}1 & x_1 & x_2 & x_1x_2\\
+              x_1 & x_1 & x_1x_2 & x_1x_2\\
+              x_2 & x_1x_2 & x_2 & x_1x_2\\
+              x_1x_2 & x_1x_2 & x_1x_2 & x_1x_2\end{pmatrix} $$
+
+            </div>
+            <div class="fragment fade-in-then-out" data-fragment-index="2">
+
+              The <b>Möbius-transform</b> assigns the following
+
+              $$\begin{align}1 &\longrightarrow (1-x_1)(1-x_2)\\
+              x_1 &\longrightarrow x_1(1-x_2)\\
+              x_2 & \longrightarrow (1-x_1)x_2\\
+              x_1x_2 & \longrightarrow x_1x_2\end{align}$$
+
+              <b>We multiply monomials $m$ with $(1-x_i)$ for all $x_i$ not appearing in
+                $m$.</b>
+
+            </div>
+            <div class="fragment fade-in" data-fragment-index="3">
+
+              As $\color{darkorange}x_i(1-x_i)=0$, applying the transform to the rows and columns of
+              $\color{darkorange}X$ diagonalizes the matrix:
+
+              $$\tiny\begin{pmatrix}1 & x_1 & x_2 & x_1x_2\\
+              x_1 & x_1 & x_1x_2 & x_1x_2\\
+              x_2 & x_1x_2 & x_2 & x_1x_2\\
+              x_1x_2 & x_1x_2 & x_1x_2 & x_1x_2\end{pmatrix} \rightarrow\begin{pmatrix}(1-x_1)(1-x_2) & &
+              &\\&x_1(1-x_2)&&\\&&(1-x_1)x_2&\\&&&x_1x_2\end{pmatrix}$$
+
+
+            </div>
+          </div>
+
+        </section>
+        <section>
+          <h3>
+            Möbius-transform based symmetry reduction
+          </h3>
+
+          <p>
+            Normally, we can only apply the transform to the <b>final level</b> of the
+            Lasserre hierarchy.
+          </p>
+
+          <br />
+
+          <p>
+            We <b>truncate</b> the Lasserre hierarchy in such a way, that we can <b>apply the transform earlier</b>
+            to sub-problems, partially diagonalizing it.
+          </p>
+
+
+        </section>
+
+        <section>
+
+          <h3>
+            Back to codes
+          </h3>
+
+
+          We are in the setting of
+          <ul>
+            <li>
+              <b>variables</b> $x_{u}\in\{0,1\}$ corresponding to <b>words $u$</b>,
+            </li>
+            <li>
+              <b>monomials</b> $C$ corresponding to <b>codes.</b>
+            </li>
+          </ul>
+
+        </section>
+
+        <section>
+
+          <h3>
+            Prioritizing "small" codes
+          </h3>
+
+          <div class="r-stack">
+
+            <!-- STACK 1 -->
+            <div class="fragment fade-out" data-fragment-index="2">
+
+              We prioritize codes with <b>small support</b>. Let $\color{green}T$ be the maximum size of support we want
+              to appear in the hierarchy.
+
+              <div class="fragment" data-fragment-index="1">
+                <br>
+                <div class="r-frame">
+                  We optimize over sums of squares
+                  $$\sum p_i^2, $$
+                  where <b>each square</b> $p_i^2$ does not contain a code with support bigger than
+                  $\color{green}T$.
+                </div>
+              </div>
+
+            </div>
+            <!-- STACK 2 -->
+
+            <div class="fragment fade-in-then-out" data-fragment-index="2">
+              We optimize over sums of squares
+              $${\color{red}[x]}^T X {\color{red}[x]},$$
+              where ${\color{red}[x]}$ contains codes with support size at most ${\color{green}T}$, where $X$ has a
+              <b>rank one decomposition</b>
+              $$X = X_1 + \ldots + X_k,$$
+              such that each ${\color{red}[x]}^T X_i {\color{red}[x]}$ is a linear combination of codes with support at
+              most
+              $\color{green}T$.
+
+            </div>
+
+            <!-- STACK 3 -->
+            <div class="fragment fade-in" data-fragment-index="3">
+
+              The $X_i$ correspond exactly to the <b>maximal
+                cliques</b> in the sparsity pattern given by
+              $$ (X_i)_{C_1,C_2} = 0 \quad\text{if }\lvert\mathrm{supp}(C_1\cup C_2)\rvert > {\color{green}T}.$$
+
+            </div>
+
+          </div>
+
+
+        </section>
+
+        <section>
+
+          <h3>
+            The maximal cliques
+          </h3>
+
+          For each ${\color{darkorange}K}\leq {\color{green}T}$ with ${\color{darkorange}K}\enspace\mathrm{mod}\enspace
+          2\equiv
+          {\color{green}T}$, the maximal clique $\mathcal{B}_{\color{darkorange}K}$ contains the codes of the form:
+
+
+          <p>
+            <img style="width: 50%;" src="./CliqueGraphs.svg">
+
+          </p>
+
+
+          <div class="fragment">
+            <b>Unions of codes within the same $\mathcal{B}_{\color{darkorange}K}$ result in a
+              code with support of size at most $\color{green}T$.</b>
+          </div>
+
+        </section>
+        <section>
+          <h4>Example: Maximal clique $w=3, {\color{green}T} = 5, {\color{darkorange}K} = 3$</h4>
+
+          $\mathcal{B}_{\color{darkorange}K}$ contains the codes with support in $[{\color{darkorange}K}] = \{1,2,3\}$
+          and one additional coordinate.
+
+          $$\small\mathcal{B}_3 = \{1,x_{123},x_{12i}, x_{13i},x_{23i}, x_{123}x_{12i},
+          x_{123}x_{13i},x_{123}x_{23i},\}$$
+
+        </section>
+
+        <section>
+
+          <h3>
+            Symmetry reduction
+          </h3>
+
+          Symmetry reduction is trivial: <b>We only consider the maximal cliques up to
+            symmetry!</b>
+
+        </section>
+
+        <section>
+
+          <h3>
+            Möbius transform
+          </h3>
+
+
+          <p>
+            Each clique $\mathcal{B}_{\color{darkorange}K}$ is closed under addition of words with support within
+            $[{\color{darkorange}K}]$.
+          </p>
+
+          <br />
+
+          <div class="fragment">
+
+            <b>$\longrightarrow$ Möbius-transform on the first $\color{darkorange}K$
+              vertices</b>.<br>
+
+            If $C_1\vert_{[{\color{darkorange}K}]} \neq C_2\vert_{[{\color{darkorange}K}]}$, then the product of the
+            transformed codes is zero.
+          </div>
+
+          <br />
+
+          <b class="fragment">$\longrightarrow$ One block for each code on $[K]$. We only need to consider codes up to
+            isomorphism!</b>
+
+        </section>
+        <section>
+          <h4>Example: Maximal clique $w=3, {\color{green}T} = 5, {\color{darkorange}K} = 3$</h4>
+
+          $$\small\mathcal{B}_3 = \{1,x_{123},x_{12i}, x_{13i},x_{23i}, x_{123}x_{12i},
+          x_{123}x_{13i},x_{123}x_{23i},\}$$
+
+          Splits into
+
+          $$\small\left\lbrace {\color{darkorange}x_{123}}x_{12i}, {\color{darkorange}x_{123}}x_{13i},
+          {\color{darkorange}x_{123}}x_{23i}\right\rbrace$$
+          and
+          $$\small\left\lbrace {\color{darkorange}(1-x_{123})}, {\color{darkorange}(1-x_{123})}x_{12i},
+          {\color{darkorange}(1-x_{123})}x_{13i},
+          {\color{darkorange}(1-x_{123})}x_{23i}\right\rbrace$$
+
+        </section>
+        <section>
+
+          <h3>
+            Breaking Schur's Lemma
+          </h3>
+
+          <div class="r-stack">
+            <div class="fragment fade-out" data-fragment-index="2">
+
+              <div class="r-frame">
+
+                Let $\color{darkorange}M$, $\color{darkorange}N$ be two <b>irreducible</b> $G$-modules over a ring $R$.
+                Let
+                ${\color{green}\varphi} : {\color{darkorange}M}\to {\color{darkorange}N}$ be a homomorphism.
+
+                <ul>
+                  <li>
+                    If $\color{darkorange}M$ and $\color{darkorange}N$ are not isomorphic, then
+                    ${\color{green}\varphi} \equiv 0$.
+                  </li>
+                  <li>
+                    If ${\color{darkorange}M}\simeq {\color{darkorange}N}$ and $R$ is an <span
+                      style="color:red">algebraically closed field</span>, then ${\color{green}\varphi} = c\mathrm{I}$
+                    for a $c\in R$.
+                  </li>
+                </ul>
+
+              </div>
+
+              <br />
+
+              <div class="fragment" data-fragment-index="1">
+                We optimize over $\{0,1\} = \mathbb{Z}_2$, which is <b>not algebraically
+                  closed!</b>
+              </div>
+
+            </div>
+            <div class="fragment fade-in" data-fragment-index="2">
+
+              <!-- <img class="r-stretch" src="Pic_BreakingSchurs.svg"> -->
+              $$\small\begin{align}M_1 & = \mathrm{span}\left\lbrace x_{123}x_{12i}, x_{123}x_{13i},
+              x_{123}x_{23i}\right\rbrace\\
+              M_2 & = \mathrm{span}\left\lbrace (1-x_{123})x_{12i}, (1-x_{123})x_{13i},
+              (1-x_{123})x_{23i}\right\rbrace\end{align}$$
+
+              Both modules are <b>isomorphic</b> to the $S_{n-3}$-module $3M^{(1)}$, but also <b>orthogonal</b> to each
+              other, as
+              $x_{123}(1-x_{123}) = 0$.
+            </div>
+
+          </div>
+
+        </section>
+
+        <section>
+
+          <h3>
+            Additional symmetries
+          </h3>
+
+          <p>
+            We obtain <b>one block for each code $\color{green}C$ on up to $\color{green}T$ coordinates</b>.
+          </p>
+
+          <br />
+
+          <div class="fragment" data-fragment-index="4">
+            The symmetries of each block are now given by
+            $$\mathrm{Aut}({\color{green}C}) \times S_{n-|\mathrm{supp}({\color{green}C})|} $$
+            <span style="color:red">The symmetry groups are complicated!</span>
+
+          </div>
+
+          <br />
+
+          <div class="fragment" data-fragment-index="5">
+            We can still block-diagonalize the algebra numerically.
+          </div>
+
+
+        </section>
+
+        <section>
+
+          <h3>
+            Connection to Razborov's hierarchy for flag algebras
+          </h3>
+
+          <p>
+            We obtain blocks for each code ${\color{green}C}$ with symmetry
+            $$\mathrm{Aut}({\color{green}C}) \times S_{n-|\mathrm{supp}({\color{green}C})|}. $$
+          </p>
+
+          <p class="fragment">
+            We obtain the <b>Flag Algebra $\mathcal{A}^{\color{green}C}$ of <b>type</b> ${\color{green}C}$ </b>by
+            restricting to the elements invariant under $S_{n-|\mathrm{supp}({\color{green}C})|},$ and letting $n$ run
+            to infinity.
+          </p>
+
+          <p class="fragment">
+            We call the thus obtained hierarchy $\mathrm{Raz}_{\color{green}T}$.
+          </p>
+
+        </section>
+
+        <section>
+
+          <h3>
+            Comparing the hierarchies
+          </h3>
+
+          In the setting of codes of constant weight $w$ we have
+          \begin{equation}
+          \mathrm{Las}_{{\color{darkorange}d}} \geq \mathrm{Raz}_{2w\color{darkorange}d}
+          \end{equation}
+          and
+          \begin{equation}
+          \mathrm{Raz} _{\color{green}T} \geq \mathrm{Las}
+          _{\binom{{\color{green}T}}{w}},
+          \end{equation}
+          where <b>lower means better</b>.
+
+        </section>
+      </section>
+      <section>
+        <section>
+          <h3>Results: Case $A(n,d,w) = A(11,4,3) = 17$</h3>
+
+          <p>
+            Here the <b>Delsarte-, 3-point, 4-point</b> and <b>$\mathrm{Las}_2$-bounds</b> are all
+            <b>$18\frac{1}{3}$</b>.
+          </p>
+
+          <p>
+            We can compute
+            $$\begin{align}
+            \mathrm{Raz}_3 &= 165.0\quad \text{(3 variables)}\\
+            \mathrm{Raz}_4 &= 18.33\quad \text{(6 variables)}\\
+            \mathrm{Raz}_5 &= 18.33\quad \text{(11 variables)}\\
+            \mathrm{Raz}_6 &= 18.33\quad \text{(30 variables)}\\
+            \mathrm{Raz}_7 &= {\color{darkorange}18.08}\quad \text{(90 variables)}\\
+            \mathrm{Raz}_8 &= {\color{darkorange}17.51}\quad \text{(497 variables)}\\
+            \mathrm{Raz}_9 &= {\color{darkorange}17.51}\quad \text{(5044 variables)}\\
+            \end{align}$$
+          </p>
+        </section>
+        <section>
+          <h3>(Early) numerical results</h3>
+
+          <ul>
+            <li>
+              We always reach at least the <b>Delsarte-bound</b>.
+            </li>
+            <li class="fragment">
+              In some cases we improve over <b>$\mathrm{Las}_2$</b>, but not enough to improve best known bounds.
+            </li>
+          </ul>
+
+          <p class="fragment">
+            The SDPs are still quite small (<b>order thousands of total variables in the blocks</b>), the bottleneck is
+            the <b>computation of the coefficients</b> of the hierachy itself.
+          </p>
+        </section>
+      </section>
+      <section>
+        <h3>Summary</h3>
+
+        <ul>
+          <li>
+            We propose a <b>new hierarchy of upper bounds</b> for error correcting codes.
+          </li>
+          <li>
+            When working with binary variables, we can potentially do <b>better symmetry reductions than Schur's Lemma implies</b>.
+          </li>
+          <li>
+            Similar hierarchies may lead to improved bounds for other problems.
+          </li>
+        </ul>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="./dist/reveal.js"></script>
+
+  <script src="./plugin/markdown/markdown.js"></script>
+  <script src="./plugin/highlight/highlight.js"></script>
+  <script src="./plugin/zoom/zoom.js"></script>
+  <script src="./plugin/notes/notes.js"></script>
+  <script src="./plugin/math/math.js"></script>
+  <script>
+    function extend() {
+      var target = {};
+      for (var i = 0; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (source.hasOwnProperty(key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    }
+
+    // default options to init reveal.js
+    var defaultOptions = {
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+      transition: 'default', // none/fade/slide/convex/concave/zoom
+      plugins: [
+        RevealMarkdown,
+        RevealHighlight,
+        RevealZoom,
+        RevealNotes,
+        RevealMath
+      ]
+    };
+
+    // options from URL query string
+    var queryOptions = Reveal().getQueryHash() || {};
+
+    var options = extend(defaultOptions, { "pdfSeparateFragments": true, "transition": "slide" }, queryOptions);
+  </script>
+
+  <script src="./plugins/manim.js"></script>
+  <script src="./plugin.js"></script>
+
+  <script>
+    Reveal.initialize(options);
+  </script>
+</body>
+
+</html>
