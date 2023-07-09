@@ -60,14 +60,14 @@
       </section>
       <section data-auto-animate>
         <h2>Error correcting codes</h2>
-        
+
         <div class="container">
           <div class="col">
             <img style="width: 75%;" src="./A.jpg">
           </div>
         </div>
-        
-        </section>
+
+      </section>
       <section data-auto-animate>
         <h2>Error correcting codes</h2>
 
@@ -79,36 +79,36 @@
             <img style="width: 75%;" src="./B.jpg">
           </div>
         </div>
-        </section>
+      </section>
       <section data-auto-animate>
         <h2>Error correcting codes</h2>
 
         <div class="container">
           <div class="col" style="width: 48%;">
             <img style="width: 75%;" src="./A.jpg">
-            <img style="width: 75%;" src="./B.jpg">							
+            <img style="width: 75%;" src="./B.jpg">
           </div>
           <div class="col" style="width: 48%;">
             <img style="width: 75%;" src="./C.jpg">
           </div>
         </div>
 
-        </section>
+      </section>
       <section data-auto-animate>
         <h2>Error correcting codes</h2>
 
         <div class="container">
           <div class="col" style="width: 48%;">
             <img style="width: 75%;" src="./A.jpg">
-            <img style="width: 75%;" src="./B.jpg">							
+            <img style="width: 75%;" src="./B.jpg">
           </div>
           <div class="col" style="width: 48%;">
-            <img style="width: 75%;"  src="./C.jpg">
+            <img style="width: 75%;" src="./C.jpg">
             <img style="width: 75%;" src="./D.jpg">
           </div>
         </div>
 
-        </section>
+      </section>
       <section>
         <section>
           <h2>Error correcting codes</h2>
@@ -142,11 +142,11 @@
         </section>
         <section>
           <h3>Existing bounds</h3>
-          
+
           <b>
             <a href="https://www.win.tue.nl/~aeb/codes/Andw.html">Bound tables by Andries Brouwer</a>
           </b>
-          
+
         </section>
       </section>
       <section>
@@ -167,7 +167,7 @@
             Then clearly $A(n, d_\min, w) = \alpha(G)$.
           </p>
 
-          <img style="width: 30%;"  class="fragment" src="./LatexPics/LatexPic-2.svg">
+          <img style="width: 30%;" class="fragment" src="./LatexPics/LatexPic-2.svg">
         </section>
         <section>
           <h2>Polynomial optimization</h2>
@@ -363,13 +363,17 @@
 
           <ul>
             <li>
-              The first level $\mathrm{Las}_1$ of the hierarchy is equivalent to the <b>Delsarte LP-bound</b> for constant weight codes.
+              <b>[Schrijver, 1979]</b>: The first level $\mathrm{Las}_1$ with entrywise nonnegativity is equivalent to
+              the <b>Delsarte LP-bound</b> for constant weight codes.
             </li>
             <li class="fragment">
-              <b>Schrijver</b> computes a 3-point bound (in between $\mathrm{Las}_1$ and $\mathrm{Las}_2$).
+              <b>[Schrijver, 2005]</b> computes a <b>3-point bound</b> (in between $\mathrm{Las}_1$ and
+              $\mathrm{Las}_2$).
             </li>
             <li class="fragment">
-              <b>Polak</b> computes a 4-point bound and in some small cases the full second level.
+
+              <b>[Polak, 2019]</b> computes a <b>4-point bound</b>, and in some small cases the full second level
+              <b>$\mathrm{Las}_2$</b>.
             </li>
           </ul>
         </section>
@@ -385,7 +389,7 @@
               <h3>
                 Razborov style hierarchy
               </h3>
-    
+
               <h4>
                 Prioritizing codes on <b>few vertices</b>
               </h4>
@@ -450,7 +454,8 @@
             </div>
             <div class="fragment fade-in" data-fragment-index="3">
 
-              As $\color{darkorange}x_i(1-x_i)=0$, applying the transform to the rows and columns of $\color{darkorange}X$ diagonalizes the matrix:
+              As $\color{darkorange}x_i(1-x_i)=0$, applying the transform to the rows and columns of
+              $\color{darkorange}X$ diagonalizes the matrix:
 
               $$\tiny\begin{pmatrix}1 & x_1 & x_2 & x_1x_2\\
               x_1 & x_1 & x_1x_2 & x_1x_2\\
@@ -581,77 +586,81 @@
         <section>
           <h4>Example: Maximal clique $w=3, {\color{green}T} = 5, {\color{darkorange}K} = 3$</h4>
 
-          $\mathcal{B}_{\color{darkorange}K}$ contains the codes with support in $[{\color{darkorange}K}] = \{1,2,3\}$ and one additional coordinate.
+          $\mathcal{B}_{\color{darkorange}K}$ contains the codes with support in $[{\color{darkorange}K}] = \{1,2,3\}$
+          and one additional coordinate.
 
-          $$\small\mathcal{B}_3 = \{1,x_{123},x_{12i}, x_{13i},x_{23i}, x_{123}x_{12i}, x_{123}x_{13i},x_{123}x_{23i},\}$$
+          $$\small\mathcal{B}_3 = \{1,x_{123},x_{12i}, x_{13i},x_{23i}, x_{123}x_{12i},
+          x_{123}x_{13i},x_{123}x_{23i},\}$$
 
         </section>
-        
+
         <section>
 
           <h3>
             Symmetry reduction
           </h3>
-          
+
           Symmetry reduction is trivial: <b>We only consider the maximal cliques up to
             symmetry!</b>
-            
-          </section>
-          
-          <section>
-            
-            <h3>
-              Möbius transform
-            </h3>
-            
-            
-            <p>
+
+        </section>
+
+        <section>
+
+          <h3>
+            Möbius transform
+          </h3>
+
+
+          <p>
             Each clique $\mathcal{B}_{\color{darkorange}K}$ is closed under addition of words with support within
             $[{\color{darkorange}K}]$.
           </p>
-          
+
           <br />
-          
+
           <div class="fragment">
-            
+
             <b>$\longrightarrow$ Möbius-transform on the first $\color{darkorange}K$
               vertices</b>.<br>
-              
-              If $C_1\vert_{[{\color{darkorange}K}]} \neq C_2\vert_{[{\color{darkorange}K}]}$, then the product of the
-              transformed codes is zero.
-            </div>
-            
-            <br />
-            
-            <b class="fragment">$\longrightarrow$ One block for each code on $[K]$. We only need to consider codes up to
+
+            If $C_1\vert_{[{\color{darkorange}K}]} \neq C_2\vert_{[{\color{darkorange}K}]}$, then the product of the
+            transformed codes is zero.
+          </div>
+
+          <br />
+
+          <b class="fragment">$\longrightarrow$ One block for each code on $[K]$. We only need to consider codes up to
             isomorphism!</b>
 
-          </section>
-          <section>
-            <h4>Example: Maximal clique $w=3, {\color{green}T} = 5, {\color{darkorange}K} = 3$</h4>
-  
-            $$\small\mathcal{B}_3 = \{1,x_{123},x_{12i}, x_{13i},x_{23i}, x_{123}x_{12i}, x_{123}x_{13i},x_{123}x_{23i},\}$$
-  
-            Splits into 
+        </section>
+        <section>
+          <h4>Example: Maximal clique $w=3, {\color{green}T} = 5, {\color{darkorange}K} = 3$</h4>
 
-            $$\small\left\lbrace {\color{darkorange}x_{123}}x_{12i}, {\color{darkorange}x_{123}}x_{13i},
-            {\color{darkorange}x_{123}}x_{23i}\right\rbrace$$
-              and 
-              $$\small\left\lbrace {\color{darkorange}(1-x_{123})}, {\color{darkorange}(1-x_{123})}x_{12i}, {\color{darkorange}(1-x_{123})}x_{13i},
-              {\color{darkorange}(1-x_{123})}x_{23i}\right\rbrace$$
+          $$\small\mathcal{B}_3 = \{1,x_{123},x_{12i}, x_{13i},x_{23i}, x_{123}x_{12i},
+          x_{123}x_{13i},x_{123}x_{23i},\}$$
 
-          </section>
-          <section>
-            
-            <h3>
-              Breaking Schur's Lemma
-            </h3>
-            
-            <div class="r-stack">
-              <div class="fragment fade-out" data-fragment-index="2">
-                
-                <div class="r-frame">
-                  
+          Splits into
+
+          $$\small\left\lbrace {\color{darkorange}x_{123}}x_{12i}, {\color{darkorange}x_{123}}x_{13i},
+          {\color{darkorange}x_{123}}x_{23i}\right\rbrace$$
+          and
+          $$\small\left\lbrace {\color{darkorange}(1-x_{123})}, {\color{darkorange}(1-x_{123})}x_{12i},
+          {\color{darkorange}(1-x_{123})}x_{13i},
+          {\color{darkorange}(1-x_{123})}x_{23i}\right\rbrace$$
+
+        </section>
+        <section>
+
+          <h3>
+            Breaking Schur's Lemma
+          </h3>
+
+          <div class="r-stack">
+            <div class="fragment fade-out" data-fragment-index="2">
+
+              <div class="r-frame">
+
                 Let $\color{darkorange}M$, $\color{darkorange}N$ be two <b>irreducible</b> $G$-modules over a ring $R$.
                 Let
                 ${\color{green}\varphi} : {\color{darkorange}M}\to {\color{darkorange}N}$ be a homomorphism.
@@ -701,7 +710,9 @@
             Additional symmetries
           </h3>
 
-          We obtain <b>one block for each code $\color{green}C$ on up to $\color{green}T$ coordinates</b>.
+          <p>
+            We obtain <b>one block for each code $\color{green}C$ on up to $\color{green}T$ coordinates</b>.
+          </p>
 
           <br />
 
@@ -727,15 +738,23 @@
             Connection to Razborov's hierarchy for flag algebras
           </h3>
 
+          <p>
+            We obtain blocks for each code ${\color{green}C}$ with symmetry
+            $$\mathrm{Aut}({\color{green}C}) \times S_{n-|\mathrm{supp}({\color{green}C})|}. $$
+          </p>
 
-          We obtain blocks for each code ${\color{green}C}$ with symmetry
-          $$\mathrm{Aut}({\color{green}C}) \times S_{n-|\mathrm{supp}({\color{green}C})|}. $$
+          <p class="fragment">
+            We obtain the <b>Flag Algebra $\mathcal{A}^{\color{green}C}$ of <b>type</b> ${\color{green}C}$ </b>by
+            restricting to the elements invariant under $S_{n-|\mathrm{supp}({\color{green}C})|},$ and letting $n$ run
+            to infinity.
+          </p>
 
-          We obtain the <b>Flag Algebra $\mathcal{A}^{\color{green}C}$ of <b>type</b> ${\color{green}C}$ </b>by
-          restricting to the elements invariant under $S_{n-|\mathrm{supp}({\color{green}C})|},$ and letting $n$ run to infinity.
-          
+          <p class="fragment">
+            We call the thus obtained hierarchy $\mathrm{Raz}_{\color{green}T}$.
+          </p>
+
         </section>
-        
+
         <section>
 
           <h3>
@@ -756,21 +775,61 @@
         </section>
       </section>
       <section>
-        <h3>(Early) numerical results</h3>
+        <section>
+          <h3>Results: Case $A(n,d,w) = A(11,4,3) = 17$</h3>
+
+          <p>
+            Here the <b>Delsarte-, 3-point, 4-point</b> and <b>$\mathrm{Las}_2$-bounds</b> are all
+            <b>$18\frac{1}{3}$</b>.
+          </p>
+
+          <p>
+            We can compute
+            $$\begin{align}
+            \mathrm{Raz}_3 &= 165.0\quad \text{(3 variables)}\\
+            \mathrm{Raz}_4 &= 18.33\quad \text{(6 variables)}\\
+            \mathrm{Raz}_5 &= 18.33\quad \text{(11 variables)}\\
+            \mathrm{Raz}_6 &= 18.33\quad \text{(30 variables)}\\
+            \mathrm{Raz}_7 &= {\color{darkorange}18.08}\quad \text{(90 variables)}\\
+            \mathrm{Raz}_8 &= {\color{darkorange}17.51}\quad \text{(497 variables)}\\
+            \mathrm{Raz}_9 &= {\color{darkorange}17.51}\quad \text{(5044 variables)}\\
+            \end{align}$$
+          </p>
+        </section>
+        <section>
+          <h3>(Early) numerical results</h3>
+
+          <ul>
+            <li>
+              We always reach at least the <b>Delsarte-bound</b>.
+            </li>
+            <li class="fragment">
+              In some cases we improve over <b>$\mathrm{Las}_2$</b>, but not enough to improve best known bounds.
+            </li>
+          </ul>
+
+          <p class="fragment">
+            The SDPs are still quite small (<b>order thousands of total variables in the blocks</b>), the bottleneck is
+            the <b>computation of the coefficients</b> of the hierachy itself.
+          </p>
+        </section>
+      </section>
+      <section>
+        <h3>Summary</h3>
 
         <ul>
           <li>
-            We always reach at least the <b>Delsarte-bound</b>.
+            We propose a <b>new hierarchy of upper bounds</b> for error correcting codes.
           </li>
-          <li class="fragment">
-            In some cases we improve over Delsarte, and even <b>Schrijver's 3-point boint</b>, but not enough to improve best known bounds.
+          <li>
+            When working with binary variables, we can potentially do <b>better symmetry reductions than Schur's Lemma implies</b>.
+          </li>
+          <li>
+            Similar hierarchies may lead to improved bounds for other problems.
           </li>
         </ul>
-
-        <p class="fragment">
-          The SDPs are still quite small (<b>order hundreds of total variables</b>), the bottleneck is the <b>computation of the coefficients</b> of the hierachy itself. 
-        </p>
       </section>
+
     </div>
   </div>
 
