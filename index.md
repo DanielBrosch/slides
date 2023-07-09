@@ -9,3 +9,4 @@
 - SDPs for extremal combinatorics: [22.2.23](/SDPsForExtremalCombinatorics)
 - Flag algebra of binary rooted trees: [15.4.23](/TreeFlags)
 - Flag Sums of Squares for Sidorenko's Conjecture (SIAM OP23) [26.5.23](/CombDerivatives_SiamOP23)
+- Moebius transform based bounds for constant weight codes (SIAM AG23) [10.5.23](/MoebiusCodes)
