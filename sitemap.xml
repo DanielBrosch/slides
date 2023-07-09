@@ -14,6 +14,12 @@
     <priority>0.5</priority>
 </url>
 <url>
+    <loc>danielbrosch.github.io/slides/TreeFlags/README/index.html</loc>
+    <lastmod>2023-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
     <loc>danielbrosch.github.io/slides/SDPsForExtremalCombinatorics/examples/markdown/index.html</loc>
     <lastmod>2023-07-09</lastmod>
     <changefreq>monthly</changefreq>
@@ -26,12 +32,6 @@
     <priority>0.5</priority>
 </url>
 <url>
-    <loc>danielbrosch.github.io/slides/TreeFlags/README/index.html</loc>
-    <lastmod>2023-07-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
     <loc>danielbrosch.github.io/slides/SDPsForExtremalCombinatorics/README/index.html</loc>
     <lastmod>2023-07-09</lastmod>
     <changefreq>monthly</changefreq>
@@ -39,12 +39,6 @@
 </url>
 <url>
     <loc>danielbrosch.github.io/slides/SDPsForExtremalCombinatorics/test/simple/index.html</loc>
-    <lastmod>2023-07-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>danielbrosch.github.io/slides/MoebiusCodes/README/index.html</loc>
     <lastmod>2023-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -309,12 +303,6 @@
 </url>
 <url>
     <loc>danielbrosch.github.io/slides/FlagSymmetries/March22/plugin/notes/speaker-view/</loc>
-    <lastmod>2023-07-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>danielbrosch.github.io/slides/MoebiusCodes/OldPres/</loc>
     <lastmod>2023-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
