@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- first run: npm install -->
+<!-- then: npm start -->
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <title>Title</title>
+  <link rel="shortcut icon" href="./favicon.ico" />
+  <link rel="stylesheet" href="./dist/reset.css" />
+  <link rel="stylesheet" href="./dist/reveal.css" />
+  <link rel="stylesheet" href="./dist/theme/beige_custom.css" id="theme" />
+  <link rel="stylesheet" href="./css/highlight/zenburn.css" />
+
+  <style>
+    .container {
+      display: flex;
+      /* max-height: 100%; */
+      /* margin-bottom: 100px; */
+    }
+
+    .col {
+      flex: 1;
+      /* width: 50%; */
+      /* margin-bottom: 100px; */
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        $$\require{color}$$
+        $$\definecolor{darkorange}{rgb}{0.8, 0.45, 0}$$
+        <section data-auto-animate>
+          <h2>Is the set of trees convex?</h2>
+          <br>
+
+          <h3>Daniel Brosch</h3>
+          <h5>University of Klagenfurt</h5>
+
+          <br>
+
+          <h5>17 August 2023</h5>
+
+
+        </section>
+        <section data-auto-animate>
+          <h2>Is the set of trees convex?</h2>
+          <h4 style="color: red;">And what does this even mean?</h4>
+          <br>
+
+          <h3>Daniel Brosch</h3>
+          <h5>University of Klagenfurt</h5>
+
+          <br>
+
+          <h5>17 August 2023</h5>
+
+        </section>
+      </section>
+      <section>
+        <h3>Can we linearly interpolate between "infinite" trees?</h3>
+
+        <b>Infinite tree </b>$:=$ sequence of trees $\mathcal{T} = (T_1,T_2, T_3,\ldots)$ of increasing size
+
+        <br>
+        <br>
+
+        We only consider <b>binary rooted trees</b>.
+      </section>
+      <section>
+        <section>
+          <h3>How to encode limits of trees?</h3>
+          <sup><b>Previous attempt [Bubeck, Linial, 2014]:</b></sup><br>
+
+          Encode tree-limits as sequences of <b>subtree counts</b><br>
+          $(\#$<img style="vertical-align:middle;" src="./LatexPics/Tree-3.svg">$,\#$<img style="vertical-align:middle;"
+            src="./LatexPics/Tree-4.svg">$,\#$<img style="vertical-align:middle;" src="./LatexPics/Tree-5.svg">$,\#$<img
+            style="vertical-align:middle;" src="./LatexPics/Tree-6.svg">$,\ldots)$.
+
+          <div class="fragment">
+            And normalize to <b>densities</b><br>
+            $(d_{\mathcal{T}}($<img style="vertical-align:middle;" src="./LatexPics/Tree-3.svg">$),d_{\mathcal{T}}($<img
+              style="vertical-align:middle;" src="./LatexPics/Tree-4.svg">$),d_{\mathcal{T}}($<img
+              style="vertical-align:middle;" src="./LatexPics/Tree-5.svg">$),d_{\mathcal{T}}($<img
+              style="vertical-align:middle;" src="./LatexPics/Tree-6.svg">$),\ldots),$<br>
+            where
+            $$\sum_{\text{tree }T \text{ with $k$ vertices}} d_{\mathcal{T}}(T) = 1. $$
+          </div>
+        </section>
+        <section>
+          <h3>Distance between trees</h3>
+
+          The set of sequences $[0,1]^{\aleph_0}$ is (isomorphic to) the <b>Hilbert cube</b>, a compact metric space.
+
+          $$d(\mathcal{T}_1, \mathcal{T}_2) := \sum \frac{1}{2^i} \lvert d_{\mathcal{T}_1}(T_i) - d_{\mathcal{T}_2}(T_i)
+          \rvert$$
+        </section>
+        <section>
+          <h3>
+            <b style="color: red;"> We loose information on global structure!</b>
+          </h3>
+
+          <h4>(But here the set of tree-limits is convex.)</h4>
+        </section>
+      </section>
+      <section>
+        <section data-auto-animate>
+
+          <h3>A change of perspective</h3>
+          <h6><sup>[Czabarka, Székely, Wagner, 2017]</sup></h6>
+
+
+          <p>
+            What happens, if we only consider the <b>leaves</b> of trees to be the "vertices" of the tree?
+          </p>
+
+          <img style="width: 30%;" src="./LatexPics/LatexPic-1.svg">
+
+          <p>
+            (Inner vertices are now part of the "edges" of the tree.)
+          </p>
+        </section>
+        <section data-auto-animate>
+
+          <h3>A change of perspective</h3>
+          <h6><sup>[Czabarka, Székely, Wagner, 2017]</sup></h6>
+
+          <img style="width: 30%;" src="./LatexPics/LatexPic-1.svg"><br>
+
+          <p>
+            <b>Motivation:</b> phylogenetic trees, tanglegrams
+          </p>
+        </section>
+        <section data-auto-animate data-auto-animate-restart>
+          <h3>Subtrees</h3>
+          <img style="width: 30%;" src="./LatexPics/LatexPic-2.svg">
+        </section>
+        <section data-auto-animate>
+          <h3>Subtrees</h3>
+          <div class="container">
+            <div class="col" style="flex: 2;">
+              <img style="width: 100%;" src="./LatexPics/LatexPic-2.svg">
+            </div>
+            <div class="col" style="flex: 1;">
+              <br><br><br><br>
+              $$\Rightarrow$$
+            </div>
+            <div class="col" style="flex: 2;">
+              <img style="width: 100%;" src="./LatexPics/LatexPic-3.svg">
+            </div>
+          </div>
+        </section>
+        <section data-auto-animate>
+          <h3>Subtrees</h3>
+          <div class="container">
+            <div class="col" style="flex: 2;">
+              <img style="width: 100%;" src="./LatexPics/LatexPic-3.svg">
+            </div>
+            <div class="col" style="flex: 1;">
+              <br><br><br><br>
+              $$\Rightarrow$$
+            </div>
+            <div class="col" style="flex: 2;">
+              <img style="width: 50%;" src="./LatexPics/LatexPic-4.svg">
+            </div>
+          </div>
+        </section>
+        <section data-auto-animate>
+          <h3>Subtrees</h3>
+          <div class="container">
+            <div class="col" style="flex: 2;">
+              <img style="width: 50%;" src="./LatexPics/LatexPic-4.svg">
+            </div>
+            <div class="col" style="flex: 1;">
+              <br><br><br><br>
+              $$\Rightarrow$$
+            </div>
+            <div class="col" style="flex: 2;">
+              <br><br>
+              <img style="width: 50%;" src="./LatexPics/LatexPic-5.svg">
+            </div>
+        </section>
+        <section>
+          <h3>
+            Subtree densities
+          </h3>
+
+          <p>
+            Let $\mathcal{T} = (T_i)_{i\geq 0}$ be a tree limit.
+            Let $S$ be a finite tree.
+            $$d_{\mathcal{T}}({\color{darkorange}S}):=\lim_{i\to\infty}
+            \mathbb{P}[\left.(T_i)\right|_{ {\color{green}V_i}} \cong {\color{darkorange}S}],$$
+            where $\color{green}V_i$ is a random subset of leaves of $T_i$ of size $V({\color{darkorange}S})$.
+          </p>
+        </section>
+      </section>
+      <section>
+
+        <section data-auto-animate>
+          <h3>Where is the optimization?</h3>
+
+        </section>
+        <section data-auto-animate>
+          <h3>Where is the optimization?</h3>
+
+          <div>
+
+            $(d_{\mathcal{T}}($<img style="vertical-align:middle;" src="./LatexPics/Tree-3.svg">$),d_{\mathcal{T}}($<img
+            style="vertical-align:middle;" src="./LatexPics/Tree-4.svg">$),d_{\mathcal{T}}($<img
+            style="vertical-align:middle;" src="./LatexPics/Tree-5.svg">$),d_{\mathcal{T}}($<img
+            style="vertical-align:middle;" src="./LatexPics/Tree-6.svg">$),\ldots)$<br>
+          </div>
+
+          <div class="fragment">
+            $\hat{=}$ Dirac measure of tree $\mathcal{T}$
+          </div>
+
+          <br>
+          
+          <div class="fragment">
+            $\xrightarrow{Dualize}$ Nonnegative functions on tree-limits
+          </div>
+          
+          <br>
+          
+          <div class="fragment">
+            $\longrightarrow$ Flag sums-of-squares
+          </div>
+          
+          <br>
+          
+          <div class="fragment">
+            $\longrightarrow$ <b>Semidefinite programming!</b>
+          </div>
+        </section>
+      </section>
+      <section>
+        <h3>An <b>outer approximation</b> of the projection of trees onto</h3>
+        $\Bigg(d_{\mathcal{T}}\bigg($<img
+        style="vertical-align:middle;" src="./LatexPics/Tree-10.svg">$\bigg), d_{\mathcal{T}}\bigg($<img
+        style="vertical-align:middle;" src="./LatexPics/Tree-12.svg"> $\bigg) \Bigg) $.
+      </section>
+      <section>
+        <h3>Please send me your extended abstracts.</h3>
+      </section>
+    </div>
+  </div>
+
+  <script src="./dist/reveal.js"></script>
+
+  <script src="./plugin/markdown/markdown.js"></script>
+  <script src="./plugin/highlight/highlight.js"></script>
+  <script src="./plugin/zoom/zoom.js"></script>
+  <script src="./plugin/notes/notes.js"></script>
+  <script src="./plugin/math/math.js"></script>
+  <script>
+    function extend() {
+      var target = {};
+      for (var i = 0; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (source.hasOwnProperty(key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    }
+
+    // default options to init reveal.js
+    var defaultOptions = {
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+      transition: 'default', // none/fade/slide/convex/concave/zoom
+      plugins: [
+        RevealMarkdown,
+        RevealHighlight,
+        RevealZoom,
+        RevealNotes,
+        RevealMath
+      ]
+    };
+
+    // options from URL query string
+    var queryOptions = Reveal().getQueryHash() || {};
+
+    var options = extend(defaultOptions, { "pdfSeparateFragments": true, "transition": "slide" }, queryOptions);
+  </script>
+
+  <script src="./plugins/manim.js"></script>
+  <script src="./plugin.js"></script>
+
+  <script>
+    Reveal.initialize(options);
+  </script>
+</body>
+
+</html>
