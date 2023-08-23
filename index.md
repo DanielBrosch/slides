@@ -7,7 +7,7 @@
 - Combinatoric derivatives: [23.10.22](/CombDerivatives)
 - Crossing number: [1.12.22](/Crossing), [14.4.23](/CrossingGeorgiaTech)
 - SDPs for extremal combinatorics: [22.2.23](/SDPsForExtremalCombinatorics)
-- Flag algebra of binary rooted trees: [15.4.23](/TreeFlags)
+- Flag algebra of binary rooted trees: [15.4.23](/TreeFlags), [25.8.23](/TreeFlagsEuropt23)
 - Flag Sums of Squares for Sidorenko's Conjecture (SIAM OP23) [26.5.23](/CombDerivatives_SiamOP23)
 - Moebius transform based bounds for constant weight codes (SIAM AG23) [10.5.23](/MoebiusCodes)
 - Is the set of trees convex? [17.8.23](/Oberwolfach2333)
