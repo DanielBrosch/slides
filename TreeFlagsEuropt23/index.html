@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- first run: npm install -->
+<!-- then: npm start -->
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <title>The Flag Algebra of Rooted Binary Trees</title>
+  <link rel="shortcut icon" href="./favicon.ico" />
+  <link rel="stylesheet" href="./dist/reset.css" />
+  <link rel="stylesheet" href="./dist/reveal.css" />
+  <link rel="stylesheet" href="./dist/theme/beige_custom_2.css" id="theme"/>
+  <link rel="stylesheet" href="./css/highlight/zenburn.css" />
+
+  <style>
+    .container {
+      display: flex;
+      /* max-height: 100%; */
+      /* margin-bottom: 100px; */
+    }
+
+    .col {
+      flex: 1;
+      /* width: 50%; */
+      /* margin-bottom: 100px; */
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        $$\require{color}$$
+        $$\definecolor{darkorange}{rgb}{0.8, 0.45, 0}$$
+        <section data-background-image="https://cdn.pixabay.com/photo/2018/11/17/22/15/trees-3822149_960_720.jpg"
+          data-background-opacity="0.2">
+          <h2>The Flag Algebra of Rooted Binary Trees</h2>
+          <h4><sup>Joint work with <b>Diane Puges</b> and <b>Stephan Wagner</b></sup></h4>
+          <br>
+
+          <h3>Daniel Brosch</h3>
+          <h5>University of Klagenfurt</h5>
+
+          <br>
+
+          <h5>Europt, August 25, 2023</h5>
+
+        </section>
+        <section>
+          <img
+            src="https://yerun.eu/wp-content/uploads/2022/01/Luftbildaufnahme2021-05-07-AAU-0209_Gert_Steinthaler-1-1536x1025.jpg">
+        </section>
+        <section data-auto-animate>
+              <h3>Is the set of trees convex?</h3>
+        </section>
+        <section data-auto-animate>
+              <h3>Is the set of trees convex?</h3>
+              <h3>How many copies of a small tree can we fit into a very big tree?</h3>
+        </section>
+        <section data-auto-animate>
+              <h3>Is the set of trees convex?</h3>
+              <h3>How many copies of a small tree can we fit into a very big tree?</h3>
+          <h3 style="color: red;">And what does this even mean?</h3>
+        </section>
+        <section data-auto-animate>
+              <h3>Is the set of trees convex?</h3>
+              <h3>How many copies of a small tree can we fit into a very big tree?</h3>
+          <h3 style="color: red;">And what does this even mean?</h3>
+          <img style="width: 50%;" src="https://cdn.pixabay.com/photo/2017/07/12/08/35/detour-2496197_960_720.jpg">
+        </section>
+        <section>
+          <h3>Extremal <b>graph</b> theory</h3>
+
+          We are interested in <b>limit objects</b> of sequences of graphs
+
+          $$ \mathcal{G} = (G_i)_{i\geq 0},$$
+
+          where $G_i$ is a graph on $i$ vertices.
+
+        </section>
+        <section>
+          <h3> How many edges can there be in a <b>triangle free</b> graph?</h3>
+          <video class="fv-video" src="./videos/media/videos/TriangleFree/1080p60/Triangle2.webm"
+            fv-playback-info="./videos/media/videos/TriangleFree/1080p60/Triangle2.json">
+          </video>
+        </section>
+        <section>
+          <h3><b>Graphons</b> (<b>Graph</b>-functi<b>ons</b>)</h3>
+          <h6><sup>[Lovász, Szegedy, 2006]</sup></h6>
+
+          <br>
+
+          <div class="container">
+            <div class="col" style="flex: 2">
+              <b>Limits of adjacency matrices:</b> symmetric measurable functions
+              $$W\colon[0,1]^2\to[0,1]$$
+              <img style="width: 70%;" src="Graphon.png">
+            </div>
+            <div class="col" style="flex: 1">
+              <br>
+              <img src="GraphLimits.jpg">
+            </div>
+          </div>
+
+        </section>
+      </section>
+      <section>
+        <section>
+          <h3><b>Flag Algebras</b></h3>
+          <h6><sup>[Razborov, 2007]</sup></h6>
+
+          <br>
+
+          <div class="container">
+            <div class="col" style="flex: 2">
+
+
+              <b>Record only the limits of subgraph densities:</b>
+              $$\phi_{\mathcal{G}}(H) = \lim_{i\to\infty} (\text{density of $H$ in $G_i$}).$$
+
+              <b>Flag Algebras</b> consider the relations between different values $\phi_{\mathcal{G}}(H)$ and
+              $\phi_{\mathcal{G}}(H')$.
+
+
+            </div>
+            <div class="col" style="flex: 1">
+              <img style="width: 80%;" src="FlagAlg.png">
+            </div>
+          </div>
+        </section>
+        <section>
+          <h3>Subgraph densities</h3>
+
+          We define the (non-induced) <b>density</b> of a finite graph $\color{darkorange}H$ in $\mathcal{G}$ as
+
+          $$\phi_{\mathcal{G}}({\color{darkorange}H}):= \lim_{i\to\infty} \text{density of $\color{darkorange}H$ in
+          $G_i$}$$
+
+          <p class="fragment">
+            $$=\lim_{i\to\infty} \mathbb{P}[{\color{green}\sigma_i}({\color{darkorange}H}) \text{ is a subgraph of }G_i
+            ],$$
+            where ${\color{green}\sigma_i}\colon V({\color{darkorange}H})\to V(G_i)$ is a random injective mapping.
+          </p>
+
+        </section>
+
+        <section>
+          <h3>Triangle free graphs</h3>
+
+          <p>
+            Maximize the <span style="color:rgb(200, 100, 0)">edge density</span> in a <span
+              style="color:green">triangle
+              free</span> sequence $\mathcal{G}$ of graphs of increasing size:
+          </p>
+
+          <img style="width:70%;" src="./LatexPics/LatexPic-6.svg">
+
+          <div class="fragment">
+            <p>
+              We saw that
+            </p>
+            <img style="width:30%;" src="./LatexPics/LatexPic-7.svg">
+
+            <p>
+              but how can we prove an <b>upper bound</b>?
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h3>Multiplying subgraph densities</h3>
+
+          <div class="r-stack">
+            <div class="fragment fade-out" data-fragment-index="1">
+              <p>To multiply two subgraph densities, we <b>glue together</b> the graphs:</p>
+
+              <img style="width: 50%;" src="./LatexPics/LatexPic-8.svg">
+
+
+              <!-- <div class="fragment fade-in" data-fragment-index="0">
+                Because the probability that the two graphs are sent to <b>disjoint</b> sets
+                of vertices <b>converges to $1$ in the limit</b>.
+              </div> -->
+            </div>
+            <div class="fragment current-visible" data-fragment-index="1">
+              <p>These relationships are <b>independent of $\mathcal{G}$</b>, motivating the definition</p>
+
+              <img style="width: 30%;" src="./LatexPics/LatexPic-9.svg">
+
+              <p>
+                where a graph $H$ now stands for the function
+                $$\small H(\mathcal{G}) = \phi_{\mathcal{G}}(H)= \lim_{i\to\infty}
+                \mathbb{P}[\sigma_i(H) \text{ is a subgraph of }G_i].$$
+              </p>
+            </div>
+            <div class="fragment">
+              <p>We can fix entries of the $\sigma_i$ to fix (<b>flag</b>) some vertices, and extend the <b>gluing</b>
+                operation to <b>partially labeled graphs (flags)</b>:</p>
+
+              <img style="width: 40%;" src="./LatexPics/LatexPic-10.svg">
+            </div>
+          </div>
+        </section>
+
+        <!-- <section>
+          <h3>The Flag Algebra of Graphs</h3>
+
+          $$\mathcal{A}_{\text{graphs}} = \{\text{real linear combinations of flags}\}$$
+        </section> -->
+
+        <section>
+          <h3>Flag Sums-of-Squares</h3>
+
+          <div class="r-stack">
+            <div class="fragment fade-out" data-fragment-index="3">
+              <ul>
+                <li>
+                  Flags $F$ send graph sequences to real numbers:
+                  $$ F (\mathcal{G}) \in [0,1]$$
+                </li>
+                <li class="fragment" data-fragment-index="1">
+                  Then so do <b>real linear combinations</b> of flags<br>
+                  <sup style="font-size:large;">
+                    The literature calls these "Quantum graphs".
+                  </sup>
+                </li>
+                <li class="fragment" data-fragment-index="2">
+                  Squares of real numbers are <b>nonnegative</b>:
+
+                  <div style="text-align: center;">
+                    <img style="width: 60%;" src="./LatexPics/LatexPic-11.svg">
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="fragment current-visible" data-fragment-index="3">
+              <p>We can <b>average</b> flags over all choices of labels, <b>unlabeling</b> them:</p>
+
+              <img style="width: 60%;" src="./LatexPics/LatexPic-12.svg">
+            </div>
+            <div class="fragment">
+              <p>We can now find an <b>upper bound</b> for the edge density in triangle free graphs:</p>
+              <img src="./LatexPics/LatexPic-13.svg" style="width: 90%;">
+              <p class="fragment fade-in">As with <b>polynomial optimization</b>, we can model Flag-SOS using
+                <b>semidefinite programming</b>.
+              </p>
+
+            </div>
+
+        </section>
+        <section data-auto-animate>
+          <h3>Polynomial Sums-of-Squares</h3>
+
+          <ul>
+            <li>
+              Let ${\color{darkorange}[x]} = (m_1,\ldots, m_k)^\top$ be a vector containing a finite subset of a basis
+              of $\mathbb{R}{\color{darkorange}[x]}$.
+            </li>
+          </ul>
+        </section>
+        <section data-auto-animate>
+          <h3>Polynomial Sums-of-Squares</h3>
+
+          <ul>
+            <li>
+              Let ${\color{darkorange}[x]} = (m_1,\ldots, m_k)^\top$ be a vector containing a finite subset of a basis
+              of $\mathbb{R}{\color{darkorange}[x]}$.
+            </li>
+            <li>
+              We can write polynomials in the form
+              $$\small p = \sum_{i=1}^k c_i m_i = c^\top{\color{darkorange}[x]}$$
+            </li>
+          </ul>
+        </section>
+        <section data-auto-animate>
+          <h3>Polynomial Sums-of-Squares</h3>
+
+          <ul>
+            <li>
+              Let ${\color{darkorange}[x]} = (m_1,\ldots, m_k)^\top$ be a vector containing a finite subset of a basis
+              of $\mathbb{R}{\color{darkorange}[x]}$.
+            </li>
+            <li>
+              We can write polynomials in the form
+              $$\small p = \sum_{i=1}^k c_i m_i = c^\top{\color{darkorange}[x]}$$
+            </li>
+            <li>
+              And squares as
+              $$\small p^2 = (c^\top{\color{darkorange}[x]})^2 = {\color{darkorange}[x]}^\top (cc^\top)
+              {\color{darkorange}[x]} = \langle c c^\top, {\color{darkorange}[x]}{\color{darkorange}[x]}^\top\rangle$$
+            </li>
+          </ul>
+        </section>
+        <section data-auto-animate>
+          <h3>Polynomial Sums-of-Squares</h3>
+
+          <ul>
+            <li>
+              And squares as
+              $$\small p^2 = (c^\top{\color{darkorange}[x]})^2 = {\color{darkorange}[x]}^\top (cc^\top)
+              {\color{darkorange}[x]} = \langle c c^\top, {\color{darkorange}[x]}{\color{darkorange}[x]}^\top\rangle$$
+            </li>
+            <li>
+              Sums-of-squares correspond to PSD matrices:
+              $$\small \sum p_i^2 = \left\langle \sum c_ic_i^\top,
+              {\color{darkorange}[x]}{\color{darkorange}[x]}^\top\right\rangle =\left\langle M,
+              {\color{darkorange}[x]}{\color{darkorange}[x]}^\top\right\rangle,$$
+              for some $M \in \mathbb{S}^n_+$.
+            </li>
+          </ul>
+        </section>
+
+        <section data-auto-animate data-auto-animate-restart>
+          <h3>Flag Sums-of-Squares</h3>
+
+          <ul>
+            <li>
+              Let ${\color{darkorange}\mathcal{F}}$ be a (finite) vector of flags.
+            </li>
+          </ul>
+        </section>
+        <section data-auto-animate>
+          <h3>Flag Sums-of-Squares</h3>
+
+          <ul>
+            <li>
+              Let ${\color{darkorange}\mathcal{F}}$ be a (finite) vector of flags.
+            </li>
+            <li>
+              Linear combinations of flags are of the form
+              $$f = c^\top {\color{darkorange}\mathcal{F}}.$$
+            </li>
+          </ul>
+        </section>
+        <section data-auto-animate>
+          <h3>Flag Sums-of-Squares</h3>
+
+          <ul>
+            <li>
+              Let ${\color{darkorange}\mathcal{F}}$ be a (finite) vector of flags.
+            </li>
+            <li>
+              Linear combinations of flags are of the form
+              $$f = c^\top {\color{darkorange}\mathcal{F}}.$$
+            </li>
+            <li data-fragment-index="a">
+              <p>
+                Unlabelled squares can be written as
+              <div data-fragment-index="b" style="display: flex; justify-content: center;">
+                <img data-fragment-index="c" src="./LatexPics/LatexPic-14.svg" style="width: 50%; text-align: center;">
+              </div>
+              </p>
+            </li>
+          </ul>
+        </section>
+        <section data-auto-animate>
+          <h3>Flag Sums-of-Squares</h3>
+
+          <ul>
+            <li>
+              Linear combinations of flags are of the form
+              $$f = c^\top {\color{darkorange}\mathcal{F}}.$$
+            </li>
+            <li data-fragment-index="a">
+              <p>
+                Unlabelled squares can be written as
+              <div data-fragment-index="b" style="display: flex; justify-content: center;">
+                <img data-fragment-index="c" src="./LatexPics/LatexPic-14.svg" style="width: 50%; text-align: center;">
+              </div>
+              </p>
+            </li>
+            <li>
+              <div>
+                Flag sums-of-squares are of the form
+                <div style="display: flex; justify-content: center;">
+                  <img src="./LatexPics/LatexPic-15.svg" style="width: 30%; text-align: center;">
+                </div>
+                for positive semidefinite matrices $M$.
+              </div>
+            </li>
+          </ul>
+        </section>
+        <section data-auto-animate>
+          <h3>Flag Sums-of-Squares</h3>
+
+          <ul>
+            <li>
+              <div>
+                Flag sums-of-squares are of the form
+                <div style="display: flex; justify-content: center;">
+                  <img src="./LatexPics/LatexPic-15.svg" style="width: 30%; text-align: center;">
+                </div>
+                for positive semidefinite matrices $M$.
+              </div>
+            </li>
+          </ul>
+
+          <br>
+          <p>
+            In practice: Use "smarter" hierarchies, <b>block diagonalized</b> by combinatorial ideas and/or symmetries.
+          </p>
+        </section>
+
+      </section>
+      <section>
+        <section>
+          <h3>Graph profiles</h3>
+
+          <div class="r-stack">
+            <div class="fragment fade-out" data-fragment-index="2">
+              <p>We saw that <b>triangle free</b> graphs have at most edge density $\frac{1}{2}$.</p>
+
+              <br>
+
+              <p class="fragment" data-fragment-index="1">What happens if we allow <b>some triangles</b>?</p>
+            </div>
+            <div class="fragment" data-fragment-index="2">
+              <figure>
+                <img style="width: 70%;" src="./TriangleProfile.png">
+                <figcaption>
+                  <b>[Razborov, 2008]</b>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+        <section>
+          <h3>Investigating nonnegativity</h3>
+          Let $p=a_1 G_1 + a_2 G_2 + \ldots + a_k G_k$ be a linear combination of unlabeled graphs.
+
+          <br>
+          <br>
+
+          <div class="container">
+            <div class="col" style="flex: 1; background-color:darkseagreen; text-shadow: 0px 0px 6px #f7f3de;">
+              <br>
+
+              <b>[Lovász, Szegedy 2009]:</b><br>
+
+              If $p\geq 0$, then $p + \varepsilon$ is a SOS for any $\varepsilon > 0$.<br><br>
+            </div>
+            <div class="col" style="flex: 1; background-color: lightcoral;text-shadow: 0px 0px 6px #cac7b7;">
+              <br>
+
+              <b>[Hatami, Norin, 2011]:</b><br>
+
+              The question "Does $p \geq 0$ hold?"<br> is undecidable.
+
+              <br>
+              <br>
+            </div>
+          </div>
+
+        </section>
+      </section>
+      <section>
+        <section>
+          <h3>Extremal <b>tree</b> theory</h3>
+
+          Let $\mathcal{T} = (T_i)_{i\geq 0}$ be a sequence of trees, where $T_i$ has $i$ vertices.
+
+          Let $S$ be a finite tree.
+          $$\phi_{\mathcal{T}}({\color{darkorange}S}):=\lim_{i\to\infty}
+          \mathbb{P}[{\color{green}\sigma_i}({\color{darkorange}S}) \text{ is a subtree of }T_i ] {\color{red}=0}.$$
+
+          <p><b>All subtree densities are $0$.</b></p>
+
+        </section>
+        <section>
+          <ul>
+            <li>
+              The induciblity of any tree is zero.
+            </li>
+            <li>
+              All profiles of trees are $\{0\}$.
+            </li>
+            <li>
+              Deciding nonnegativity of quantum trees is trivial.
+            </li>
+          </ul>
+        </section>
+        <section data-auto-animate>
+          <h3 style="display: inline;">The end</h3>
+        </section>
+        <section data-auto-animate>
+          <h3 style="display: inline;">The end</h3>
+          <h3 style="display: inline;color: red;">?</h3>
+        </section>
+      </section>
+      <section>
+        <section data-auto-animate>
+          <h3><b>Scaling limits</b> - compact metric spaces</h3>
+
+          <figure>
+            <img style="width: 70%;" src="ScalingLimit.png">
+            <figcaption>
+              <b>[Picture by Igor Kortchemski]</b>
+            </figcaption>
+          </figure>
+
+
+        </section>
+        <section data-auto-animate>
+          <h3><b>Scaling limits</b> - compact metric spaces</h3>
+
+          <br>
+
+          Still unclear how to define subtree densities.
+
+
+        </section>
+        <section data-auto-animate-restart data-auto-animate>
+          <h3><b>Sparse limits</b> of trees</h3>
+          <h6><sup>[Bubeck, Linial, 2014]</sup></h6>
+
+          <br>
+
+          At every $n$, <b>normalize</b> the sum of densities of trees with the same number of vertices to be
+          $1$.<br><br>
+
+          <div class="fragment">
+
+            For a tree ${\color{darkorange}S}$ with $k$ vertices we set
+
+            $$\phi_{\mathcal{T}}({\color{darkorange}S}):= \lim_{i\to\infty}\frac{\text{number of copies of
+            ${\color{darkorange}S}$ in $T_i$}}{\text{number of trees with $k$ vertices in $T_i$}}$$
+          </div>
+
+        </section>
+        <section data-auto-animate>
+          <h3><b>Sparse limits</b> of trees</h3>
+          <h6><sup>[Bubeck, Linial, 2014]</sup></h6>
+
+          <br>
+          <ul>
+            <li>
+              <p>Profiles of trees with the same number of vertices are <b>convex</b>.</p>
+            </li>
+            <li>
+              <p>It is unclear how to extend <b>flag algebras</b> to this setting.</p>
+            </li>
+          </ul>
+
+
+        </section>
+      </section>
+      <section>
+        <section data-auto-animate>
+
+          <h3>A change of perspective</h3>
+          <h6><sup>[Czabarka, Székely, Wagner, 2017]</sup></h6>
+
+
+          <p>
+            What happens, if we only consider the <b>leaves</b> of trees to be the "vertices" of the tree?
+          </p>
+
+          <img style="width: 30%;" src="./LatexPics/LatexPic-1.svg">
+
+          <p>
+            (Inner vertices are now part of the "edges" of the tree.)
+          </p>
+        </section>
+        <section data-auto-animate>
+
+          <h3>A change of perspective</h3>
+          <h6><sup>[Czabarka, Székely, Wagner, 2017]</sup></h6>
+
+          <img style="width: 30%;" src="./LatexPics/LatexPic-1.svg"><br>
+
+          <p>
+            <b>Motivation:</b> phylogenetic trees, tanglegrams
+          </p>
+        </section>
+        <section data-auto-animate data-auto-animate-restart>
+          <h3>Subtrees</h3>
+          <img style="width: 30%; vertical-align:middle;" src="./LatexPics/LatexPic-2.svg">
+        </section>
+        <section data-auto-animate>
+          <h3>Subtrees</h3>
+          <div class="container">
+            <div class="col" style="flex: 2;">
+              <img style="width: 100%; vertical-align:middle;" src="./LatexPics/LatexPic-2.svg">
+            </div>
+            <div class="col" style="flex: 1;">
+              <br><br><br><br>
+              $$\longrightarrow$$
+            </div>
+            <div class="col" style="flex: 2;">
+              <img style="width: 100%; vertical-align:middle;" src="./LatexPics/LatexPic-3.svg">
+            </div>
+          </div>
+        </section>
+        <section data-auto-animate>
+          <h3>Subtrees</h3>
+          <div class="container">
+            <div class="col" style="flex: 2;">
+              <img style="width: 100%; vertical-align:middle;" src="./LatexPics/LatexPic-3.svg">
+            </div>
+            <div class="col" style="flex: 1;">
+              <br><br><br><br>
+              $$\longrightarrow$$
+            </div>
+            <div class="col" style="flex: 2;">
+              <img style="width: 50%; vertical-align:middle;" src="./LatexPics/LatexPic-4.svg">
+            </div>
+          </div>
+        </section>
+        <section data-auto-animate>
+          <h3>Subtrees</h3>
+          <div class="container">
+            <div class="col" style="flex: 2;">
+              <img style="width: 50%; vertical-align:middle;" src="./LatexPics/LatexPic-4.svg">
+            </div>
+            <div class="col" style="flex: 1;">
+              <br><br><br><br>
+              $$\longrightarrow$$
+            </div>
+            <div class="col" style="flex: 2;">
+              <br><br>
+              <img style="width: 50%; vertical-align:middle;" src="./LatexPics/LatexPic-5.svg">
+            </div>
+        </section>
+        <section>
+          <h3>
+            Subtree densities
+          </h3>
+
+          <p>
+            Let $\mathcal{T} = (T_i)_{i\geq 0}$ be a sequence of trees, where $T_i$ has $i$ <b>leaves</b>.
+
+            Let $S$ be a finite tree.
+            $$\phi_{\mathcal{T}}({\color{darkorange}S}):=\lim_{i\to\infty}
+            \mathbb{P}[\left.(T_i)\right|_{ {\color{green}V_i}} \cong {\color{darkorange}S}],$$
+            where $\color{green}V_i$ is a random subset of leaves of $T_i$ of size $V({\color{darkorange}S})$.
+          </p>
+
+          <br>
+
+          <div class="fragment">
+            We can encode the <b>limit object</b> as sequence
+            $$(\phi_{\mathcal{T}}({\color{darkorange}S_1}),\phi_{\mathcal{T}}({\color{darkorange}S_2}),\phi_{\mathcal{T}}({\color{darkorange}S_3}),\ldots )\in [0,1]^{\aleph_0}.$$
+          </div>
+        </section>
+
+        <section>
+          <h3>Questions</h3>
+
+          <ul>
+            <li>
+              What are the inducibilities of trees? <br><br>
+
+              <div style="text-align: center;">
+                Inducibility of $S= \mathrm{Ind}(S) :=\max_\mathcal{T}\phi_\mathcal{T}(S)$
+              </div>
+              <br>
+
+              <div style="text-align: center;">
+                <b class="fragment">Various upper and lower bounds by Wagner et al.</b>
+              </div>
+            </li>
+            <br>
+            <li class="fragment">
+              Are profiles of trees convex?<br><br>
+              <div style="text-align: center;">
+                <b class="fragment">Open!</b>
+              </div>
+            </li>
+          </ul>
+        </section>
+      </section>
+
+
+      <section>
+        <section>
+          <h3>The flag algebra of binary rooted trees</h3>
+
+          <div>
+            $\varnothing \equiv 1$
+          </div>
+          <br>
+          <div class="fragment">
+            <img style="vertical-align:middle;" src="./LatexPics/LatexPic-17.svg"> $\equiv 1$
+          </div>
+          <br>
+          <div class="fragment">
+            <img style="vertical-align:middle;" src="./LatexPics/LatexPic-16.svg"> $\equiv 1$
+
+          </div>
+          <br>
+          <div class="fragment">
+            <img style="vertical-align:middle;" src="./LatexPics/LatexPic-18.svg"> $\equiv 1$
+
+          </div>
+          <br>
+          <div class="fragment">
+            <img style="vertical-align:middle;" src="./LatexPics/LatexPic-19.svg"> $+$ <img
+              style="vertical-align:middle;" src="./LatexPics/LatexPic-20.svg">$\equiv 1$
+
+          </div>
+
+        </section>
+        <section>
+          <h3>Products of subtree densities</h3>
+          <div class="fragment fade-out">
+            <img style="vertical-align:middle;" src="./LatexPics/LatexPic-16.svg"> $\cdot$ <img
+              style="vertical-align:middle;" src="./LatexPics/LatexPic-16.svg"> $\stackrel{?}{=}\large($ <img
+              style="vertical-align:middle;" src="./LatexPics/LatexPic-16.svg"><img style="vertical-align:middle;"
+              src="./LatexPics/LatexPic-16.svg">$\large)$
+          </div>
+          <div class="fragment">
+            <img style="vertical-align:middle;" src="./LatexPics/LatexPic-16.svg"> $\cdot$ <img
+              style="vertical-align:middle;" src="./LatexPics/LatexPic-16.svg"> $=$ <img style="vertical-align:middle;"
+              src="./LatexPics/LatexPic-19.svg"> $+$ <img style="vertical-align:middle;"
+              src="./LatexPics/LatexPic-20.svg">
+          </div>
+
+          <div class="fragment">
+            <img style="vertical-align:middle;" src="./LatexPics/LatexPic-21.svg"> $\cdot$
+            <img style="vertical-align:middle;" src="./LatexPics/LatexPic-21.svg"> $= \frac{9}{5}$
+            <img style="vertical-align:middle;" src="./LatexPics/LatexPic-22.svg">
+            $+\frac{9}{5}$
+            <img style="vertical-align:middle;" src="./LatexPics/LatexPic-23.svg">
+            $+\frac{3}{5}$
+            <img style="vertical-align:middle;" src="./LatexPics/LatexPic-24.svg">
+          </div>
+
+        </section>
+      </section>
+      <section>
+        <section class="scrollable-slide">
+
+          <h3>Inducibility of small trees</h3>
+          <br>
+
+          <!-- <img style="vertical-align:middle;" src="./LatexPics/Tree-1.svg"> $\leq 1.0e-5$<br> -->
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-2.svg"> $\bigg)\leq 1.0$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-3.svg"> $\bigg)\leq 1.0$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-4.svg"> $\bigg)\leq 1.0$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-5.svg"> $\bigg)\leq 0.42857$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-6.svg"> $\bigg)\leq 1.0$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-7.svg"> $\bigg)\leq 0.66667$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-8.svg"> $\bigg)\leq 1.0$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-9.svg"> $\bigg)\leq 0.24718$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-10.svg"> $\bigg)\leq 1.0$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-11.svg"> $\bigg)\leq 0.19166$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-12.svg"> $\bigg)\leq 0.32258$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-13.svg"> $\bigg)\leq 0.46875$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-14.svg"> $\bigg)\leq 0.34121$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-15.svg"> $\bigg)\leq 0.20738$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-16.svg"> $\bigg)\leq 0.16972$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-17.svg"> $\bigg)\leq 0.25593$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-18.svg"> $\bigg)\leq 0.34568$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-19.svg"> $\bigg)\leq 0.24722$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-20.svg"> $\bigg)\leq 0.20864$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-21.svg"> $\bigg)\leq 0.2381$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-22.svg"> $\bigg)\leq 0.10488$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-23.svg"> $\bigg)\leq 0.08879$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-24.svg"> $\bigg)\leq 1.0$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-25.svg"> $\bigg)\leq 0.14409$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-26.svg"> $\bigg)\leq 0.54688$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-27.svg"> $\bigg)\leq 0.10891$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-28.svg"> $\bigg)\leq 0.15392$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-29.svg"> $\bigg)\leq 0.10069$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-30.svg"> $\bigg)\leq 1.0$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-31.svg"> $\bigg)\leq 0.13499$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-32.svg"> $\bigg)\leq 0.13142$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-33.svg"> $\bigg)\leq 0.07846$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-34.svg"> $\bigg)\leq 0.04778$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-35.svg"> $\bigg)\leq 0.27344$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-36.svg"> $\bigg)\leq 0.29397$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-37.svg"> $\bigg)\leq 0.22385$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-38.svg"> $\bigg)\leq 0.4375$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-39.svg"> $\bigg)\leq 0.10921$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-40.svg"> $\bigg)\leq 0.05062$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-41.svg"> $\bigg)\leq 0.14794$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-42.svg"> $\bigg)\leq 0.07021$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-43.svg"> $\bigg)\leq 0.15873$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-44.svg"> $\bigg)\leq 0.15785$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-45.svg"> $\bigg)\leq 0.11242$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-46.svg"> $\bigg)\leq 0.0618$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-47.svg"> $\bigg)\leq 0.3156$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-48.svg"> $\bigg)\leq 0.1106$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-49.svg"> $\bigg)\leq 0.21818$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-50.svg"> $\bigg)\leq 0.07672$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-51.svg"> $\bigg)\leq 0.05459$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-52.svg"> $\bigg)\leq 0.32813$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-53.svg"> $\bigg)\leq 0.07269$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-54.svg"> $\bigg)\leq 0.16773$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-55.svg"> $\bigg)\leq 0.14118$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-56.svg"> $\bigg)\leq 0.03742$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-57.svg"> $\bigg)\leq 0.06838$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-58.svg"> $\bigg)\leq 0.0546$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-59.svg"> $\bigg)\leq 0.06361$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-60.svg"> $\bigg)\leq 0.06572$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-61.svg"> $\bigg)\leq 0.06916$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-62.svg"> $\bigg)\leq 0.09701$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-63.svg"> $\bigg)\leq 0.10656$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-64.svg"> $\bigg)\leq 0.05395$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-65.svg"> $\bigg)\leq 0.1674$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-66.svg"> $\bigg)\leq 0.30674$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-67.svg"> $\bigg)\leq 0.15159$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-68.svg"> $\bigg)\leq 0.04657$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-69.svg"> $\bigg)\leq 0.19236$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-70.svg"> $\bigg)\leq 0.15381$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-71.svg"> $\bigg)\leq 0.10694$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-72.svg"> $\bigg)\leq 0.03393$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-73.svg"> $\bigg)\leq 0.09637$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-74.svg"> $\bigg)\leq 0.02046$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-75.svg"> $\bigg)\leq 0.08361$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-76.svg"> $\bigg)\leq 0.03807$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-77.svg"> $\bigg)\leq 0.12347$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-78.svg"> $\bigg)\leq 0.11441$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-79.svg"> $\bigg)\leq 0.49219$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-80.svg"> $\bigg)\leq 0.07703$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-81.svg"> $\bigg)\leq 0.20609$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-82.svg"> $\bigg)\leq 0.09881$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-83.svg"> $\bigg)\leq 0.15142$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-84.svg"> $\bigg)\leq 0.11154$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-85.svg"> $\bigg)\leq 0.13361$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-86.svg"> $\bigg)\leq 0.0417$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-87.svg"> $\bigg)\leq 0.06798$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-88.svg"> $\bigg)\leq 1.0$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-89.svg"> $\bigg)\leq 0.03665$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-90.svg"> $\bigg)\leq 0.03196$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-91.svg"> $\bigg)\leq 0.12142$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-92.svg"> $\bigg)\leq 0.17236$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-93.svg"> $\bigg)\leq 0.04644$<br>
+          $\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-94.svg"> $\bigg)\leq 0.10636$<br>
+        </section>
+        <section data-auto-animate>
+          <h3>Irrational inducibility?</h3>
+          
+          <b>[Dossou-Olory, Wagner, 2019]:</b>
+          
+          <br><br>
+          
+          
+          $0.247071\leq\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-9.svg"> $\bigg)\leq 0.24745$<br>
+
+
+          
+        </section>
+        <section data-auto-animate>
+          <h3>Irrational inducibility?</h3>
+
+          <b>[Dossou-Olory, Wagner, 2019]:</b>
+          
+          <br><br>
+          
+
+          $0.247071\leq\mathrm{Ind}\bigg($<img style="vertical-align:middle;" src="./LatexPics/Tree-9.svg"> $\bigg)\leq{\color{red} 0.24718}\leq
+          0.24745$<br>
+
+        </section>
+        <section data-auto-animate data-auto-animate-restart>
+          <h3>Outer approximation of tree profiles</h3>
+          <div>
+
+            We can obtain a <b>lower bound</b> of the profile of two trees ${\color{darkorange}S},{\color{green}T}$ on the interval ${\color{darkorange}S}\in[a,b]\subseteq [0,1]$ by approximating
+            
+            $$
+            \begin{align*}
+            \max \enspace&\int_{a}^{b} f_\text{lower}(x) \,dx \\
+            \text{s.t.}\enspace&{\color{green}T} - f_\text{lower}({\color{darkorange}S}) \geq 0\text{ if ${\color{darkorange}S}\in[a,b]$},\\
+            &f_\text{lower}\in\mathbb{R}[x]
+            \end{align*}
+            $$
+            
+            using <b>flag sums-of-squares.</b>
+          </div>
+        </section>
+        
+        <section data-auto-animate>
+          <h3>Outer approximation of tree profiles</h3>
+          
+          For ${\color{darkorange}S}=$<img style="vertical-align:middle;" src="./LatexPics/Tree-10.svg"> and ${\color{green}T}=$
+          <img style="vertical-align:middle;" src="./LatexPics/Tree-12.svg">:<br>
+          
+          
+          
+        </section>
+        <section data-auto-animate>
+          <h3>Outer approximation of tree profiles</h3>
+          <div class="container">
+            <div class="col" style="flex: 1">
+            </div>
+            <div class="col" style="flex: 5">
+              <iframe style="width: 1080pt; height: 300pt; display: block;" frameborder="0" seamless='seamless' scrolling='no' src="./treeProfile/index.html"></iframe>
+            </div>
+          </div>
+        </section>
+        
+
+        <section>
+          <h3>Open questions</h3>
+          
+          <ul>
+            <li>
+              Is the question "Is this linear combination of tree-densities nonnegative?" <b>decidable</b>?
+            </li>
+            <li>
+              Is the <b>inducibility</b> of <img style="vertical-align:middle;" src="./LatexPics/Tree-9.svg"> <b>irrational</b>?
+            </li>
+            <li>
+              Can we define limit objects in the form of "<b>Tree-ons</b>"?
+            </li>
+          </ul>
+        </section>
+      </section>
+    </div>
+  </div>
+
+  <script src="./dist/reveal.js"></script>
+
+  <script src="./plugin/markdown/markdown.js"></script>
+  <script src="./plugin/highlight/highlight.js"></script>
+  <script src="./plugin/zoom/zoom.js"></script>
+  <script src="./plugin/notes/notes.js"></script>
+  <script src="./plugin/math/math.js"></script>
+  <script>
+    function extend() {
+      var target = {};
+      for (var i = 0; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (source.hasOwnProperty(key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    }
+
+    function resetSlideScrolling(slide) {
+      slide.classList.remove('scrollable-slide');
+    }
+
+    function handleSlideScrolling(slide) {
+      if (slide.scrollHeight >= 800) {
+        slide.classList.add('scrollable-slide');
+      }
+    }
+
+    Reveal.addEventListener('ready', function (event) {
+      handleSlideScrolling(event.currentSlide);
+    });
+
+    Reveal.addEventListener('slidechanged', function (event) {
+      if (event.previousSlide) {
+        resetSlideScrolling(event.previousSlide);
+      }
+      handleSlideScrolling(event.currentSlide);
+    });
+
+    // default options to init reveal.js
+    var defaultOptions = {
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+      transition: 'default', // none/fade/slide/convex/concave/zoom
+      plugins: [
+        RevealMarkdown,
+        RevealHighlight,
+        RevealZoom,
+        RevealNotes,
+        RevealMath
+      ]
+    };
+
+    // options from URL query string
+    var queryOptions = Reveal().getQueryHash() || {};
+
+    var options = extend(defaultOptions, { "pdfSeparateFragments": true, "transition": "slide" }, queryOptions);
+  </script>
+
+  <script src="./plugins/manim.js"></script>
+  <script src="./plugin.js"></script>
+
+  <script>
+    Reveal.initialize(options);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,507 @@
+% \documentclass[tikz,convert={outfile=\jobname.svg}]{standalone}
+\documentclass[crop,equation,convert={outext=,command=\unexpanded{pdf2svg \infile\space ./LatexPics/Tree-\%d.svg all}},multi=alone]{standalone}
+% \documentclass{article}
+\usepackage{amsmath}
+\input{tikzMacros.tex}
+\usetikzlibrary{arrows.meta}
+\tikzset{
+    side by side/.style 2 args={
+    line width=2pt,
+    #1,
+    postaction={
+        clip,postaction={draw,#2, line width=6pt}
+        }
+    }
+}
+\tikzstyle{treeNode}[black]=[draw=#1,fill=#1!20, circle, inner sep = 5pt]
+\tikzstyle{treeNodeLabeled}[black]=[draw=#1, circle, inner sep = 1pt]
+\tikzstyle{treeNodeMarked}[red]=[draw=#1,fill=#1!20, circle, inner sep = 5pt]%, edge=treeEdgeMarked]
+\tikzstyle{treeNodeInner}=[inner sep = 0pt, circle, fill]
+% \tikzstyle{treeNodeRoot}=[draw, inner sep = 3pt]
+\tikzstyle{treeNodeRoot}=[inner sep = 2pt, circle, fill]
+\tikzstyle{treeEdgeMarked}=[red, very thick]
+\tikzstyle{treeEdgeDouble}=[side by side={red!50}{blue!50}]
+
+% \usepackage[margins=0]{geometry}
+\usepackage{ytableau}
+\usepackage{forest}
+
+\begin{document}
+\color{black}
+
+\forestset{
+  default preamble={
+      for tree={l = 0cm, s sep = 0.5cm,calign=fixed edge angles}
+    }
+}
+\Large
+% \boldmath
+\begin{alone}
+  $$\varnothing$$
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNode] [, treeNode] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNode] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNode] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] [, treeNode] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNode] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] [, treeNode] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ] [, treeNode] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] [, treeNodeInner [, treeNode] [, treeNode] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ] [, treeNode] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNode] ] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] [, treeNodeInner [, treeNode] [, treeNode] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ] [, treeNode] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNode] ] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNode] ] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] [, treeNodeInner [, treeNode] [, treeNode] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ] [, treeNode] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] [, treeNodeInner [, treeNode] [, treeNode] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ] [, treeNode] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNode] ] ] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNode] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ] [, treeNodeInner [, treeNode] [, treeNode] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] [, treeNode] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ] [, treeNodeInner [, treeNode] [, treeNode] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] [, treeNode] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNode] ] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNode] ] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ] [, treeNodeInner [, treeNode] [, treeNode] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNode] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNode] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ] [, treeNode] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ] [, treeNodeInner [, treeNode] [, treeNode] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ] [, treeNode] ] [, treeNode] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ] ] [, treeNodeInner [, treeNode] [, treeNode] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] [, treeNode] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] [, treeNode] ] ] ] [, treeNode] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ] [, treeNodeInner [, treeNode] [, treeNode] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNode] ] ] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] [, treeNodeInner [, treeNode] [, treeNode] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNode] ] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ] [, treeNode] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ] ] ] [, treeNode] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNode] ] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ] [, treeNode] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ] [, treeNode] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ] ] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] [, treeNode] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] [, treeNodeInner [, treeNode] [, treeNode] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNodeInner [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] [, treeNode] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNodeInner [, treeNode] [, treeNode] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] ] ]
+  \end{forest}
+  \end{alone}
+  \begin{alone}
+  \begin{forest}
+  [, treeNodeRoot [, treeNodeInner [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ] [, treeNodeInner [, treeNode] [, treeNodeInner [, treeNode] [, treeNode] ] ] ]
+  \end{forest}
+  \end{alone}
+\end{document}
