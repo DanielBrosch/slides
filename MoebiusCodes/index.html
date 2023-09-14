@@ -187,7 +187,7 @@
 
             $$\small
             \begin{align}
-            \mathrm{Las}_{r}:=\sup &\sum y_{\{v\}}\\
+            \mathrm{Las}_{r}:=\sup &\sum y_{\{v\} }\\
             \text{s.t. }& M(y):=\left(y_{C_1\cup C_2}\right)_{C_1, C_2 \in \mathcal{C}_r} \succcurlyeq 0\\
             & y_C = 0 \quad \text{ if $C$ is not an $(n, d_\min, w)$-code}\\
             & y_C \in \mathbb{R} \quad \text{for }C\in\mathcal{C}_{2r}.
@@ -252,10 +252,12 @@
 
           As the feasible set of an SDP is <b>convex</b>, we can <b>average</b> feasible solutions:
 
-          $$\mathcal{R}(M(y)) := \frac{1}{|{\color{darkorange}S_n}|} \sum_{\sigma\in S_n}\sigma(M(y))$$
+          $$\mathcal{R}(M(y)) := \frac{1}{|{\color{darkorange}S_n}|} \sum_{ {\color{darkorange}\sigma}\in
+          {\color{darkorange}S_n} }{\color{darkorange}\sigma}(M(y))$$
 
 
           <b>
+
             $\mathcal{R}(X)$ is again feasible, with the same objective value as $X$!
           </b>
 
@@ -638,8 +640,8 @@
 
           Splits into
 
-          $$\small\left\lbrace {\color{darkorange}x_{123}}x_{12i}, {\color{darkorange}x_{123}}x_{13i},
-          {\color{darkorange}x_{123}}x_{23i}\right\rbrace$$
+          $$\small\left\lbrace {\color{darkorange}x_{123} }x_{12i}, {\color{darkorange}x_{123} }x_{13i},
+          {\color{darkorange}x_{123} }x_{23i}\right\rbrace$$
           and
           $$\small\left\lbrace {\color{darkorange}(1-x_{123})}, {\color{darkorange}(1-x_{123})}x_{12i},
           {\color{darkorange}(1-x_{123})}x_{13i},
@@ -759,12 +761,12 @@
 
           In the setting of codes of constant weight $w$ we have
           \begin{equation}
-          \mathrm{Las}_{d} \geq \mathrm{Raz}_{2wd}
+          \mathrm{Las}_{ {\color{darkorange}d} } \geq \mathrm{Raz}_{2w\color{darkorange}d}
           \end{equation}
           and
           \begin{equation}
           \mathrm{Raz} _{\color{green}T} \geq \mathrm{Las}
-          _{\binom{{\color{green}T}}{w}},
+          _{\binom{ {\color{green}T} }{w} },
           \end{equation}
           where <b>lower means better</b>.
 
