@@ -5,7 +5,7 @@
 - Pre-defense: [15.6.22](/PreDefense)
 - Defense: [19.10.22](/defense/#/0/1)
 - Combinatoric derivatives: [23.10.22](/CombDerivatives)
-- Crossing number: [1.12.22](/Crossing), [14.4.23](/CrossingGeorgiaTech)
+- Crossing number: [1.12.22](/Crossing), [14.4.23](/CrossingGeorgiaTech), [9.2.24](/CrossingTalkIowaCity/)
 - SDPs for extremal combinatorics: [22.2.23](/SDPsForExtremalCombinatorics)
 - Flag algebra of binary rooted trees: [15.4.23](/TreeFlags), [25.8.23](/TreeFlagsEuropt23)
 - Flag Sums of Squares for Sidorenko's Conjecture (SIAM OP23) [26.5.23](/CombDerivatives_SiamOP23) (CIRM) [13.11.23](/CombDerivatives_CIRM)
