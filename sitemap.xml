@@ -2,60 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
-    <loc>danielbrosch.github.io/slides/defense/README/index.html</loc>
-    <lastmod>2024-02-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>danielbrosch.github.io/slides/CombDerivatives_SiamOP23/README/index.html</loc>
-    <lastmod>2024-02-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>danielbrosch.github.io/slides/SDPsForExtremalCombinatorics/examples/markdown/index.html</loc>
-    <lastmod>2024-02-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>danielbrosch.github.io/slides/index.html</loc>
-    <lastmod>2024-02-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>danielbrosch.github.io/slides/TreeFlags/README/index.html</loc>
-    <lastmod>2024-02-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>danielbrosch.github.io/slides/SDPsForExtremalCombinatorics/README/index.html</loc>
-    <lastmod>2024-02-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>danielbrosch.github.io/slides/TreeFlagsEuropt23/README/index.html</loc>
-    <lastmod>2024-02-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>danielbrosch.github.io/slides/SDPsForExtremalCombinatorics/test/simple/index.html</loc>
-    <lastmod>2024-02-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>danielbrosch.github.io/slides/FlagCodeTalk/README/index.html</loc>
-    <lastmod>2024-02-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
     <loc>danielbrosch.github.io/slides/defense/examples/markdown/index.html</loc>
     <lastmod>2024-02-13</lastmod>
     <changefreq>monthly</changefreq>
@@ -69,6 +15,24 @@
 </url>
 <url>
     <loc>danielbrosch.github.io/slides/CombDerivatives_CIRM/README/index.html</loc>
+    <lastmod>2024-02-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>danielbrosch.github.io/slides/SDPsForExtremalCombinatorics/test/simple/index.html</loc>
+    <lastmod>2024-02-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>danielbrosch.github.io/slides/SDPsForExtremalCombinatorics/examples/markdown/index.html</loc>
+    <lastmod>2024-02-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>danielbrosch.github.io/slides/index.html</loc>
     <lastmod>2024-02-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
