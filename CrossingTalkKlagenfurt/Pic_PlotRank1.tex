@@ -1,0 +1,145 @@
+% \documentclass[tikz,convert={outfile=\jobname.svg}]{standalone}
+\documentclass[convert={outext=.svg,command=\unexpanded{pdf2svg \infile\space\outfile}},multi=false, varwidth, border={0 0 0cm 0}]{standalone}
+% \documentclass{standalone}
+% \documentclass{article}
+\usepackage{amsmath}
+\input{tikzMacros.tex}
+\usetikzlibrary{arrows.meta}
+\definecolor{firebrick}{rgb}{0.7, 0.13, 0.13}
+\definecolor{nwoblue}{RGB}{37,150,190}
+\definecolor{blauw}{RGB}{61,158,255}
+\definecolor{donkerblauw}{RGB}{50,50,200}
+\definecolor{donkergroenoud}{RGB}{46,148,0}
+\definecolor{donkergroen}{RGB}{255,0,0}
+\definecolor{donkergroen2}{RGB}{255,0,0}
+\definecolor{donkerrood}{RGB}{204,0,0}
+
+% \usepackage[margins=0]{geometry}
+\usepackage{ytableau}
+\usepackage[ruled,vlined]{algorithm2e}
+\usepackage{etoolbox}
+\begin{document}
+% \FlagGraphNumb{5}{1--2,2--3,3--4}{2}
+% + 2 \FlagGraph{5}{1--2,2--3,3--4}
+% \begin{center}
+% \color{white}
+% \begin{big}
+% \big
+% \begin{algorithm}
+  \begin{figure}[ht]
+    \centering \scalebox{0.9}{
+  \begin{tikzpicture}
+    \begin{axis}[width={0.7\textwidth}, height={0.5\textwidth}, tick label style={font=\footnotesize},xmin={0.85}, xmax={6.15}, xtick={{1.0,2.0,3.0,4.0,5.0,6.0}}, xticklabels={{$1$,$2$,$3$,$4$,$5$,$6$}}, ymin={0}, ymax={2.5}, ytick={{0.0,0.5,1.0,1.5,2.0,2.5}}, yticklabels={{$0.0$,$0.5$,$1.0$,$1.5$,$2.0$,$2.5$}},axis x line*=bottom,axis y line*=left]
+        \addplot[color={donkerblauw}, name path={4fe83275-249e-4781-8851-e6af4db26945}, draw opacity={1.0}, line width={1}]
+            table[row sep={\\}]
+            {
+                \\
+                1.0  0.5477225575051661  \\
+                2.0  0.3385111569432115  \\
+            }
+            ;
+        \addplot[color={donkerblauw}, name path={dfdb879b-1ee9-46a8-bb20-7bd3685f98ac}, only marks, draw opacity={1.0}, line width={0}, solid, mark={*}, mark size={2.0 pt}, mark repeat={1}, mark options={color={rgb,1:red,0.0;green,0.0;blue,0.0}, draw opacity={1.0}, fill={donkerblauw}, fill opacity={1.0}, line width={0.75}, rotate={0}, solid}]
+            table[row sep={\\}]
+            {
+                \\
+                1.0  0.5477225575051661  \\
+                2.0  0.3385111569432115  \\
+            }
+            ;
+        \addplot[color={donkerblauw}, name path={de46eb95-7503-4372-959a-9ab6ac1d4d42}, draw opacity={1.0}, line width={1}, solid]
+            table[row sep={\\}]
+            {
+                \\
+                1.0  0.9241589976025947  \\
+                2.0  0.7763005370264053  \\
+                3.0  0.46693002673905953  \\
+            }
+            ;
+        \addplot[color={donkerblauw}, name path={cb3c1ab5-3359-4561-80c2-c6d7528446cb}, only marks, draw opacity={1.0}, line width={0}, solid, mark={*}, mark size={2.0 pt}, mark repeat={1}, mark options={color={rgb,1:red,0.0;green,0.0;blue,0.0}, draw opacity={1.0}, fill={donkerblauw}, fill opacity={1.0}, line width={0.75}, rotate={0}, solid}]
+            table[row sep={\\}]
+            {
+                \\
+                1.0  0.9241589976025947  \\
+                2.0  0.7763005370264053  \\
+                3.0  0.46693002673905953  \\
+            }
+            ;
+        \addplot[color={donkerblauw}, name path={ee760013-f831-45a1-a303-569ab526c2ae}, draw opacity={1.0}, line width={1}, solid]
+            table[row sep={\\}]
+            {
+                \\
+                1.0  1.300774920542659  \\
+                2.0  1.1370941601767157  \\
+                3.0  0.9514402546468679  \\
+                4.0  0.6237302263556502  \\
+            }
+            ;
+        \addplot[color={donkerblauw}, name path={6e92a1ab-3e02-4f0f-bd78-927893d9e25b}, only marks, draw opacity={1.0}, line width={0}, solid, mark={*}, mark size={2.0 pt}, mark repeat={1}, mark options={color={rgb,1:red,0.0;green,0.0;blue,0.0}, draw opacity={1.0}, fill={donkerblauw}, fill opacity={1.0}, line width={0.75}, rotate={0}, solid}]
+            table[row sep={\\}]
+            {
+                \\
+                1.0  1.300774920542659  \\
+                2.0  1.1370941601767157  \\
+                3.0  0.9514402546468679  \\
+                4.0  0.6237302263556502  \\
+            }
+            ;
+        \addplot[color={donkerblauw}, name path={78c4be73-0cea-4aa5-9bd2-e7502d9cae16}, draw opacity={1.0}, line width={1}, solid]
+            table[row sep={\\}]
+            {
+                \\
+                1.0  1.7015830148583757  \\
+                2.0  1.537366014525392  \\
+                3.0  1.320333055885324  \\
+                4.0  1.0574761315138692  \\
+                5.0  0.6208679500074303  \\
+            }
+            ;
+        \addplot[color={donkerblauw}, name path={09a88fd6-ed5a-4b02-abe2-3fb2422ee2bb}, only marks, draw opacity={1.0}, line width={0}, solid, mark={*}, mark size={2.0 pt}, mark repeat={1}, mark options={color={rgb,1:red,0.0;green,0.0;blue,0.0}, draw opacity={1.0}, fill={donkerblauw}, fill opacity={1.0}, line width={0.75}, rotate={0}, solid}]
+            table[row sep={\\}]
+            {
+                \\
+                1.0  1.7015830148583757  \\
+                2.0  1.537366014525392  \\
+                3.0  1.320333055885324  \\
+                4.0  1.0574761315138692  \\
+                5.0  0.6208679500074303  \\
+            }
+            ;
+        \addplot[color={donkerblauw}, name path={e7904ed5-ebf7-44e4-8d76-68c61ff6d361}, draw opacity={1.0}, line width={1}, solid]
+            table[row sep={\\}]
+            {
+                \\
+                1.0  2.0904835031007987  \\
+                2.0  1.9700264113263073  \\
+                3.0  1.7231417188918703  \\
+                4.0  1.4626064532562786  \\
+                5.0  1.2220506765769963  \\
+                6.0  0.6175223936822627  \\
+            }
+            ;
+        \addplot[color={donkerblauw}, name path={89e185af-8e64-48c7-aee2-007279a9606f}, only marks, draw opacity={1.0}, line width={0}, solid, mark={*}, mark size={2.0 pt}, mark repeat={1}, mark options={color={rgb,1:red,0.0;green,0.0;blue,0.0}, draw opacity={1.0}, fill={donkerblauw}, fill opacity={1.0}, line width={0.75}, rotate={0}, solid}]
+            table[row sep={\\}]
+            {
+                \\
+                1.0  2.0904835031007987  \\
+                2.0  1.9700264113263073  \\
+                3.0  1.7231417188918703  \\
+                4.0  1.4626064532562786  \\
+                5.0  1.2220506765769963  \\
+                6.0  0.6175223936822627  \\
+            }
+            ;
+        \node[right, color={donkerblauw}, draw opacity={1.0}, rotate={0.0}, font={\footnotesize}]  at (axis cs:1.5,0.5) {$v_5$};
+        \node[right, color={donkerblauw}, draw opacity={1.0}, rotate={0.0}, font={\footnotesize}]  at (axis cs:2.5,0.65) {$v_7$};
+        \node[right, color={donkerblauw}, draw opacity={1.0}, rotate={0.0}, font={\footnotesize}]  at (axis cs:3.5,0.82) {$v_9$};
+        \node[right, color={donkerblauw}, draw opacity={1.0}, rotate={0.0}, font={\footnotesize}]  at (axis cs:4.5,0.87) {$v_{11}$};
+        \node[right, color={donkerblauw}, draw opacity={1.0}, rotate={0.0}, font={\footnotesize}]  at (axis cs:5.5,0.94) {$v_{13}$};
+    \end{axis}
+    \end{tikzpicture}}\vspace{-4pt}
+    \caption{Vectors $v_m$ such that optimal $Y = \frac{1}{(m-1)!}v_mv_m^T$. }\label{figure: betaSolutions}
+    \end{figure}
+% \end{algorithm}
+% \end{big}
+% \end{center}
+\end{document}
