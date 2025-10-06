@@ -1,0 +1,1 @@
+import{b as r,o as s,v as a,x as n,T as t}from"./modules/vue-DMF2R5Zi.js";import{I as c}from"./pageBar-CZxVh9p_.js";import{I as m,aj as p}from"./index-ClD-mn_P.js";import"./modules/shiki-86HzZTjZ.js";const k={__name:"slides.md__slidev_50",setup(i){const{$clicksContext:e,$frontmatter:o}=m();return e.setup(),(_,l)=>(s(),r(c,a(n(t(p)(t(o),49))),null,16))}};export{k as default};

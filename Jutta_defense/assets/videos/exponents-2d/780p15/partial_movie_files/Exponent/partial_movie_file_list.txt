@@ -1,0 +1,7 @@
+# This file is used internally by FFMPEG.
+file 'file:/home/jutrath/slidev/public/assets/videos/exponents-2d/780p15/partial_movie_files/Exponent/3431280126_2023226627_808194351.mp4'
+file 'file:/home/jutrath/slidev/public/assets/videos/exponents-2d/780p15/partial_movie_files/Exponent/1579034835_3420339324_3614800428.mp4'
+file 'file:/home/jutrath/slidev/public/assets/videos/exponents-2d/780p15/partial_movie_files/Exponent/1579034835_2921696577_3295820733.mp4'
+file 'file:/home/jutrath/slidev/public/assets/videos/exponents-2d/780p15/partial_movie_files/Exponent/1579034835_3420339324_3267691145.mp4'
+file 'file:/home/jutrath/slidev/public/assets/videos/exponents-2d/780p15/partial_movie_files/Exponent/1579034835_3160818332_816107804.mp4'
+file 'file:/home/jutrath/slidev/public/assets/videos/exponents-2d/780p15/partial_movie_files/Exponent/1579034835_2827574840_2067785578.mp4'
